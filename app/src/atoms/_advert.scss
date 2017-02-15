@@ -1,0 +1,25 @@
+/**
+ * @atom Banner Advert
+ * @section Advertise
+ * @markup
+ *  <div class="advert-banner"> </div>
+ */
+.advert-banner {
+    @include row();
+    background-color: lightgrey;
+    width: 100%;
+    height: 80px;
+    margin: 10px 0;
+}
+
+/**
+ * @atom Article Advert
+ * @section Advertise
+ * @markup
+ *  <div class="advert-article"> </div>
+ */
+.advert-article {
+    background-color: lightgrey;
+    display: inline;
+    border: 1px solid black;
+}

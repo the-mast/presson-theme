@@ -5,7 +5,11 @@
 @import 'nuclides/colors';
 @import 'nuclides/mixins';
 
+@import 'atoms/advert';
+@import 'atoms/blockquote';
+
 @import 'structures/header';
+@import 'structures/article';
 
 html, body{
     margin: 0;

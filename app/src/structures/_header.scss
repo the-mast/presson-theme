@@ -1,12 +1,11 @@
+$masthead-height: 60px;
+
 #masthead {
     @include row;
     padding: 5px;
     background-color: $primary;
     color: white;
-
-    h1 {
-        color: lime;
-    }
+    height: $masthead-height;
 
     #logo-header{
         @include span_columns(8);
@@ -18,10 +17,10 @@
     }
 
     nav{
-        border: 5px solid white;
-    
+        border: 1px solid white;
+        
         ul {
-            list-style: none;
+             list-style: none;
         }
     }
 };
