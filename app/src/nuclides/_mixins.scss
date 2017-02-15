@@ -6,8 +6,7 @@
  * @example
  *  @quote-mark();
  */
-@mixin quote-mark (){
-        font-size: 100px;
-        color: $primary;
-        font-family: Garamond
+@mixin open-quote (){
+    background-image: url('/images/quote_icon.svg');
+    background-repeat: no-repeat;
 }

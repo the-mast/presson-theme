@@ -6,22 +6,15 @@
  */
 
 blockquote {
+    @include row;
+    @include open-quote;
     border-radius: 5px;
-    border-left: none;
-    
-    &::before {
-        content: '"';
-        @include quote-mark();
-    }
-
-    &::after {
-        content: '"';
-        @include quote-mark();
-    }
+    margin: 0;
 
     p {
-        font-weight: 300;
-        font-family: helvetica;
-
+        margin-left: 36px;
+        font-family: $primary-font;
+        font-weight: bold;
+        font-size: 1.2em;
     }
 }

@@ -30,7 +30,7 @@
         }
 
         .article-title {
-                color: white;
+            color: white;
         }
         
         .article-info {
@@ -40,9 +40,14 @@
         .article-author {
             font-weight: bolder;
         }
+    }
 
-        .article-date {
-            
+    .article-content {
+        @import '../atoms/blockquote';
+        padding: 5px 10px;
+
+        p {
+            margin: 5px 10px;
         }
     }
 }
