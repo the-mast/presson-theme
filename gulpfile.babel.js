@@ -85,7 +85,7 @@ gulp.task('styles', () => {
   var neat = require('node-neat').includePaths;
 
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src('app/src/**/main.scss')
+  return gulp.src('app/src/**/style.scss')
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -193,6 +193,19 @@ gulp.task('serve:dist', ['default'], () =>
     port: 3001
   })
 );
+
+gulp.task('serve:wordpress', ['styles'], function() {
+  gulp.src('wp-php/**/*.php')
+  .pipe(gulp.dest('dist/'));
+
+  gulp.src('.tmp/styles/style.css')
+  .pipe(gulp.dest('dist/'));
+
+  gulp.watch('.tmp/styles/style.css', function() {
+    gulp.src('.tmp/styles/style.css')
+    .pipe(gulp.dest('dist/'));
+  });
+});
 
 // Build production files, the default task
 gulp.task('default', ['clean'], cb =>
