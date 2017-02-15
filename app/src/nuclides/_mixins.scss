@@ -1,0 +1,13 @@
+/**
+ * Prepend a large quote mark (for blockquotes).
+ *
+ * @mixin
+ * @section Style Mixins
+ * @example
+ *  @quote-mark();
+ */
+@mixin quote-mark (){
+        font-size: 100px;
+        color: $primary;
+        font-family: Garamond
+}

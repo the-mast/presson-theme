@@ -82,15 +82,15 @@ gulp.task('styles', () => {
     'bb >= 10'
   ];
 
+  var neat = require('node-neat').includePaths;
+
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src([
-    'app/styles/**/*.scss',
-    'app/styles/**/*.css'
-  ])
+  return gulp.src('app/src/**/main.scss')
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      precision: 10
+      precision: 10,
+      includePaths: ['app/src/**/*.scss'].concat(neat)
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
@@ -173,6 +173,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/src/**/*.scss'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });

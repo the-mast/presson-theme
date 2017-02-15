@@ -1,0 +1,28 @@
+#masthead {
+    @include row;
+    padding: 5px;
+    background-color: $primary;
+    color: white;
+
+    h1 {
+        color: lime;
+    }
+
+    #logo-header{
+        @include span_columns(8);
+    }
+
+    #nav-header{
+        @include span_columns(4);
+        
+    }
+
+    nav{
+        border: 5px solid white;
+    
+        ul {
+            list-style: none;
+        }
+    }
+};
+
