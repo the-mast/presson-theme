@@ -7,6 +7,13 @@
  *  @quote-mark();
  */
 @mixin open-quote (){
-    background-image: url('/images/quote_icon.svg');
+    background-image: url('assets/images/quote_icon.svg');
     background-repeat: no-repeat;
+}
+
+@mixin burger-menu(){
+    background-image: url('assets/images/hamburger.svg');
+    background-repeat: no-repeat;
+    cursor:pointer;
+    border:none;
 }

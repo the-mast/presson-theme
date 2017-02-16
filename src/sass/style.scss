@@ -1,6 +1,9 @@
-// Import The Mast components
-@import 'components/the_mast.scss';
-
 // Import _s base styles
 @import '_s/style.scss';
 
+// Import The Mast components
+@import 'components/the_mast.scss';
+
+$color__link: $secondary;
+$color__link-visited: $accent;
+$color__link-hover: $accent;

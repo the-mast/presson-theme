@@ -225,9 +225,9 @@ gulp.task('serve:dist', ['default'], () =>
 
 gulp.task('build', ['clean', 'styles:underscore'], () => {
   gulp.src('src/images/**/*')
-  .pipe(gulp.dest('dist/assets/'));
+  .pipe(gulp.dest('dist/assets/images/'));
   gulp.src('src/js/**/*.js')
-  .pipe(gulp.dest('dist/assets/'));
+  .pipe(gulp.dest('dist/assets/js/'));
   gulp.src('src/**/*.php')
   .pipe(gulp.dest('dist/'));
 });
