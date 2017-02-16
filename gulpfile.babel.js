@@ -224,6 +224,10 @@ gulp.task('serve:dist', ['default'], () =>
 );
 
 gulp.task('build', ['clean', 'styles:underscore'], () => {
+  gulp.src('src/images/**/*')
+  .pipe(gulp.dest('dist/assets/'));
+  gulp.src('src/js/**/*.js')
+  .pipe(gulp.dest('dist/assets/'));
   gulp.src('src/**/*.php')
   .pipe(gulp.dest('dist/'));
 });
@@ -237,6 +241,8 @@ gulp.task('serve:wordpress', ['styles:underscore'], function() {
 
   gulp.watch(['src/sass/**/*.scss'], ['clean', 'styles:underscore', 'build', reload]);
   gulp.watch(['src/**/*.php'], ['clean', 'build', reload]);
+  gulp.watch(['src/images/**/*'], ['clean', 'build', reload]);
+  gulp.watch(['src/js/**/*'], ['clean', 'build', reload]);
 });
 
 // Build production files, the default task
