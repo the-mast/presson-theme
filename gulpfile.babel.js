@@ -98,8 +98,37 @@ gulp.task('styles', () => {
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('dist/'))
     .pipe(gulp.dest('.tmp/styles'));
+});
+
+gulp.task('styles:underscore', () => {
+  const AUTOPREFIXER_BROWSERS = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+  ];
+  const neat = require('node-neat').includePaths;
+
+  // For best performance, don't add Sass partials to `gulp.src`
+  return gulp.src('src/sass/style.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      precision: 10,
+      includePaths: ['src/sass/**/*.scss'].concat(neat)
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    // Concatenate and minify styles
+    .pipe($.if('*.css', $.cssnano()))
+    .pipe($.size({title: 'styles'}))
+    .pipe($.sourcemaps.write('./'))
+    .pipe(gulp.dest('dist/'));
 });
 
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
@@ -194,17 +223,20 @@ gulp.task('serve:dist', ['default'], () =>
   })
 );
 
-gulp.task('serve:wordpress', ['styles'], function() {
-  gulp.src('wp-php/**/*.php')
+gulp.task('build', ['clean', 'styles:underscore'], () => {
+  gulp.src('src/**/*.php')
   .pipe(gulp.dest('dist/'));
+});
 
-  gulp.src('.tmp/styles/style.css')
-  .pipe(gulp.dest('dist/'));
-
-  gulp.watch('.tmp/styles/style.css', function() {
-    gulp.src('.tmp/styles/style.css')
-    .pipe(gulp.dest('dist/'));
+gulp.task('serve:wordpress', ['styles:underscore'], function() {
+  browserSync({
+    notify: false,
+    // Customize the Browsersync console logging prefix
+    proxy: 'http://localhost:8080'
   });
+
+  gulp.watch(['src/sass/**/*.scss'], ['clean', 'styles:underscore', 'build', reload]);
+  gulp.watch(['src/**/*.php'], ['clean', 'build', reload]);
 });
 
 // Build production files, the default task
