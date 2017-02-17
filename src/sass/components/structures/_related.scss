@@ -1,0 +1,38 @@
+#artile-related{
+    padding: 10px;
+
+}
+
+
+    #related-header{
+    width: 100%;
+    height: 51px;
+    margin-bottom: 20px;
+    background-color: #F1F1F1;
+    padding: 5px 10px;
+
+        h2{
+            margin: 0;
+        }
+    }
+
+
+#related-storie{
+    @include row;
+    padding: 10px;
+
+    border-bottom: solid darkgrey;
+
+    #related-story-title{
+        @include span_columns(9);
+        h3{
+            margin: 0;
+        }
+    }
+
+    #related-story-image{
+        @include span_columns(3);
+        height: 80px;
+        width: 80px;
+    }
+}

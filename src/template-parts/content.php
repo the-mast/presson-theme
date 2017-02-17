@@ -9,13 +9,14 @@
 
 ?>
 
+
 <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		
-			<?php
-			if ( has_post_thumbnail() ) : ?>
-			<div class="image-container">
-					<?php the_post_thumbnail(); ?>
+
+	<header>	
+		<?php
+		if ( has_post_thumbnail() ) : ?>
+		<div class="image-container">
+			<?php the_post_thumbnail(); ?>
 			<div class="image-box">
 				<div class="title-overlay">
 					<?php
@@ -26,15 +27,14 @@
 					endif; ?>
 				</div>
 			</div>
-			<?php
-			else:
-				if ( is_single() ) :
-						the_title( '<h1>', '</h1>' );
-					else :
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					endif;
-			endif;?>
-			
+					<?php
+					else:
+						if ( is_single() ) :
+								the_title( '<h1>', '</h1>' );
+							else :
+								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							endif;
+					endif;?>
 		</div>
 		<div class="article-info">
 			<?php
@@ -60,8 +60,36 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div>
+	</section>
 	<!-- .entry-content -->
+	<section class="related-stuff">
+			<?php
+		$args = array('posts_per_page' => 3);
+		$postslist = get_posts($args);
+
+		if ($postslist) { ?>
+				<div id="article-related">
+					<div id="related-header">
+						<h2>RELATED STORIES</h2>
+					</div>
+				</div>
+		<?php foreach( $postslist as $post ):
+			setup_postdata('$post');
+			?>
+				<div id="related-storie">
+					<div id="related-story-title">
+						<span>Section</span>
+						<h3> <?php the_title(); ?> </h3>
+					</div>
+					<div id="related-story-image">
+						<?php the_post_thumbnail(); ?>
+					</div>
+				</div>
+			<?php 
+			endforeach;
+			wp_reset_postdata;
+		}?>
+	</section>
 
 	<footer class="entry-footer">
 		<?php the_mast_entry_footer(); ?>
