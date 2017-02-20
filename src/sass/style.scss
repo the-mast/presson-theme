@@ -7,3 +7,23 @@
 $color__link: $secondary;
 $color__link-visited: $secondary;
 $color__link-hover: $secondary;
+
+a {
+	color: $color__link;
+
+	&:visited {
+		color: $secondary;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $secondary;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

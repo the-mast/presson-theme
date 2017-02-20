@@ -64,7 +64,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</section>
+	
 	<!-- .entry-content -->
 	<section class="related-stuff">
 			<?php
@@ -95,6 +95,10 @@
 			endforeach;
 			wp_reset_postdata;
 		}?>
+		<?php
+			get_template_part( 'template-parts/content-related', 'none' );
+		?>
+
 	</section>
 
 	<footer class="entry-footer">
