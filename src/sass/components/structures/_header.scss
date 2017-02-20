@@ -1,4 +1,5 @@
 $masthead-height: 60px;
+@import '../atoms/navigation';
 
 #masthead {
     @include row;
@@ -8,22 +9,13 @@ $masthead-height: 60px;
     height: $masthead-height;
 
     #logo-header{
-        @include span_columns(10);
-        height: 100%;
-
-        h1{
-            margin:0;
-        }
+        @include span_columns(11);
+        @include logo-header;
     }
 
     #nav-header{
-        @include span_columns(2);
+        @include span_columns(1);
         height: 100%;
-        .menu{
-            @include burger-menu;
-            border-radius: 5px;
-            width:27px;
-        }
     }
 
 };

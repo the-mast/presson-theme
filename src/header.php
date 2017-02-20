@@ -24,16 +24,16 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-mast' ); ?></a>
 	<div  id="masthead">
 		<div id="logo-header">
-			<header>
-			<div id="logo">
-				<h1>The Mast</h1>
-			</div>
-			</header>
       	</div>
       
 		<div id="nav-header">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<input class="menu-toggle menu" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'the-mast' ); ?></input>
+				<div id="nav-burger-menu" class="menu-toggle menu" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'the-mast' ); ?>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div>

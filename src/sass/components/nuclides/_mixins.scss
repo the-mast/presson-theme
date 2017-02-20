@@ -11,6 +11,17 @@
     background-repeat: no-repeat;
 }
 
+@mixin logo-header (){
+    background-image: url('assets/images/logo_white.png');
+    background-repeat: no-repeat;
+    height: $masthead-height;
+}
+
+@mixin logo-content{
+    background-image: url('assets/images/logo_purple.png');
+    background-repeat: no-repeat;
+}
+
 @mixin burger-menu(){
     background-image: url('assets/images/hamburger.svg');
     background-repeat: no-repeat;
