@@ -10,7 +10,10 @@ $masthead-height: 60px;
 
     #logo-header{
         @include span_columns(11);
-        @include logo-header;
+        padding: 10px;
+        svg{
+            @include logo-white;
+         }
     }
 
     #nav-header{

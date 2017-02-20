@@ -11,13 +11,13 @@
     background-repeat: no-repeat;
 }
 
-@mixin logo-header (){
-    background-image: url('assets/images/logo_white.png');
+@mixin logo-white (){
+    background-image: url('assets/images/logo_white.svg');
     background-repeat: no-repeat;
     height: $masthead-height;
 }
 
-@mixin logo-content{
+@mixin logo-purple{
     background-image: url('assets/images/logo_purple.png');
     background-repeat: no-repeat;
 }

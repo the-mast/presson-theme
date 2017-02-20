@@ -15,7 +15,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
 <?php wp_head(); ?>
 </head>
 
@@ -24,6 +23,9 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-mast' ); ?></a>
 	<div  id="masthead">
 		<div id="logo-header">
+			<svg class="logo-svg" viewBox="0 0 220 80" >
+			<!-- SVG content -->
+			</svg>
       	</div>
       
 		<div id="nav-header">
@@ -41,7 +43,9 @@
 
 
 	<div class="advert-banner">
-      ADVERTISEMENT
+		<div class="advert-content">
+			 ADVERTISEMENT
+		</div>
     </div>
 
 	<div id="content" class="site-content">

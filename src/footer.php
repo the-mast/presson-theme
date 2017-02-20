@@ -13,13 +13,17 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'the-mast' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'the-mast' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'the-mast' ), 'the-mast', '<a href="https://automattic.com/" rel="designer">The Mast Online</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<div id="mastfoot">
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div id="logo-footer">
+			</div>
+			<div class="site-info">
+				<p> Contact Us </p>
+				<p> Send Us a Tip </p>
+				<p> Advertise with us </p>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

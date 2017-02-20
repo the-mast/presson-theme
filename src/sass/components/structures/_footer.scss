@@ -1,0 +1,20 @@
+$mastfoot-height: 524px;
+
+#mastfoot{
+    height: $mastfoot-height;
+    background-color: $primary;
+    width: 100%;
+    padding: 20px;
+
+    p {
+        color: white;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    #logo-footer{
+        @include logo-white;
+        width: 98px;
+        margin: 0 auto;
+    }
+}

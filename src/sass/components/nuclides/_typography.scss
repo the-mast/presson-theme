@@ -4,5 +4,12 @@
  * @nuclide Primary Typeface
  * @section Typography
  */
- $primary-font: Sans-Serif, Arial, Helvetica, OpenSans;
- $secondary-font: Serif, 'Times New Roman', Garamond;
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans%7CRoboto+Slab');
+
+ $primary-font: 'Noto Sans';
+ $secondary-font: 'Roboto Slab';
+
+ h1, h2, h3 {
+    font-family: $secondary-font
+ }

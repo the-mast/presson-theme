@@ -70,7 +70,7 @@
 		if ($postslist) { ?>
 				<div id="article-related">
 					<div id="related-header">
-						<h2>RELATED STORIES</h2>
+						<h2>LATEST STORIES</h2>
 					</div>
 				</div>
 		<?php foreach( $postslist as $post ):
