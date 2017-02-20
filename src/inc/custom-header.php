@@ -35,20 +35,20 @@ if ( ! function_exists( 'the_mast_header_style' ) ) :
  * @see the_mast_custom_header_setup().
  */
 function the_mast_header_style() {
-	$header_text_color = get_header_textcolor();
+		$header_text_color = get_header_textcolor();
 
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
-	 */
-	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-		return;
-	}
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+		}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>

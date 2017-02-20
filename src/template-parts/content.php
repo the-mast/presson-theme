@@ -28,7 +28,7 @@
 				</div>
 			</div>
 					<?php
-					else:
+					else :
 						if ( is_single() ) :
 								the_title( '<h1>', '</h1>' );
 							else :
@@ -51,7 +51,11 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-mast' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-mast' ), array(
+					'span' => array(
+						'class' => array(),
+					),
+				) ),
 				the_title( '<span class="article-title">', '"</span>', false )
 			) );
 
@@ -64,16 +68,18 @@
 	<!-- .entry-content -->
 	<section class="related-stuff">
 			<?php
-		$args = array('posts_per_page' => 3);
+		$args = array(
+			'posts_per_page' => 3,
+		);
 		$postslist = get_posts($args);
 
-		if ($postslist) { ?>
-				<div id="article-related">
-					<div id="related-header">
-						<h2>LATEST STORIES</h2>
-					</div>
-				</div>
-		<?php foreach( $postslist as $post ):
+		if ($postslist ) { ?>
+							<div id="article-related">
+							<div id="related-header">
+							<h2>LATEST STORIES</h2>
+							</div>
+							</div>
+							<?php foreach ( $postslist as $post ) :
 			setup_postdata('$post');
 			?>
 				<div id="related-storie">
@@ -85,7 +91,7 @@
 						<?php the_post_thumbnail(); ?>
 					</div>
 				</div>
-			<?php 
+			<?php
 			endforeach;
 			wp_reset_postdata;
 		}?>
