@@ -38,6 +38,15 @@ import pkg from './package.json';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+// File paths to various assets are defined here.
+var PATHS = {
+  phpcs: [
+    '**/*.php',
+    '!wpcs',
+    '!wpcs/**'
+  ]
+};
+
 // Lint JavaScript
 gulp.task('lint', () =>
   gulp.src(['app/scripts/**/*.js','!node_modules/**'])
@@ -238,6 +247,30 @@ gulp.task('copy_phpfiles', () => {
 
 gulp.task('build', ['clean', 'styles:underscore'], cb => {
   runSequence(['copy_images', 'copy_assets', 'copy_phpfiles'], cb);
+});
+
+// PHP Code Sniffer task
+gulp.task('phpcs', function() {
+  return gulp.src(PATHS.phpcs)
+      .pipe($.phpcs({
+        bin: 'wpcs/vendor/bin/phpcs',
+        standard: './codesniffer.ruleset.xml',
+        showSniffCode: true,
+      }))
+      .on('error', $.util.log)
+      .pipe($.phpcs.reporter('log'));
+});
+
+// PHP Code Beautifier task
+gulp.task('phpcbf', function () {
+  return gulp.src(PATHS.phpcs)
+      .pipe($.phpcbf({
+        bin: 'wpcs/vendor/bin/phpcbf',
+        standard: './codesniffer.ruleset.xml',
+        warningSeverity: 0
+      }))
+      .on('error', $.util.log)
+      .pipe(gulp.dest('.'));
 });
 
 //Package task
