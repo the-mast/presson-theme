@@ -29,6 +29,7 @@ import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
+import moment from 'moment';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
@@ -223,13 +224,29 @@ gulp.task('serve:dist', ['default'], () =>
   })
 );
 
-gulp.task('build', ['clean', 'styles:underscore'], () => {
-  gulp.src('src/images/**/*')
-  .pipe(gulp.dest('dist/assets/images/'));
-  gulp.src('src/js/**/*.js')
-  .pipe(gulp.dest('dist/assets/js/'));
-  gulp.src('src/**/*.php')
-  .pipe(gulp.dest('dist/'));
+gulp.task('copy_images', () => {
+  return gulp.src('src/images/**/*').pipe(gulp.dest('dist/assets/images/'));
+});
+
+gulp.task('copy_assets', () => {
+  return gulp.src('src/js/**/*.js').pipe(gulp.dest('dist/assets/js/'));
+});
+
+gulp.task('copy_phpfiles', () => {
+  return gulp.src('src/**/*.php').pipe(gulp.dest('dist/'));
+});
+
+gulp.task('build', ['clean', 'styles:underscore'], cb => {
+  runSequence(['copy_images', 'copy_assets', 'copy_phpfiles'], cb);
+});
+
+//Package task
+gulp.task('package', ['build'], function() {
+  var title = 'news-day-theme' + '_' + moment().format("YYYY-MM-DD_HH-mm") + '.zip';
+
+  return gulp.src('dist/**/*')
+      .pipe($.zip(title))
+      .pipe(gulp.dest('packaged'));
 });
 
 gulp.task('serve:wordpress', ['styles:underscore'], function() {
