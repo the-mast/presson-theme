@@ -4,7 +4,6 @@ pipeline:
     commands:
       - npm install -g gulp-cli bower && npm install --unsafe-perm
       - git clone --depth=1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs
-      - rm -rf node_modules/
       - npm install
       - npm install -g gulp-cli
       - cd wpcs && composer install
@@ -18,7 +17,7 @@ pipeline:
 
   deploy:
     image: drillster/drone-rsync:latest
-    hosts: [ ${REMOTE_IP_ADDRESS} ]
+    hosts: [ '${REMOTE_IP_ADDRESS}' ]
     key: ${REMOTE_RSA_KEY}
     source: ./packaged/*
     target: /var/www/html/wp-content/themes/mast-theme
