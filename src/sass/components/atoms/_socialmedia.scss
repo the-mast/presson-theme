@@ -14,3 +14,30 @@
         margin: 0 auto;
     }
 }
+
+.mast-social-media-links{
+    @include row;
+    padding: 20px;
+
+    .fb-share{
+        @include span_columns(2);
+         span{
+            @include fb-share;
+            float: left;
+         }
+    }
+    .tw-share{
+        @include span_columns(2);
+        span{
+            @include tw-share;
+            float: left;
+         }
+    }
+    .wa-share{
+        @include span_columns(2);
+        span{
+            @include wa-share;
+            float: left;
+         }
+    }
+}

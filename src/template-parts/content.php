@@ -46,6 +46,11 @@
 			<?php
 			endif; ?>
 		</div>
+		<div class="mast-social-media-links">
+			<div class="fb-share"> <span></span> </div>
+			<div class="tw-share"> <span></span> </div>
+			<div class="wa-share"> <span></span> </div>
+		</div>
 	</header><!-- .entry-header -->
     <section class="article-content">
 		<?php

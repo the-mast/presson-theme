@@ -1,3 +1,7 @@
+
+$article-padding: 5px 10px;
+
+
 .article {
     @include row;
 
@@ -25,8 +29,7 @@
                 width: 100%;
                 overflow: hidden;
                 background:rgba(31, 31, 31, 0.53);
-                padding: 5px 10px;
-
+                padding: $article-padding;
                 a{
                     text-decoration: none;
                     color: white;
@@ -39,8 +42,7 @@
         }
         
         .article-info {
-            padding: 10px;
-
+            padding: $article-padding;
             p{
                 margin:0;
             }
@@ -53,8 +55,7 @@
 
     .article-content {
         @import '../atoms/blockquote';
-        padding: 5px 10px;
-
+         padding: $article-padding;
         p {
             margin: 5px 0;
         }
