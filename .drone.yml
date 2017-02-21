@@ -25,7 +25,7 @@ pipeline:
     script:
           - cd /var/www/html/wp-content/themes/mast-theme
           - find . ! -name "*.zip" -exec rm -rf {} \;
-          - unzip -of "`ls *.zip | tail -1`"
+          - unzip "`ls *.zip | tail -1`"
           - rm -f *.zip
 
   notify:
