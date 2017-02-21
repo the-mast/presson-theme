@@ -9,7 +9,7 @@ pipeline:
       - cd wpcs && composer install
       - gulp phpcs
       - gulp phpcbf
-      - gulp build && gulp package
+      - gulp package
       - cd ..
       - git config remote.origin.url 'https://${GITHUB_TOKEN}@github.com/the-mast/webstarterkit-spike.git'
       - git tag v0.0.1-${DRONE_COMMIT_SHA}
