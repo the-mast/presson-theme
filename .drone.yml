@@ -17,13 +17,14 @@ pipeline:
 
   deploy:
     image: drillster/drone-rsync:latest
-    hosts: [ "41.79.78.215" ]
+    hosts: [ '${REMOTE_IP_ADDRESS}' ]
     key: ${REMOTE_RSA_KEY}
     source: ./packaged/*
     target: /var/www/html/wp-content/themes/mast-theme
     delete: true
     script:
           - cd /var/www/html/wp-content/themes/mast-theme
+          - find . ! -name "*.zip" -exec rm -r {} \;
           - unzip -of *.zip
           - rm *.zip
 
