@@ -3,15 +3,16 @@ $masthead-height: 60px;
 
 #masthead {
     @include row;
-    padding: 5px;
+    padding: 10px 20px;
     background-color: $primary;
     color: white;
     height: $masthead-height;
 
     #logo-header{
         @include span_columns(11);
-        padding: 10px;
-        svg{
+        height:  $masthead-height;
+       // padding: 10px;
+        span{
             @include logo-white;
          }
     }

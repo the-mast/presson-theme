@@ -23,9 +23,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-mast' ); ?></a>
 	<div  id="masthead">
 		<div id="logo-header">
-			<svg class="logo-svg" viewBox="0 0 220 80" >
-			<!-- SVG content -->
-			</svg>
+			<span > </span>
       	</div>
       
 		<div id="nav-header">

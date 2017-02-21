@@ -16,6 +16,7 @@
 	<div id="mastfoot">
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div id="logo-footer">
+				<span></span>
 			</div>
 			<div class="site-info">
 				<p> Contact Us </p>

@@ -12,9 +12,12 @@
 }
 
 @mixin logo-white (){
-    background-image: url('assets/images/logo_white.svg');
-    background-repeat: no-repeat;
-    height: $masthead-height;
+    background: url('assets/images/logo_white.svg') no-repeat;
+    background-size: contain;
+    display: block;
+    height: $masthead-height - 10px;
+    width: 150px;
+    //background-size: 100px 82px;
 }
 
 @mixin logo-purple{

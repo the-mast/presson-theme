@@ -105,6 +105,11 @@ get_header(); ?>
 			</div>
 		</div>
 
+		<div class="social-media-following">
+			<p>Stay updated, follow The Mast</p>
+			<button>follow</button>
+		</div>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

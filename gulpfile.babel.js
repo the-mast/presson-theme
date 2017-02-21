@@ -273,7 +273,7 @@ gulp.task('phpcbf', function () {
       .pipe(gulp.dest('.'));
 });
 
-//Package task
+// Package task
 gulp.task('package', ['build'], function() {
   var title = 'news-day-theme' + '_' + moment().format("YYYY-MM-DD_HH-mm") + '.zip';
 

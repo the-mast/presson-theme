@@ -14,7 +14,9 @@ $mastfoot-height: 524px;
 
     #logo-footer{
         @include logo-white;
-        width: 98px;
-        margin: 0 auto;
+         margin: 0 auto;
+        span{
+            @include logo-white;
+         }
     }
 }
