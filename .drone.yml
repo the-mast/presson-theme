@@ -17,7 +17,7 @@ pipeline:
 
   deploy:
     image: drillster/drone-rsync:latest
-    hosts: [ '${REMOTE_IP_ADDRESS}' ]
+    hosts: [ "41.79.78.215" ]
     key: ${REMOTE_RSA_KEY}
     source: ./packaged/*
     target: /var/www/html/wp-content/themes/mast-theme
