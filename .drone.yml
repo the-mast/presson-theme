@@ -24,7 +24,7 @@ pipeline:
     delete: true
     script:
           - cd /var/www/html/wp-content/themes/mast-theme
-          - find . ! -name "*.zip" -exec rm -rf {} \;
+          - find . -mindepth 1 ! -name "*.zip" -delete
           - unzip "`ls *.zip | tail -1`"
           - rm -f *.zip
 
