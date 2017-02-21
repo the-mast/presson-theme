@@ -33,7 +33,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-mast' ); ?></a>
 	<div  id="masthead">
 		<div id="logo-header">
-			<span > </span>
+			<a href="/" ><span > </span> </a>
       	</div>
       
 		<div id="nav-header">

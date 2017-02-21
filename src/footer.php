@@ -18,6 +18,15 @@
 			<div id="logo-footer">
 				<span></span>
 			</div>
+
+			<div id="follow-us-footer">
+				<p> Follow Us: </p>
+				<div>
+					<span class="fb-follow"></span>
+					<span class="tw-follow"></span>
+				</div>
+			</div>
+
 			<div class="site-info">
 				<p> Contact Us </p>
 			</div><!-- .site-info -->

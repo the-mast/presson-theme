@@ -1,4 +1,4 @@
-$mastfoot-height: 524px;
+$mastfoot-height: 350px;
 
 #mastfoot{
     height: $mastfoot-height;
@@ -20,6 +20,31 @@ $mastfoot-height: 524px;
             margin: 0 auto;
             width: 110px;
         }
-    
+    }
+
+    #follow-us-footer{
+        padding: 10px;
+        @include row;
+        margin: 0 auto;
+
+        p{
+            text-align: center;
+        }
+
+        div{
+            display: block;
+            margin: 0 auto;
+            width: 130px;
+        }
+
+        .fb-follow{
+            @include span_columns(3);
+            @include fb-follow-white;
+        }
+
+        .tw-follow{
+            @include span_columns(3);
+            @include tw-follow-white;
+        }
     }
 }
