@@ -19,12 +19,17 @@
 
 #related-storie{
     @include row;
-    padding: 10px;
+    padding: 10px 0;
+    width: 90%;
+    display: block;
+    margin: auto;
 
-    border-bottom: solid darkgrey;
+
+    border-bottom: solid 1px $accent;
+    border-width: 90%;
 
     #related-story-title{
-        @include span_columns(9);
+        @include span_columns(8);
         h3{
             margin: 0;
         }
@@ -34,8 +39,9 @@
     }
 
     #related-story-image{
-        @include span_columns(3);
-        height: 80px;
-        width: 80px;
+        @include span_columns(4);
+        width: 90px;
+        padding-top: 15px;
+        margin-bottom: 20px;
     }
 }

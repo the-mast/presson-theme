@@ -107,7 +107,9 @@ get_header(); ?>
 
 		<div class="social-media-following">
 			<p>Stay updated, follow The Mast</p>
-			<button>follow</button>
+			<div class="fb-like-section">
+				<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
+			</div>
 		</div>
 
 		</main><!-- #main -->

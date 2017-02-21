@@ -72,38 +72,9 @@
 	
 	<!-- .entry-content -->
 	<section class="related-stuff">
-			<?php
-		$args = array(
-			'posts_per_page' => 3,
-		);
-		$postslist = get_posts($args);
-
-		if ($postslist ) { ?>
-							<div id="article-related">
-							<div id="related-header">
-							<h2>LATEST STORIES</h2>
-							</div>
-							</div>
-							<?php foreach ( $postslist as $post ) :
-			setup_postdata('$post');
-			?>
-				<div id="related-storie">
-					<div id="related-story-title">
-						<span>Section</span>
-						<h3> <?php the_title(); ?> </h3>
-					</div>
-					<div id="related-story-image">
-						<?php the_post_thumbnail(); ?>
-					</div>
-				</div>
-			<?php
-			endforeach;
-			wp_reset_postdata;
-		}?>
 		<?php
 			get_template_part( 'template-parts/content-related', 'none' );
 		?>
-
 	</section>
 
 	<footer class="entry-footer">

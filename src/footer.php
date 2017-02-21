@@ -20,8 +20,6 @@
 			</div>
 			<div class="site-info">
 				<p> Contact Us </p>
-				<p> Send Us a Tip </p>
-				<p> Advertise with us </p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div>
