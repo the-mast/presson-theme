@@ -246,7 +246,7 @@ gulp.task('copy_phpfiles', () => {
 });
 
 gulp.task('build', ['clean', 'styles:underscore'], cb => {
-  runSequence(['copy_images', 'copy_assets', 'copy_phpfiles'], cb);
+  runSequence(['copy_images', 'copy_assets', 'copy_phpfiles'], 'generate-service-worker', cb);
 });
 
 // PHP Code Sniffer task
@@ -341,9 +341,9 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
     ],
     staticFileGlobs: [
       // Add/remove glob patterns to match your directory setup.
-      `${rootDir}/images/**/*`,
-      `${rootDir}/scripts/**/*.js`,
-      `${rootDir}/styles/**/*.css`,
+      `${rootDir}/assets/images/**/*`,
+      `${rootDir}/assets/js/**/*.js`,
+      `${rootDir}/**/*.css`,
       `${rootDir}/*.{html,json}`
     ],
     // Translates a static file path to the relative URL that it's served from.
