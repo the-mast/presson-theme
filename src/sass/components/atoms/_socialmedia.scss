@@ -1,9 +1,8 @@
-.social-media-following{
+.social-media-following {
     @include row;
     padding: 10px;
     margin-bottom: 20px;
-
-    p{
+    p {
         text-align: center;
         font-size: 1em;
         color: #3b55a0;
@@ -11,44 +10,42 @@
         margin: 0;
         border-top: solid 1px $accent;
     }
-
-    .fb-like-section{
+    .fb-like-section {
         display: block;
         margin: 0 auto;
         width: 49px;
         padding-bottom: 20px;
     }
-
-    .tw-follow-section{
+    .tw-follow-section {
         display: block;
         margin: 0 auto;
         width: 64px;
     }
 }
 
-.mast-social-media-links{
+.mast-social-media-links {
     @include row;
     padding: 20px;
-
-    .fb-share{
+    width: 60%;
+    .fb-share {
         @include span_columns(3);
-         span{
+        span {
             @include fb-share;
             float: left;
-         }
+        }
     }
-    .tw-share{
+    .tw-share {
         @include span_columns(3);
-        span{
+        span {
             @include tw-share;
             float: left;
-         }
+        }
     }
-    .wa-share{
+    .wa-share {
         @include span_columns(2);
-        span{
+        span {
             @include wa-share;
             float: left;
-         }
+        }
     }
 }
