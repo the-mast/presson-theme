@@ -49,7 +49,7 @@
 		<div class="mast-social-media-links">
 			<div class="fb-share">
 				<div class="fb-share-button" data-href="<?php echo esc_url( get_permalink()) ?>" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" 
-				href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>;src=sdkpreparse">Share</a></div>
+				href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">Share</a></div>
 			</div>
 			<div class="tw-share">
 				<a class="twitter-share-button"
