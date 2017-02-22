@@ -48,7 +48,8 @@
 		</div>
 		<div class="mast-social-media-links">
 			<div class="fb-share">
-				<div class="fb-share-button" data-href="<?php esc_url( get_permalink() ) ?>" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+				<div class="fb-share-button" data-href="<?php echo esc_url( get_permalink()) ?>" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" 
+				href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>;src=sdkpreparse">Share</a></div>
 			</div>
 			<div class="tw-share">
 				<a class="twitter-share-button"
