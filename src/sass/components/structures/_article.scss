@@ -56,8 +56,13 @@ $article-padding: 5px 15px;
     .article-content {
         @import '../atoms/blockquote';
          padding: $article-padding;
-        p {
-            margin: 5px 0;
-        }
+            p {
+                margin: 5px 0;
+            }
+
+            a{
+                color: $secondary;
+                font-weight: bolder;
+            }
     }
 }
