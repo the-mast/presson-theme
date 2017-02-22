@@ -76,7 +76,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-	
+	</section>
 	<!-- .entry-content -->
 	<section class="related-stuff">
 		<?php
