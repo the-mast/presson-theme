@@ -20,7 +20,7 @@
 			</div>
 
 			<div id="follow-us-footer">
-				<p> Follow Us: </p>
+				<p> Find Us: </p>
 				<div>
 					<a href="https://www.facebook.com/themastzambia/">
 							<span class="fb-follow"></span>

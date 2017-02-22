@@ -105,17 +105,9 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<div class="social-media-following">
-			<p>Stay updated, follow The Mast</p>
-			<div class="fb-like-section">
-				<div class="fb-like" data-href="https://www.facebook.com/themastzambia/" data-width="100" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
-			</div>
-
-			<p>Join the conversation</p>
-			<div class="tw-follow-section">
-				<a href="https://twitter.com/themastzambia" class="twitter-follow-button" data-show-count="false">Follow</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
-		</div>
+		<?php
+		get_template_part( 'template-parts/content-social-media-following', 'none' );
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

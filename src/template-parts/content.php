@@ -84,6 +84,10 @@
 		?>
 	</section>
 
+	<?php
+		get_template_part( 'template-parts/content-social-media-following', 'none' );
+	?>
+
 	<footer class="entry-footer">
 		<?php the_mast_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
