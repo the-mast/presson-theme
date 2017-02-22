@@ -149,8 +149,11 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/main.js'
-      // Other scripts
+      './app/scripts/main.js',
+      './src/js/customizer.js',
+      './src/js/navigation.js',
+      './src/js/skip-link-focus-fix.js',
+      './src/js/social-media.js',
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
@@ -162,7 +165,7 @@ gulp.task('scripts', () =>
       // Output files
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/scripts'))
+      .pipe(gulp.dest('dist/assets/js'))
       .pipe(gulp.dest('.tmp/scripts'))
 );
 
@@ -246,7 +249,7 @@ gulp.task('copy_phpfiles', () => {
 });
 
 gulp.task('build', ['clean', 'styles:underscore'], cb => {
-  runSequence(['copy_images', 'copy_assets', 'copy_phpfiles'], 'generate-service-worker', cb);
+  runSequence(['scripts', 'copy_images', 'copy_assets', 'copy_phpfiles'], 'generate-service-worker', cb);
 });
 
 // PHP Code Sniffer task
