@@ -22,8 +22,12 @@
 			<div id="follow-us-footer">
 				<p> Follow Us: </p>
 				<div>
-					<span class="fb-follow"></span>
-					<span class="tw-follow"></span>
+					<a href="https://www.facebook.com/themastzambia/">
+							<span class="fb-follow"></span>
+					</a>
+					<a href="https://twitter.com/themastzambia?lang=en">
+							<span class="tw-follow"></span>
+					</a>
 				</div>
 			</div>
 
