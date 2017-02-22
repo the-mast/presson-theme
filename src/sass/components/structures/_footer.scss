@@ -1,53 +1,47 @@
 $mastfoot-height: 350px;
-
-#mastfoot{
+#mastfoot {
     height: $mastfoot-height;
     background-color: $primary;
     width: 100%;
     padding: 20px;
-
     p {
         color: white;
         text-align: center;
         font-size: 1.5em;
     }
-
-    #logo-footer{
+    #logo-footer {
         padding-top: 10px;
-       
-        span{
+        span {
             @include logo-white;
             margin: 0 auto;
             width: 110px;
         }
     }
-
-    #follow-us-footer{
+    #follow-us-footer {
         padding: 10px;
         @include row;
         margin: 0 auto;
-
-        p{
+        p {
             text-align: center;
         }
-
-        div{
+        div {
             display: block;
             margin: 0 auto;
             width: 90px;
-            
         }
-
-        .fb-follow{
+        .fb-follow {
             @include span_columns(3);
             @include fb-follow-white;
-           
             margin-right: 10px !important;
         }
-
-        .tw-follow{
+        .tw-follow {
             @include span_columns(3);
             @include tw-follow-white;
+        }
+    }
+    .site-info {
+        a {
+            text-decoration: none;
         }
     }
 }

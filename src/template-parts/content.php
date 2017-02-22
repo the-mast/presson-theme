@@ -54,7 +54,7 @@
 			<div class="tw-share">
 				<a class="twitter-share-button"
 					href="https://twitter.com/intent/tweet?text=<?php get_the_title() ?>"
-					data-size="small">
+					data-size="large">
 					Tweet
 				</a>
 			 </div>
