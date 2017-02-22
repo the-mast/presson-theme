@@ -31,8 +31,7 @@ get_header(); ?>
 				'numberposts' => 1,
 				'offset' => 0,
 				'orderby' => 'post_date',
-				'order' => 'DESC',
-				'post_status' => 'published'
+				'order' => 'DESC'
 			);
 
 		   $latestpost = get_posts( $args );
