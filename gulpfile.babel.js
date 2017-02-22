@@ -322,7 +322,7 @@ gulp.task('pagespeed', cb =>
 // Copy over the scripts that are used in importScripts as part of the generate-service-worker task.
 gulp.task('copy-sw-scripts', () => {
   return gulp.src(['node_modules/sw-toolbox/sw-toolbox.js', 'app/scripts/sw/runtime-caching.js'])
-    .pipe(gulp.dest('dist/scripts/sw'));
+    .pipe(gulp.dest('dist/js/sw'));
 });
 
 // See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
@@ -339,8 +339,8 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
     cacheId: pkg.name || 'presson-theme',
     // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
     importScripts: [
-      'scripts/sw/sw-toolbox.js',
-      'scripts/sw/runtime-caching.js'
+      'assets/js/sw/sw-toolbox.js',
+      'assets/js/sw/runtime-caching.js'
     ],
     staticFileGlobs: [
       // Add/remove glob patterns to match your directory setup.
