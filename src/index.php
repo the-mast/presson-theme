@@ -99,11 +99,6 @@ get_header(); ?>
 
 		endif; ?>
 
-		<div class="advert-article">
-			<div class="advert-content">
-				ADVERTISEMENT
-			</div>
-		</div>
 
 		<?php
 		get_template_part( 'template-parts/content-social-media-following', 'none' );
