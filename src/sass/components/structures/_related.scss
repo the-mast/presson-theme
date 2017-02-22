@@ -1,52 +1,42 @@
-#artile-related{
+#artile-related {
     padding: 10px;
-
 }
 
-
-    #related-header{
+#related-header {
     width: 100%;
     height: 51px;
     margin-bottom: 20px;
-    background-color: #F1F1F1;
+    background-color: $accent;
     padding: 5px 10px;
-
-        h2{
-            margin: 0;
-        }
+    h2 {
+        margin: 0;
     }
+}
 
-
-#related-storie{
+#related-storie {
     @include row;
     padding: 10px 0;
     width: 95%;
     display: block;
     margin: auto;
-
-
     border-top: solid 1px $accent;
     border-width: 95%;
-
-    #related-story-title{
+    #related-story-title {
         @include span_columns(8);
-        
-        span{
+        span {
             text-transform: uppercase;
         }
-        h3{
+        h3 {
             margin: 0;
         }
-        a{
+        a {
             text-decoration: none;
         }
     }
-
-    #related-story-image{
+    #related-story-image {
         @include span_columns(4);
         width: 90px;
         padding-top: 15px;
         margin-bottom: 20px;
-
     }
 }
