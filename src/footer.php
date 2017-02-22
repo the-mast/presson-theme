@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="site-info">
-				<p> Contact Us </p>
+				<a href="mailto:info@themastonline.com"><p> Contact Us </p></a>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div>
