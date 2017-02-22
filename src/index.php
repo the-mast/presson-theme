@@ -99,18 +99,10 @@ get_header(); ?>
 
 		endif; ?>
 
-		<div class="advert-article">
-			<div class="advert-content">
-				ADVERTISEMENT
-			</div>
-		</div>
 
-		<div class="social-media-following">
-			<p>Stay updated, follow The Mast</p>
-			<div class="fb-like-section">
-				<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
-			</div>
-		</div>
+		<?php
+		get_template_part( 'template-parts/content-social-media-following', 'none' );
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

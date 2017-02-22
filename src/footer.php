@@ -18,6 +18,19 @@
 			<div id="logo-footer">
 				<span></span>
 			</div>
+
+			<div id="follow-us-footer">
+				<p> Find Us: </p>
+				<div>
+					<a href="https://www.facebook.com/themastzambia/">
+							<span class="fb-follow"></span>
+					</a>
+					<a href="https://twitter.com/themastzambia?lang=en">
+							<span class="tw-follow"></span>
+					</a>
+				</div>
+			</div>
+
 			<div class="site-info">
 				<p> Contact Us </p>
 			</div><!-- .site-info -->

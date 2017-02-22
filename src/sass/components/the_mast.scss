@@ -14,8 +14,15 @@
 @import 'structures/related';
 
 html, body{
-    margin: 0;
     padding: 0;
+    max-width: 640px;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+}
+
+body{
+    background-color: white;
 }
 
 body {

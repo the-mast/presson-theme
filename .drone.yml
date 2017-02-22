@@ -9,7 +9,6 @@ pipeline:
       - npm install -g gulp-cli
       - cd wpcs && composer install
       - gulp phpcs
-      - gulp phpcbf
       - gulp package
       - cd ..
       - git config remote.origin.url 'https://${GITHUB_TOKEN}@github.com/the-mast/presson-theme.git'

@@ -57,3 +57,19 @@ $social-media-icon-height: 40px;
     height: $social-media-icon-height;
     width: $social-media-icon-width;
 }
+
+@mixin tw-follow-white {
+    background: url('assets/images/tw_white.svg') no-repeat;
+    background-size: contain;
+    display: block;
+    height: $social-media-icon-height;
+    width: $social-media-icon-width;
+}
+
+@mixin fb-follow-white {
+    background: url('assets/images/fb_white.svg') no-repeat;
+    background-size: contain;
+    display: block;
+    height: $social-media-icon-height;
+    width: $social-media-icon-width;
+}
