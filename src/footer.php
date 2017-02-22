@@ -25,6 +25,8 @@
 					<a href="https://www.facebook.com/themastzambia/">
 							<span class="fb-follow"></span>
 					</a>
+				</div>
+				<div>
 					<a href="https://twitter.com/themastzambia?lang=en">
 							<span class="tw-follow"></span>
 					</a>

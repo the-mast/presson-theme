@@ -35,11 +35,14 @@ $mastfoot-height: 350px;
             display: block;
             margin: 0 auto;
             width: 90px;
+            
         }
 
         .fb-follow{
             @include span_columns(3);
             @include fb-follow-white;
+           
+            margin-right: 10px !important;
         }
 
         .tw-follow{
