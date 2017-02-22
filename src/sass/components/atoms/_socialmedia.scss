@@ -16,6 +16,13 @@
         display: block;
         margin: 0 auto;
         width: 49px;
+        padding-bottom: 20px;
+    }
+
+    .tw-follow-section{
+        display: block;
+        margin: 0 auto;
+        width: 155px;
     }
 }
 
@@ -24,14 +31,14 @@
     padding: 20px;
 
     .fb-share{
-        @include span_columns(2);
+        @include span_columns(3);
          span{
             @include fb-share;
             float: left;
          }
     }
     .tw-share{
-        @include span_columns(2);
+        @include span_columns(3);
         span{
             @include tw-share;
             float: left;
