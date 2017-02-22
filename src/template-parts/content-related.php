@@ -16,14 +16,18 @@
 		
 		<?php foreach( $postslist as $post ):
 			setup_postdata('$post');
+			$categories = get_the_category();
 			?>
 				<div id="related-storie">
 					<div id="related-story-title">
-						<span>Section</span>
+						<?php
+						if ( ! empty( $categories ) ) { 
+							 echo '<span>' . esc_html( $categories[0]->name ) . '</span>';
+						}?>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					</div>
 					<div id="related-story-image">
-						<?php the_post_thumbnail(); ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 					</div>
 				</div>
 			<?php 
