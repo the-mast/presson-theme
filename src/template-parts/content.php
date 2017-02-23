@@ -53,7 +53,7 @@
 				</a>
 			</div>
 			<div class="tw-share">
-				<a href="https://twitter.com/intent/tweet?text=<?php echo esc_url( get_permalink()) ?>" >
+				<a href="https://twitter.com/intent/tweet?text=<?php get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" >
 					<span />
 				</a>
 			 </div>
