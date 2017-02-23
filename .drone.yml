@@ -2,7 +2,7 @@ pipeline:
   build:
     image: themast/docker-wp-theme-build:latest
     commands:
-      - npm install -g gulp-cli
+      - npm install -g gulp-cli && npm install --unsafe-perm
       - rm -rf node_modules/
       - npm install
       - gulp package
