@@ -2,7 +2,9 @@ pipeline:
   build:
     image: themast/docker-wp-theme-build:latest
     commands:
-      - npm install -g gulp-cli && npm install
+      - npm install -g gulp-cli
+      - rm -rf node_modules/
+      - npm install
       - gulp package
       - cd ..
       - git config remote.origin.url 'https://${GITHUB_TOKEN}@github.com/the-mast/presson-theme.git'
