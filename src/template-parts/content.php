@@ -80,7 +80,7 @@
 	<!-- .entry-content -->
 	<section class="related-stuff">
 		<?php
-			get_template_part( 'template-parts/content-related', 'none' );
+			get_template_part( 'template-parts/content-related');
 		?>
 	</section>
 
