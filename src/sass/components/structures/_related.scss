@@ -19,7 +19,7 @@
     width: 95%;
     display: block;
     margin: auto;
-    border-top: solid 1px $accent;
+    border-bottom: solid 1px $accent;
     border-width: 95%;
     #related-story-title {
         @include span_columns(8);
