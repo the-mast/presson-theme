@@ -27,7 +27,7 @@
 					</a>
 				</div>
 				<div>
-					<a href="https://twitter.com/themastzambia?lang=en">
+					<a href="https://twitter.com/themastonline">
 							<span class="tw-follow"></span>
 					</a>
 				</div>
