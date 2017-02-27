@@ -71,6 +71,13 @@ function the_mast_setup() {
 endif;
 add_action( 'after_setup_theme', 'the_mast_setup' );
 
+//Remove "Remember Me" Checkbox from WordPress Login Page
+add_action('login_head', 'remove_remember_me');
+function remove_remember_me()
+{
+	echo '<style type="text/css">.forgetmenot { display:none; }</style>' . "\n";
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -141,3 +148,5 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
