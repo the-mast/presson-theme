@@ -35,7 +35,7 @@
 
   if ('serviceWorker' in navigator &&
       (window.location.protocol === 'https:' || isLocalhost)) {
-    navigator.serviceWorker.register('service-worker.js')
+    navigator.serviceWorker.register('/wp-content/themes/mast-theme/assets/js/service-worker.js')
     .then(function(registration) {
       // updatefound is fired if service-worker.js changes.
       registration.onupdatefound = function() {
