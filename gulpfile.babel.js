@@ -150,7 +150,6 @@ gulp.task('scripts', () =>
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
       './src/js/main.js',
-      './src/js/customizer.js',
       './src/js/navigation.js',
       './src/js/skip-link-focus-fix.js',
       './src/js/social-media.js',

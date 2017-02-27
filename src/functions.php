@@ -116,7 +116,7 @@ function the_mast_scripts() {
 
     wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js');
 	wp_enqueue_script( 'twitter-widgets', '//platform.twitter.com/widgets.js', ['jquery']);
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', false, true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', ['jquery'], false, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
