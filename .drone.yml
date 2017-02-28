@@ -16,10 +16,10 @@ pipeline:
     hosts: [ '${REMOTE_IP_ADDRESS}' ]
     key: ${REMOTE_RSA_KEY}
     source: ./packaged/*
-    target: /var/www/html/wp-content/themes/mast-theme
+    target: /var/www/html/wp-content/themes/presson-theme
     delete: true
     script:
-          - cd /var/www/html/wp-content/themes/mast-theme
+          - cd /var/www/html/wp-content/themes/presson-theme
           - find . -mindepth 1 ! -name "*.zip" -delete
           - unzip "`ls *.zip | tail -1`"
           - rm -f *.zip

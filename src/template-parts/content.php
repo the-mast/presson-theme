@@ -58,6 +58,11 @@
 		?>
 	</section>
 	<!-- .entry-content -->
+	<section class="read-next-article">
+		<?php
+			get_template_part( 'template-parts/content-next');
+		?>
+	</section>
 	<section class="related-stuff">
 		<?php
 			get_template_part( 'template-parts/content-related');

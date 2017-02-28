@@ -1,20 +1,18 @@
 @import 'bourbon';
 @import 'neat';
-
 @import 'nuclides/typography';
 @import 'nuclides/colors';
 @import 'nuclides/mixins';
-
 @import 'atoms/advert';
 @import 'atoms/socialmedia';
-
 @import 'structures/header';
 @import 'structures/footer';
 @import 'structures/article';
 @import 'structures/related';
 @import 'structures/archive';
-
-html, body{
+@import 'structures/next_article';
+html,
+body {
     padding: 0;
     max-width: 640px;
     display: block;
@@ -22,7 +20,7 @@ html, body{
     background-color: white;
 }
 
-body{
+body {
     background-color: white;
 }
 
