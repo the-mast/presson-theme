@@ -125,6 +125,16 @@ function the_mast_scripts() {
 add_action( 'wp_enqueue_scripts', 'the_mast_scripts' );
 
 /**
+* Set the image sizes for srcset
+* TODO: decide appropriate breakpoints for srcset size, and provision php-gd packages on servers.
+**/
+function adjust_image_sizes_attr( $sizes, $size ) {
+   $sizes = '(max-width: 640px) 85vw, (max-width: 704px) 67vw, (max-width: 909px) 62vw, 840px';
+   return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'adjust_image_sizes_attr', 10 , 2 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
