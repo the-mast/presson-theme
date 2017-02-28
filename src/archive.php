@@ -15,33 +15,45 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+			<header>
+				<div class="archive-header">
+					<?php
+						single_cat_title('<h1>', '</h1>' );
+					?>
+				</div>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+					$args = array(
+						'posts_per_page' => 20,
+						'category' => the_category_ID(false)
+					);
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				$postslist = get_posts($args);
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+				foreach( $postslist as $post ):
+				setup_postdata('$post');
+				$categories = get_the_category();
+				?>
+					<div id="related-storie">
+						<div id="related-story-title">
+							<?php
+							foreach ($categories as $cat): 
+							 	$category_link = get_category_link( $cat->term_id );
+								echo '<a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a>';
+								echo ' ';
+							endforeach ?>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						</div>
+						<div id="related-story-image">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						</div>
+					</div>
+				<?php 
+				endforeach;
+				wp_reset_postdata;
+			
+			endif ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

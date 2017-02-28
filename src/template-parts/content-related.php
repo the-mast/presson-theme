@@ -33,9 +33,11 @@
 				<div id="related-storie">
 					<div id="related-story-title">
 						<?php
-						if ( ! empty( $categories ) ) { 
-							 echo '<span>' . esc_html( $categories[0]->name ) . '</span>';
-						}?>
+							foreach ($categories as $cat): 
+							 	$category_link = get_category_link( $cat->term_id );
+								echo '<a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a>';
+								echo ' ';
+							endforeach ?>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					</div>
 					<div id="related-story-image">
