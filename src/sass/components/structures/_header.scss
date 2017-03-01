@@ -23,15 +23,14 @@ $masthead-height: 60px;
 
         #nav-menu-list{
 
-            width: 75%;
-            max-width: 640px;
+            width: 300px;
             height: 100%;
             background-color: white;
             position: fixed;
             overflow: hidden;
             z-index: 1;
             top: $masthead-height;
-            right: 0;
+            margin-left: -240px;
             border-left: solid 5px $primary;
 
             ul{
