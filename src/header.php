@@ -40,17 +40,23 @@
       	</div>
       
 		<div id="nav-header">
-			<!--<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div id="nav-burger-menu" class="menu-toggle menu" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'the-mast' ); ?>
+			<nav>
+				<div id="nav-burger-menu" ><?php esc_html_e( '', 'the-mast' ); ?>
 					<span></span>
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
-				<?php wp_nav_menu( array(
-//	'theme_location' => 'menu-1',
-//	'menu_id' => 'primary-menu',
-) ); ?>-->
+				<div id="nav-menu-list" style="display:none">
+						<?php 
+							$categories = wp_list_categories();
+							foreach ($categories as $cat): 
+								$category_link = get_category_link( $cat->term_id );
+								echo '<li><a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a> </li>';
+							endforeach 
+						?>
+				</div>
+				
 			</nav><!-- #site-navigation -->
 		</div>
 	</div>

@@ -1,6 +1,19 @@
-#nav-burger-menu {  
-  float: right;
+* {
+  margin: 0;
+  padding: 0; 
+
+}
+
+#nav-header{
+  margin: 0 auto;
+  font-family: $secondary-font;
+  color: #fff;
+}
+
+
+#nav-burger-menu {
   
+  float: right;
   width: 40px;
   height: 45px;
   position: relative;
@@ -36,7 +49,7 @@
   top: 0px;
 }
 
-#nav-burger-menu span:nth-child(2),#nav-icon3 span:nth-child(3) {
+#nav-burger-menu span:nth-child(2),#nav-burger-menu span:nth-child(3) {
   top: 12px;
 }
 
@@ -68,4 +81,58 @@
   top: 18px;
   width: 0%;
   left: 50%;
+}
+
+
+/**
+  Nav list
+*/
+/**
+ * Menu overview.
+ */
+
+#nav-menu-list {
+  position: fixed;
+  z-index: 200;
+  background-color: #67b5d1;
+  transition: transform 0.3s;
+}
+
+#nav-menu-list_items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Close button resets.
+ */
+#nav-menu-list_close {
+  color: #fff;
+  background-color: #3184a1;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/**
+ * Close button resets.
+ */
+#nav-menu-list_close:focus {
+  outline: none;
+}
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+body.has-active-menu {
+  overflow: hidden;
 }
