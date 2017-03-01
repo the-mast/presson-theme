@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 ?>

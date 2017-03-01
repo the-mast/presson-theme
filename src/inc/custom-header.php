@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses the_mast_header_style()
+ * @uses press_on_header_style()
  */
-function the_mast_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'the_mast_custom_header_args', array(
+function press_on_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'press_on_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'the_mast_header_style',
+		'wp-head-callback'       => 'press_on_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'the_mast_custom_header_setup' );
+add_action( 'after_setup_theme', 'press_on_custom_header_setup' );
 
-if ( ! function_exists( 'the_mast_header_style' ) ) :
+if ( ! function_exists( 'press_on_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see the_mast_custom_header_setup().
+ * @see press_on_custom_header_setup().
  */
-function the_mast_header_style() {
+function press_on_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 get_header(); ?>

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 ?><!DOCTYPE html>
@@ -33,7 +33,7 @@
 <div id="fb-root"></div>
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'the-mast' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'press-on' ); ?></a>
 	<div  id="masthead">
 		<div id="logo-header">
 			<a href="/" ><span > </span> </a>
@@ -41,7 +41,7 @@
       
 		<div id="nav-header">
 			<nav>
-				<div id="nav-burger-menu" ><?php esc_html_e( '', 'the-mast' ); ?>
+				<div id="nav-burger-menu" ><?php esc_html_e( '', 'press-on' ); ?>
 					<span></span>
 					<span></span>
 					<span></span>

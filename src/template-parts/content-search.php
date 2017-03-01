@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php the_mast_posted_on(); ?>
+			<?php press_on_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php the_mast_entry_footer(); ?>
+		<?php press_on_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

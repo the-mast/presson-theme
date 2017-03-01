@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 get_header(); ?>

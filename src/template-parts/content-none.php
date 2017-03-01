@@ -4,21 +4,21 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package The_Mast
+ * @package Press_On
  */
 
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'the-mast' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'press-on' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'the-mast' ), array(
+			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'press-on' ), array(
 	'a' => array(
 		'href' => array(),
 	),
@@ -26,13 +26,13 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'the-mast' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'press-on' ); ?></p>
 			<?php
 				get_search_form();
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'the-mast' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'press-on' ); ?></p>
 			<?php
 				get_search_form();
 
