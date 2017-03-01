@@ -11,7 +11,7 @@ function presson_create_menu() {
 function register_presson_settings() {
 	register_setting( 'presson-settings', 'po_google_analytics_id' );
 	register_setting( 'presson-settings', 'po_facebook_url' );
-	register_setting( 'presson-settings', 'po_twitter_url' );
+	register_setting( 'presson-settings', 'po_twitter_id' );
 	register_setting( 'presson-settings', 'po_mailto_address' );
 }
 
