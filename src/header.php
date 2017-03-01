@@ -25,7 +25,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-92410957-1', 'auto');
+  ga('create', '<?php echo esc_attr( get_option('google_analytics_id') ); ?>', 'auto');
   ga('send', 'pageview');
 
 </script>

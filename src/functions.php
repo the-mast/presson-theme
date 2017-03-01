@@ -71,6 +71,12 @@ function the_mast_setup() {
 endif;
 add_action( 'after_setup_theme', 'the_mast_setup' );
 
+/**
+* Include the Options page for the Theme
+* TODO: add appropriate options to deployment/config management scripts
+**/
+include get_template_directory() . '/options.php';
+
 //Remove "Remember Me" Checkbox from WordPress Login Page
 add_action('login_head', 'remove_remember_me');
 function remove_remember_me()
