@@ -13,7 +13,7 @@
     }
 }
 
-#related-storie {
+.related-story {
     @include row;
     padding: 10px 0;
     width: 95%;
@@ -21,7 +21,7 @@
     margin: auto;
     border-bottom: solid 1px $accent;
     border-width: 95%;
-    #related-story-title {
+    .related-story-title {
         @include span_columns(8);
         span {
             text-transform: uppercase;
@@ -33,10 +33,8 @@
             text-decoration: none;
         }
     }
-    #related-story-image {
+    .related-story-image {
         @include span_columns(4);
         width: 90px;
-        padding-top: 15px;
-        margin-bottom: 20px;
     }
 }

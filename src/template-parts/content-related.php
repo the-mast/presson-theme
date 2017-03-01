@@ -30,8 +30,8 @@
 			setup_postdata('$post');
 			$categories = get_the_category();
 			?>
-				<div id="related-storie">
-					<div id="related-story-title">
+				<div class="related-story">
+					<div class="related-story-title">
 						<?php
 							foreach ($categories as $cat): 
 							 	$category_link = get_category_link( $cat->term_id );
@@ -40,8 +40,8 @@
 							endforeach ?>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					</div>
-					<div id="related-story-image">
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+					<div class="related-story-image">
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 					</div>
 				</div>
 			<?php 

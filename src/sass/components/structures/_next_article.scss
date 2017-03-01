@@ -1,6 +1,6 @@
-@import "_article.scss";
-@import "_related.scss";
-.next-article-header {
+@import "article";
+@import "related";
+#next-article-header {
     @extend #related-header;
 }
 
