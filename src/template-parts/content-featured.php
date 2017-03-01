@@ -1,5 +1,5 @@
 		<?php
-		if ( has_post_thumbnail() ) : ?>
+		if ( !empty (get_the_post_thumbnail()) ) : ?>
 		<div class="image-container">
 			<?php the_post_thumbnail(); ?>
 			<div class="image-box">
