@@ -1,5 +1,6 @@
 @import "article";
 @import "related";
+$image-container-padding: 0 5% 0 5%;
 .next-article-header {
     @extend #related-header;
     margin-bottom: 15px;
@@ -9,9 +10,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-right: 5%;
+    padding: $image-container-padding;
     margin-bottom: 2%;
     min-height: 100px;
     img {
@@ -42,6 +41,28 @@
         }
         h3 {
             margin-top: 5px;
+        }
+    }
+}
+
+.no-thumbnail {
+    .next-article-category {
+        display: inline-block;
+        height: 34px;
+        height: 26px;
+        padding: 0px 10px 0;
+        background-color: #E34357;
+        a {
+            color: white;
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+    }
+    h3 {
+        margin-top: 5px;
+        text-decoration: none;
+        a {
+            color: black;
         }
     }
 }
