@@ -1,6 +1,6 @@
 @import "article";
 @import "related";
-#next-article-header {
+.next-article-header {
     @extend #related-header;
     margin-bottom: 15px;
 }
