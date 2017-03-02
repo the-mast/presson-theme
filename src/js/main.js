@@ -26,7 +26,22 @@
 
   nav.onclick = function() {
       nav.classList.toggle('open');
-      menuList.style.display = menuList.style.display === 'none' ? '' : 'none';
+
+      if(nav.classList.contains('open'))
+      {
+          menuList.classList.add('slideLeft');
+          menuList.classList.remove('slideRight');
+          menuList.classList.remove('resting');
+      }
+      else
+      {
+          menuList.classList.add('slideRight');
+          menuList.classList.remove('slideLeft');
+          menuList.classList.add('resting');
+      }
+
+      //menuList.classList.toggle('slideLeft');
+     // menuList.style.display = menuList.style.display === 'none' ? '' : 'none';
   }
 
 })();

@@ -47,14 +47,17 @@
 					<span></span>
 					<span></span>
 				</div>
-				<div id="nav-menu-list" style="display:none">
+				<div id="nav-menu-list" class="resting">
+					<ul>
 						<?php 
-							$categories = wp_list_categories();
+							$args = array('echo' => 0);
+							$categories = get_categories();
 							foreach ($categories as $cat): 
 								$category_link = get_category_link( $cat->term_id );
 								echo '<li><a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a> </li>';
 							endforeach 
 						?>
+					</ul>
 				</div>
 				
 			</nav><!-- #site-navigation -->
