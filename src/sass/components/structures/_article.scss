@@ -13,7 +13,7 @@ $article-padding: 5px 15px 20px 15px;
             .entry-title{
                 a{
                     color: $secondary;
-                    font-weight: bolder;
+                    font-weight: bold;
                     text-decoration: none;
                 }
             }
@@ -61,7 +61,7 @@ $article-padding: 5px 15px 20px 15px;
             }
         }
         .article-author {
-            font-weight: bolder;
+            font-weight: bold;
             font-size: 1.2em;
         }
     }
@@ -75,7 +75,7 @@ $article-padding: 5px 15px 20px 15px;
 
             a{
                 color: $secondary;
-                font-weight: bolder;
+                font-weight: bold;
             }
     }
 }

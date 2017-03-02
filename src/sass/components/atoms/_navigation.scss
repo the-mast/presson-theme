@@ -17,7 +17,7 @@
   width: 40px;
   height: 45px;
   position: relative;
-  margin: 10px auto;
+  margin: 5px auto;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -95,7 +95,7 @@
 
             width: 300px;
             height: 100%;
-            top: -15px;
+            top: -5px;
             background-color: white;
             position: relative;
             overflow: hidden;
@@ -106,7 +106,7 @@
 
             ul{
                 margin: 0;
-                padding: 20px;
+                padding: 5px 20px;
                 text-align: center;
 
                 span{
@@ -121,7 +121,7 @@
                         text-decoration: none;
                         font-size: 20px;
                         text-transform: uppercase;
-                        font-weight: bolder;
+                        font-weight: bold;
                         color: black;
                     }
                 }
@@ -133,65 +133,25 @@
         }
 
         .slideLeft{
-            animation-name: slideLeft;
-            -webkit-animation-name: slideLeft;	
+            transform: translateX(0%);
 
-            animation-duration: 0.3s;	
-            -webkit-animation-duration: 0.3s;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
 
             animation-timing-function: ease-in-out;	
             -webkit-animation-timing-function: ease-in-out;		
 
             visibility: visible !important;	
-        }
-
-        @keyframes slideLeft {
-            0% {
-                transform: translateX(100%);
-            }
-		
-            100% {
-                transform: translateX(0%);
-            }
-        }
-
-        @-webkit-keyframes slideLeft {
-            0% {
-                -webkit-transform: translateX(100%);
-            }		
-            100% {
-                -webkit-transform: translateX(0%);
-            }
         }
 
         .slideRight{
-            animation-name: slideRight;
-            -webkit-animation-name: slideRight;	
+            transform: translateX(100%);
 
-            animation-duration: 0.3s;	
-            -webkit-animation-duration: 0.3s;
+             transition: all 0.3s;
+            -webkit-transition: all 0.3s;
 
             animation-timing-function: ease-in-out;	
             -webkit-animation-timing-function: ease-in-out;		
 
             visibility: visible !important;	
-        }
-
-        @keyframes slideRight {
-            0% {
-                transform: translateX(0%);
-            }
-		
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        @-webkit-keyframes slideRight {
-            0% {
-                -webkit-transform: translateX(0%);
-            }		
-            100% {
-                -webkit-transform: translateX(100%);
-            }
         }

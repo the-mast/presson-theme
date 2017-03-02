@@ -30,12 +30,12 @@ $section-border-margin: 0 15px 0 15px;
         span {
             text-transform: uppercase;
             color: $highlight;
-            font-weight: bolder;
+            font-weight: bold;
             font-size: 0.8em;
         }
         h3 {
             margin: 0;
-            
+            font-weight: 300;
         }
         a {
             text-decoration: none;
