@@ -1,3 +1,5 @@
+$timing: .3s;
+
 * {
   margin: 0;
   padding: 0; 
@@ -93,16 +95,15 @@
 
         #nav-menu-list{
 
-            width: 300px;
-            height: 100%;
+           
+            height: calc(100vh - 60px);
             top: -5px;
             background-color: white;
             position: relative;
             overflow: hidden;
-            z-index: 1;
-            margin-left: -240px;
-            border-left: solid 5px $primary;
-            border-bottom: solid 5px $primary;
+            z-index: $middleIndex;
+           // margin-left: -243px;
+            
 
             ul{
                 margin: 0;
@@ -129,14 +130,21 @@
         }
         
         .resting{
-          transform: translateX(100%);
+          // transform: translateX(100%);
+          margin-left: 57px;
+          width: 0;
+        }
+
+        .slide{
+            width: 300px;
+            border-left: solid 5px $primary;
         }
 
         .slideLeft{
-            transform: translateX(0%);
-
-            transition: all 0.3s;
-            -webkit-transition: all 0.3s;
+            // transform: translateX(0);
+             margin-left: -243px;
+            transition: all $timing;
+            -webkit-transition: all $timing;
 
             animation-timing-function: ease-in-out;	
             -webkit-animation-timing-function: ease-in-out;		
@@ -145,10 +153,9 @@
         }
 
         .slideRight{
-            transform: translateX(100%);
-
-             transition: all 0.3s;
-            -webkit-transition: all 0.3s;
+            // transform: translateX(100%);
+             transition: all $timing;
+            -webkit-transition: all $timing;
 
             animation-timing-function: ease-in-out;	
             -webkit-animation-timing-function: ease-in-out;		

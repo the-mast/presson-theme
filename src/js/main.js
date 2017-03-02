@@ -23,25 +23,33 @@
   // Your custom JavaScript goes here
   var nav = document.getElementById('nav-burger-menu');
   var menuList = document.getElementById('nav-menu-list');
+  var overlay = document.getElementById('site-overlay');
 
   nav.onclick = function() {
-      nav.classList.toggle('open');
+    if (nav.classList.contains('open')) {
+      close();
+    } else {
+      open();
+    }
+  };
 
-      if(nav.classList.contains('open'))
-      {
-          menuList.classList.add('slideLeft');
-          menuList.classList.remove('slideRight');
-          menuList.classList.remove('resting');
-      }
-      else
-      {
-          menuList.classList.add('slideRight');
-          menuList.classList.remove('slideLeft');
-          menuList.classList.add('resting');
-      }
+  overlay.onclick = close;
 
-      //menuList.classList.toggle('slideLeft');
-     // menuList.style.display = menuList.style.display === 'none' ? '' : 'none';
+  function open() {
+    nav.classList.add('open');
+    overlay.style.display = '';
+    menuList.classList.add('slideLeft');
+    menuList.classList.remove('slideRight');
+    menuList.classList.remove('resting');
+    menuList.classList.add('slide');
   }
 
+  function close() {
+    nav.classList.remove('open');
+    overlay.style.display = 'none';
+    menuList.classList.add('slideRight');
+    menuList.classList.remove('slideLeft');
+    menuList.classList.add('resting');
+    menuList.classList.remove('slide');
+  }
 })();
