@@ -1,6 +1,10 @@
 $masthead-height: 60px;
 @import '../atoms/navigation';
 
+#page {
+    overflow: hidden;
+}
+
 #masthead {
     @include row;
     padding: 10px 20px;
