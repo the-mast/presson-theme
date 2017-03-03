@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php
 					$args = array(
-						'posts_per_page' => 20,
+						'posts_per_page' => 10,
 						'category' => the_category_ID(false)
 					);
 
@@ -52,11 +52,11 @@ get_header(); ?>
 					</div>
 				<?php 
 				endforeach;
-//				$cur_cat = get_cat_ID(single_cat_title("",false) );
-//				$cur_category = get_category($cur_cat);
-//				echo do_shortcode('[ajax_load_more container_type="div" post_type="post" meta_key="postid"
-//				meta_value="1" meta_compare=">" button_label="Load More" pause="true"
-//				category="'.$cur_category->slug.'"]');
+				$cur_cat = get_cat_ID(single_cat_title("",false) );
+				$cur_category = get_category($cur_cat);
+				echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="10" 
+				button_label="LOAD MORE" pause="true" offset="5" scroll="false"
+				images_loaded="true" category="'.$cur_category->slug.'"]');
 				wp_reset_postdata;
 			endif ?>
 
