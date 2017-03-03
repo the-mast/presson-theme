@@ -15,7 +15,7 @@ if (!empty( $next_post )): ?>
             //the_post_thumbnail();
          ?>
          <div class="" href="#">
-             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
         </div>
         <?php
         if ( !empty (get_the_post_thumbnail()) ) : ?>
