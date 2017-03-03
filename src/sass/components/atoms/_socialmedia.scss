@@ -24,7 +24,7 @@
 
 .presson-social-media-links {
     @include row;
-    padding: 0 20px;
+    padding: 0 20px 10px 20px;
     width: 60%;
     .fb-share {
         @include span_columns(3);
