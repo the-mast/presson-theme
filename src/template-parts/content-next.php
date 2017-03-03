@@ -10,10 +10,10 @@ if (!empty( $next_post )): ?>
         <h2>READ NEXT</h2>
     </div>
     <?php
+    $post = $next_post;
     if ( !empty (get_the_post_thumbnail()) ) : ?>
     <div class="next-image-container">
         <?php
-            $post = $next_post;
             the_post_thumbnail();
          ?>
         <div class="next-image-box">
