@@ -1,7 +1,8 @@
 $mastfoot-height: 350px;
 #mastfoot {
     height: $mastfoot-height;
-    background-color: $primary;
+    background-color: darken($primary,7%);
+    // background-color: $primary;
     width: 100%;
     padding: 20px;
     p {

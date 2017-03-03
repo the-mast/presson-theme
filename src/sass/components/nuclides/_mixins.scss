@@ -7,7 +7,12 @@
  *  @quote-mark();
  */
 @mixin open-quote (){
-    background-image: url('assets/images/quote_icon.svg');
+    background-image: url('assets/images/open_quote_icon.svg');
+    background-repeat: no-repeat;
+}
+
+@mixin close-quote (){
+    background-image: url('assets/images/close_quote_icon.svg');
     background-repeat: no-repeat;
 }
 
