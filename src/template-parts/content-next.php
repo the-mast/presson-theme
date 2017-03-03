@@ -1,14 +1,14 @@
 <?php
-$post = get_next_post();
-$next_post_category = get_the_category();
-$category_link = get_category_link( $next_post_category[0]->term_id );
-// setup_postdata('$post');
+
 if (!empty( $post )): ?>
 
 <div class="article-section">
-    <div class="next-article-header">
-        <h2>READ NEXT</h2>
-    </div>
+   
+<!--
+    <div class="next-article">
+    </div>-->
+   
+<!--
     <?php
     if ( !empty (get_the_post_thumbnail()) ) : ?>
     <div class="next-image-container">
@@ -38,6 +38,9 @@ if (!empty( $post )): ?>
             </h3>
         </div>
     </div>
-    <?php endif; ?>
+    <?php endif; ?>-->
+
+
+
 </div>
 <?php endif; ?>
