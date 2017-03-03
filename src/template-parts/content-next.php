@@ -1,16 +1,15 @@
 <?php
-$next_post = get_next_post();
+$post = get_next_post();
 $next_post_category = get_the_category();
 $category_link = get_category_link( $next_post_category[0]->term_id );
-setup_postdata('$next_post');
-if (!empty( $next_post )): ?>
+// setup_postdata('$post');
+if (!empty( $post )): ?>
 
 <div class="article-section">
     <div class="next-article-header">
         <h2>READ NEXT</h2>
     </div>
     <?php
-    $post = $next_post;
     if ( !empty (get_the_post_thumbnail()) ) : ?>
     <div class="next-image-container">
         <?php
