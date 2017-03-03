@@ -32,27 +32,32 @@ get_header(); ?>
 				$postslist = get_posts($args);
 
 				foreach( $postslist as $post ):
-				setup_postdata('$post');
+				setup_postdata($post);
 				$categories = get_the_category();
 				?>
 					<div class="related-story">
 						<div class="related-story-title">
-							<?php
-							foreach ($categories as $cat): 
-							 	$category_link = get_category_link( $cat->term_id );
-								echo '<a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a>';
-								echo ' ';
-							endforeach ?>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<div class="related-story-excerpt"><?php
+								$sentence = preg_split( '/(\.|!|\?)\s/', strip_tags( get_the_content()), 2, PREG_SPLIT_DELIM_CAPTURE );
+								echo $sentence[0]; ?>
+							</div>
 						</div>
 						<div class="related-story-image">
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 						</div>
+						<div class="related-story-date">
+							<?php the_time('jS F Y') ?>
+						</div>
 					</div>
 				<?php 
 				endforeach;
+//				$cur_cat = get_cat_ID(single_cat_title("",false) );
+//				$cur_category = get_category($cur_cat);
+//				echo do_shortcode('[ajax_load_more container_type="div" post_type="post" meta_key="postid"
+//				meta_value="1" meta_compare=">" button_label="Load More" pause="true"
+//				category="'.$cur_category->slug.'"]');
 				wp_reset_postdata;
-			
 			endif ?>
 
 		</main><!-- #main -->

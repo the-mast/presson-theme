@@ -41,9 +41,20 @@ $section-border-margin: 0 15px 0 15px;
             text-decoration: none;
             color: black;
         }
+
+        .related-story-excerpt{
+            font-size: 13px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
     }
     .related-story-image {
         @include span_columns(4);
         width: 90px;
+    }
+    .related-story-date {
+        @include span_columns(12);
+        color: #989186;
+        font-size: 11px;
     }
 }
