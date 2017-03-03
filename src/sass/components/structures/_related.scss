@@ -25,6 +25,8 @@ $section-border-margin: 0 15px 0 15px;
     margin: auto;
     border-bottom: solid 1px $accent;
     border-width: 95%;
+
+    
     .related-story-title {
         @include span_columns(8);
         span {
@@ -41,7 +43,7 @@ $section-border-margin: 0 15px 0 15px;
             text-decoration: none;
             color: black;
         }
-
+        
         .related-story-excerpt{
             font-size: 13px;
             margin-top: 1em;
@@ -51,6 +53,7 @@ $section-border-margin: 0 15px 0 15px;
     .related-story-image {
         @include span_columns(4);
         width: 90px;
+        float: right;
     }
     .related-story-date {
         @include span_columns(12);
