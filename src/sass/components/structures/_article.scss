@@ -3,7 +3,7 @@ $article-padding: 5px 15px 10px 15px;
     @include row;
     header {
         .text-article-container {
-            padding: $article-padding;
+            padding: 10px 5px;
             .entry-title {
                 a {
                     color: $secondary;
