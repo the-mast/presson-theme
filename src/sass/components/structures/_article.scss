@@ -19,6 +19,16 @@ $article-padding: 5px 15px 10px 15px;
     .text-article-container {
         padding: $article-padding;
         margin-top: 15px;
+        .article-category {
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: .8em;
+            a {
+                text-decoration: none;
+                color: $highlight;
+            }
+        }
         .entry-title {
             h1 {
                 margin-top: 0px;
@@ -31,32 +41,25 @@ $article-padding: 5px 15px 10px 15px;
             }
         }
     }
-    .article-category {
-        display: inline-block;
-        text-transform: uppercase;
-        font-weight: bolder;
-        font-size: .8em;
-        a {
-            text-decoration: none;
-            color: $highlight;
-        }
-    }
     .image-container {
         position: relative;
         width: 100%;
-        height: 10%;
-        img {
-            width: 100%;
-        }
+        height: 100%;
         .image-box {
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            img {
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
         }
-        .article-category {
-            display: inline-block;
+        .category-overlay {
+            top: 0;
+            position: absolute;
             height: 26px;
             margin: 10px;
             text-transform: uppercase;
@@ -70,9 +73,10 @@ $article-padding: 5px 15px 10px 15px;
             }
         }
         .title-overlay {
-            position: absolute;
             bottom: 6px;
+            position: absolute;
             width: 100%;
+            height: 30%;
             overflow: hidden;
             background: rgba(31, 31, 31, 0.53);
             padding: $article-padding;
