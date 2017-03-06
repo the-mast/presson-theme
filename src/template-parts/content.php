@@ -59,20 +59,8 @@
 	</section>
 	<!-- .entry-content -->
 	<section class="read-next-article">
-		<?php $post = get_next_post(); ?>
-
-		<?php if (!empty( $post )): ?>
-			<div class="next-article-header">
-				<h2>READ NEXT</h2>
-			</div>
-		<?php endif; ?>
-		<?php
-			$post_category = get_the_category();
-			$category_link = get_category_link( $post_category[0]->term_id );
-			$next_post_category = get_the_category();
-			$category_link = get_category_link( $next_post_category[0]->term_id );
-        
-			get_template_part( 'template-parts/content-article-head', 'none' );
+		<?php 
+			get_template_part( 'template-parts/content-next', 'none' );
 		?>
 	</section>
 	<section class="related-stuff">

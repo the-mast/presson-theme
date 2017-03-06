@@ -1,46 +1,14 @@
 <?php
-
-if (!empty( $post )): ?>
-
-<div class="article-section">
-   
-<!--
-    <div class="next-article">
-    </div>-->
-   
-<!--
+    $post = get_next_post();
+    if (!empty( $post )): ?>
+    <div class="next-article-header">
+        <h2>READ NEXT</h2>
+    </div>
     <?php
-    if ( !empty (get_the_post_thumbnail()) ) : ?>
-    <div class="next-image-container">
-        <?php
-            the_post_thumbnail();
-         ?>
-        <div class="next-image-box">
-            <div class="next-article-category">
-                <a href="<?php echo esc_html( $category_link ); ?>"><?php echo esc_html( $next_post_category[0]->name ); ?></a>
-            </div>
-            <div class="next-title-overlay">
-                <h3 class="next-article-title">
-                    <a href="<?php echo get_permalink( $next_post->class ); ?>"><?php echo get_the_title( $next_post->class ); ?></a>
-                </h3>
-            </div>
-        </div>
-    </div>
-
-    <?php else: ?>
-    <div class="next-article-box">
-        <div class="no-thumbnail">
-            <div class="next-article-category">
-                <a href="<?php echo esc_html( $category_link ); ?>"><?php echo esc_html( $next_post_category[0]->name ); ?></a>
-            </div>
-            <h3>
-                <a href="<?php echo get_permalink( $next_post->class ); ?>"><?php echo get_the_title( $next_post->class ); ?></a>
-            </h3>
-        </div>
-    </div>
-    <?php endif; ?>-->
-
-
-
-</div>
+        $post_category = get_the_category();
+        $category_link = get_category_link( $post_category[0]->term_id );
+        $next_post_category = get_the_category();
+        $category_link = get_category_link( $next_post_category[0]->term_id );
+        get_template_part( 'template-parts/content-article-head', 'none' );
+    ?>
 <?php endif; ?>
