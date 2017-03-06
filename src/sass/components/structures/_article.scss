@@ -16,18 +16,21 @@ $article-padding: 5px 15px 10px 15px;
             font-size: 1em;
         }
     }
+    .category {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: .8em;
+        a {
+            text-decoration: none;
+            color: $highlight;
+        }
+    }
     .text-article-container {
         padding: $article-padding;
         margin-top: 15px;
         .article-category {
+            @extend .category;
             display: inline-block;
-            text-transform: uppercase;
-            font-weight: bolder;
-            font-size: .8em;
-            a {
-                text-decoration: none;
-                color: $highlight;
-            }
         }
         .entry-title {
             h1 {
@@ -35,7 +38,7 @@ $article-padding: 5px 15px 10px 15px;
                 margin-bottom: 0px;
             }
             a {
-                color: #404040;
+                color: $color__text-main;
                 font-weight: bold;
                 text-decoration: none;
             }
@@ -46,31 +49,21 @@ $article-padding: 5px 15px 10px 15px;
         width: 100%;
         height: 100%;
         .image-box {
-            position: relative;
+            position: inherit;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
             img {
-                top: 0;
-                left: 0;
                 width: 100%;
             }
         }
         .category-overlay {
+            @extend .category;
             top: 0;
             position: absolute;
             height: 26px;
             margin: 10px;
-            text-transform: uppercase;
-            font-weight: bolder;
-            font-size: .8em;
             padding: 4px 10px;
             background-color: white;
-            a {
-                text-decoration: none;
-                color: $highlight;
-            }
         }
         .title-overlay {
             bottom: 6px;
