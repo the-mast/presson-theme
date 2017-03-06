@@ -13,8 +13,8 @@ function register_presson_settings() {
 	register_setting( 'presson-settings', 'po_facebook_url' );
 	register_setting( 'presson-settings', 'po_twitter_id' );
 	register_setting( 'presson-settings', 'po_mailto_address' );
-    register_setting( 'presson-settings', 'po_featured_category' );
-    register_setting( 'presson-settings', 'po_main_post_category' );
+    register_setting( 'presson-settings', 'po_front_page_category' );
+    register_setting( 'presson-settings', 'po_headline_article_category' );
 }
 
 function presson_settings_page() {
@@ -43,26 +43,26 @@ function presson_settings_page() {
         <td><input type="text" class="regular-text" name="po_mailto_address" value="<?php echo esc_attr( get_option('po_mailto_address') ); ?>" /></td>
         </tr>
         <tr valign="top">
-            <th scope="row">Featured Category</th>
+            <th scope="row">Front Page Category</th>
             <td><?php   $args = array(
                                 'show_option_none'  => 'None',
-                                'name'              => 'po_featured_category',
+                                'name'              => 'po_front_page_category',
                                 'class'             => 'regular-text',
                                 'value_field'       => 'term_id',
-                                'selected'          => get_option('po_featured_category'),
+                                'selected'          => get_option('po_front_page_category'),
                                 'required'          => true
                             );
                          wp_dropdown_categories($args) ?>
             </td>
         </tr>
         <tr valign="top">
-            <th scope="row">Main Post Category</th>
+            <th scope="row">Headline Article Category</th>
             <td><?php   $args = array(
                                 'show_option_none'  => 'None',
-                                'name'              => 'po_main_post_category',
+                                'name'              => 'po_headline_article_category',
                                 'class'             => 'regular-text',
                                 'value_field'       => 'term_id',
-                                'selected'          => get_option('po_main_post_category'),
+                                'selected'          => get_option('po_headline_article_category'),
                                 'required'          => true
                             );
                          wp_dropdown_categories($args) ?>
