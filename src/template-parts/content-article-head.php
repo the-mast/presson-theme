@@ -4,7 +4,7 @@ $category_link = get_category_link( $post_category[0]->term_id );
 if ( !empty (get_the_post_thumbnail()) ) : ?>
 <div class="image-container">
 	<div class="image-box">
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail');?></a>
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail();?></a>
 		
 		<div class="category-overlay">
             <a href="<?php echo esc_html( $category_link ); ?>"><?php echo esc_html( $post_category[0]->name ); ?></a>
