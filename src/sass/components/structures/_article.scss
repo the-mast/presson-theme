@@ -5,15 +5,15 @@ $article-padding: 5px 15px 10px 15px;
         .text-article-container {
             padding: 10px 5px;
             .entry-title {
+                h1 {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
                 a {
-                    color: $secondary;
+                    color: #404040;
                     font-weight: bold;
                     text-decoration: none;
                 }
-            }
-            h1 {
-                margin-top: 10px;
-                margin-bottom: 10px;
             }
         }
         .article-title {
@@ -32,13 +32,9 @@ $article-padding: 5px 15px 10px 15px;
     }
     .article-category {
         display: inline-block;
-        // height: 26px;
-        // margin: 10px;
         text-transform: uppercase;
         font-weight: bolder;
         font-size: .8em;
-        // padding: 4px 10px;
-        // background-color: white;
         a {
             text-decoration: none;
             color: $highlight;

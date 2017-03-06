@@ -22,11 +22,14 @@ if ( !empty (get_the_post_thumbnail()) ) : ?>
 	<div class="article-category">
         <a href="<?php echo esc_html( $category_link ); ?>"><?php echo esc_html( $post_category[0]->name ); ?></a>
     </div>
-	<?php
-	if ( is_single() ) :
-			the_title( '<h1>', '</h1>' );
-	else :
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-	endif; ?>
+	<div class="entry-title">
+		<?php
+		if ( is_single() ) :
+				the_title( '<h1><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+		else :
+			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif; ?>
+	</div>
+	
 </div>
 <?php endif; ?>

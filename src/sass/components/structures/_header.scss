@@ -1,7 +1,5 @@
 $masthead-height: 60px;
-
 @import '../atoms/navigation';
-
 #page {
     overflow: hidden;
 }
@@ -10,28 +8,25 @@ $masthead-height: 60px;
     @include row;
     padding: 10px 20px;
     background-color: $primary;
+    background: rgba(80, 8, 80, 0.9);
     color: white;
     height: $masthead-height;
     width: 100%;
     max-width: 640px;
     z-index: $foregroundIndex;
     position: fixed;
-    
-
-    #logo-header{
+    #logo-header {
         @include span_columns(11);
-        height:  $masthead-height;
-       // padding: 10px;
-        span{
+        height: $masthead-height;
+        // padding: 10px;
+        span {
             @include logo-white;
-         }
+        }
     }
-
-    #nav-header{
+    #nav-header {
         @include span_columns(1);
         height: 100%;
-
     }
+}
 
-};
-
+;
