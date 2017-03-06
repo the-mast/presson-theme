@@ -19,26 +19,22 @@ $image-container-padding: 0 15px;
                 h3 {
                     font-weight: 300;
                     margin-top: 5px;
-                    color: white;
                 }
             }
         }
     }
     .text-article-container {
-        width: 100%;
         display: block;
-        margin: auto;
+        padding-left: 16px!important;
         margin-top: 0px !important;
         padding-top: 10px !important;
         .entry-title {
             h1 {
                 display: inline-block;
                 font-size: 20px;
-                margin: 0.1em 0.1em;
                 a {
                     font-weight: 300;
                     color: black;
-                    text-decoration: none;
                 }
             }
         }
