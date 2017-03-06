@@ -1,5 +1,10 @@
 @import "article";
 .featured-article {
     @extend .article;
-    margin: 15px;
+    .text-article-container {
+        margin-top: 15px;
+    }
+    .image-container {
+        margin: 15px;
+    }
 }
