@@ -30,10 +30,10 @@ $image-container-padding: 0 15px;
         }
     }
     .text-article-container {
-        padding: 10px 0px 10px 15px;
         width: 100%;
         display: block;
         margin: auto;
+        margin-top: 0px !important;
         .entry-title {
             h1 {
                 display: inline-block;
@@ -43,32 +43,6 @@ $image-container-padding: 0 15px;
                     font-weight: 300;
                     color: black;
                     text-decoration: none;
-                }
-            }
-        }
-    }
-    .next-article-box {
-        padding: 10px 0px 10px 15px;
-        width: 100%;
-        display: block;
-        margin: auto;
-        .no-thumbnail {
-            .next-article-category {
-                display: inline-block;
-                font-weight: bolder;
-                font-size: 0.8em;
-                a {
-                    color: $highlight;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                }
-            }
-            h3 {
-                font-weight: 300;
-                a {
-                    font-size: 20px;
-                    text-decoration: none;
-                    color: black;
                 }
             }
         }
