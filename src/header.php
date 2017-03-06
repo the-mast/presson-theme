@@ -50,8 +50,16 @@
 				<div id="nav-menu-list" class="resting">
 					<ul>
 						<?php 
-							$args = array('echo' => 0);
-							$categories = get_categories();
+							if (get_option('po_home_categories_enabled')):
+								$args = array(
+									'exclude' => array( 
+										get_option('po_front_page_category'), 
+										get_option('po_headline_article_category') )
+									);
+							else:
+								$args = array();
+							endif;
+							$categories = get_categories($args);
 							foreach ($categories as $cat): 
 								$category_link = get_category_link( $cat->term_id );
 								echo '<li><a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a> </li>';

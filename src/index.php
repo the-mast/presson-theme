@@ -27,11 +27,15 @@ get_header(); ?>
 
 			<?php
 			endif;
+
+			$filter_category = get_option('po_home_categories_enabled') ? get_option('po_headline_article_category') : false;
+
 			$args = array(
 				'numberposts' => 1,
 				'offset' => 0,
 				'orderby' => 'post_date',
-				'order' => 'DESC'
+				'order' => 'DESC', 
+				'category' => $filter_category 
 			);
 
 		   $latestpost = get_posts( $args );

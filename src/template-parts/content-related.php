@@ -4,8 +4,18 @@
 		$RELATED_POSTS_AMOUNT = 4;
 		$POSTS_AMOUNT = 10;
 
-		$my_post_category = is_single() ? get_the_category() : false;
-		$my_post_category_id = !empty($my_post_category) ? $my_post_category[0]->term_id : false;
+		if (get_option('po_home_categories_enabled')):
+								$excludes = array(
+										get_option('po_front_page_category'), 
+										get_option('po_headline_article_category') 
+									);
+							else:
+								$excludes = array();
+							endif;
+
+		$my_post_category = get_the_category();
+
+		$my_post_category_id = is_single() && !empty($my_post_category) ? $my_post_category[0]->term_id : false;
 		$posts_per_page = is_single() ? $RELATED_POSTS_AMOUNT : $POSTS_AMOUNT;
 		$offset_count = is_single() ? 0 : 1;
 		$post_to_exclude = is_single() ? array($post->ID) : false;
@@ -34,9 +44,11 @@
 					<div class="related-story-title">
 						<?php
 							foreach ($categories as $cat): 
+								if( !in_array($cat->term_id, $excludes)) :
 							 	$category_link = get_category_link( $cat->term_id );
 								echo '<a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a>';
 								echo ' ';
+								endif;
 							endforeach ?>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					</div>

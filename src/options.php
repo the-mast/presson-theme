@@ -15,6 +15,7 @@ function register_presson_settings() {
 	register_setting( 'presson-settings', 'po_mailto_address' );
     register_setting( 'presson-settings', 'po_front_page_category' );
     register_setting( 'presson-settings', 'po_headline_article_category' );
+    register_setting( 'presson-settings', 'po_home_categories_enabled');
 }
 
 function presson_settings_page() {
@@ -41,6 +42,11 @@ function presson_settings_page() {
         <tr valign="top">
         <th scope="row">MailTo Address ("Contact Us")</th>
         <td><input type="text" class="regular-text" name="po_mailto_address" value="<?php echo esc_attr( get_option('po_mailto_address') ); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Configure Home Page Categories</th>
+        <td><input type="checkbox" name="po_home_categories_enabled" value="1" <?php checked( 1, get_option('po_home_categories_enabled') ); ?> />
+            </td>
         </tr>
         <tr valign="top">
             <th scope="row">Front Page Category</th>
