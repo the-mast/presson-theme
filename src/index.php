@@ -39,9 +39,9 @@ get_header(); ?>
 			);
 
 		   $latestpost = get_posts( $args );
+		   $post = $latestpost[0];
 
 			   if ($latestpost) { 
-		   			foreach( $latestpost as $post ):
 						setup_postdata('$post');	?>
 							<div class="article">
 							<header>
@@ -50,17 +50,10 @@ get_header(); ?>
 							</header>
 							</div>
 					<?php 
-					endforeach;
 				wp_reset_postdata;
 			}
 
-			
-		   /**
-			* List articles 
-			*/
-
-			get_template_part( 'template-parts/content-related');
-
+			get_template_part( 'template-parts/content-index-posts', 'none' );
 
 			/* Start the Loop */
 			// while ( have_posts() ) : the_post();
