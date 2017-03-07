@@ -38,7 +38,7 @@
 			</div>
 			
 			<div class="copyright-info">
-				<p> All content copyright <?php echo get_option('po_copyright_name'); echo ' '; echo date("Y");?> </p>
+				<p> All content copyright <?php echo get_option('po_copyright_name'); echo ' '; echo date("Y");?>. </p>
 			</div>
 			<!-- .site-info -->
 		</footer><!-- #colophon -->
