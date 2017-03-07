@@ -35,7 +35,12 @@
 
 			<div class="site-info">
 				<a href="mailto:<?php echo esc_attr( get_option('po_mailto_address') ); ?>"><p> Contact Us </p></a>
-			</div><!-- .site-info -->
+			</div>
+			
+			<div class="copyright-info">
+				<p> All content copyright <?php echo get_option('po_copyright_name'); echo ' '; echo date("Y");?> </p>
+			</div>
+			<!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div>
 </div><!-- #page -->
