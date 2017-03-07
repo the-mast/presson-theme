@@ -26,7 +26,11 @@ if ( !empty (get_the_post_thumbnail()) ) : ?>
 
 		<div class="title-overlay">
 			<?php
-				the_title( '<h3 class="next-article-category"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+				if ( is_single() ):
+					the_title( '<h3 class="article-title">', '</h3>' );
+				else:
+					the_title( '<h3 class="next-article-category"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+				endif;
 	        ?>
 		</div>
 	</div>
@@ -41,9 +45,9 @@ if ( !empty (get_the_post_thumbnail()) ) : ?>
 	<div class="entry-title">
 		<?php
 		if ( is_single() ) :
-				the_title( '<h1><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+				the_title( '<h1>', '</h1>' );
 		else :
-			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif; ?>
 	</div>
 	
