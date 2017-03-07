@@ -1,5 +1,19 @@
 <?php
 $post_category = get_the_category();
+
+if (get_option('po_home_categories_enabled')):
+	$excludes = array( get_option('po_front_page_category'), 
+					   get_option('po_headline_article_category') );
+
+	foreach ($post_category as $key=>$cat):
+		if (in_array($cat->term_id, $excludes)) {
+			unset($post_category[$key]);
+		}
+	endforeach;
+	//Reset array indexes after removing values
+	$post_category = array_values($post_category);
+endif;
+
 $category_link = get_category_link( $post_category[0]->term_id );
 if ( !empty (get_the_post_thumbnail()) ) : ?>
 <div class="image-container">
