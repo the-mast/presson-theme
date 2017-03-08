@@ -11,7 +11,24 @@
 
 
 <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	<header id="social_share_header" class="header">
+		<div class="container" >
+			<div id="sharing">
+			<div class="presson-social-media-links">
+				<div class="fb-share">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">
+						<span />
+					</a>
+				</div>
+				<div class="tw-share">
+					<a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" >
+						<span />
+					</a>
+				</div>
+			</div>	
+			</div>
+		</div>
+	</header>
 	<header>	
 		<?php
 			get_template_part( 'template-parts/content-article-head', 'none' );
@@ -25,18 +42,6 @@
 				</div><!-- .entry-meta -->
 			<?php
 			endif; ?>
-		</div>
-		<div class="presson-social-media-links">
-			<div class="fb-share">
-				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">
-					<span />
-				</a>
-			</div>
-			<div class="tw-share">
-				<a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" >
-					<span />
-				</a>
-			 </div>
 		</div>
 	</header><!-- .entry-header -->
     <section class="article-content">
@@ -76,4 +81,5 @@
 	<footer class="entry-footer">
 		<?php press_on_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
 </article><!-- #post-## -->

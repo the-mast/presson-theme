@@ -1,0 +1,35 @@
+@import "../nuclides/indexes";
+#social_share_header {
+    z-index: $middleIndex;
+    background-color: #fff;
+    color: #000;
+    border-bottom: 2px solid #500850;
+    height: 60px;
+    width: 100%;
+    max-width: 640px;
+    will-change: transform;
+    position: fixed;
+    top: -60px;
+}
+
+#sharing {
+    display: inline-block;
+    width: 290px;
+}
+
+.animated {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--not-top {
+    top: 0!important;
+}
+
+.slideUp {
+    transform: translateY(0%);
+}
+
+.slideDown {
+    transform: translateY(-100%);
+}

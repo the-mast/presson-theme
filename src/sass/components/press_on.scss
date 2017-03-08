@@ -13,6 +13,8 @@
 @import 'structures/archive';
 @import 'structures/next_article';
 @import 'structures/featured';
+@import 'structures/article_head_base';
+@import 'structures/socialshare_header';
 html,
 body {
     padding: 0;
@@ -36,8 +38,4 @@ body {
         top: 0;
         left: 0;
     }
-}
-
-#content {
-    margin-top: 60px;
 }

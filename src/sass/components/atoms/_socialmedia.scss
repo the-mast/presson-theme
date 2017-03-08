@@ -27,7 +27,7 @@
     padding: 0 20px 10px 20px;
     width: 60%;
     .fb-share {
-        @include span_columns(3);
+        @include span_columns(4);
         span {
             @include fb-share;
             float: left;

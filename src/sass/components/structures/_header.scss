@@ -14,11 +14,9 @@ $masthead-height: 60px;
     width: 100%;
     max-width: 640px;
     z-index: $foregroundIndex;
-    position: fixed;
     #logo-header {
         @include span_columns(11);
         height: $masthead-height;
-        // padding: 10px;
         span {
             @include logo-white;
         }

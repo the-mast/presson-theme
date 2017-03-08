@@ -6,17 +6,18 @@
  * @example
  *  @quote-mark();
  */
-@mixin open-quote (){
+
+@mixin open-quote () {
     background-image: url('assets/images/open_quote_icon.svg');
     background-repeat: no-repeat;
 }
 
-@mixin close-quote (){
+@mixin close-quote () {
     background-image: url('assets/images/close_quote_icon.svg');
     background-repeat: no-repeat;
 }
 
-@mixin logo-white (){
+@mixin logo-white () {
     background: url('assets/images/logo_white.svg') no-repeat;
     background-size: contain;
     display: block;
@@ -24,22 +25,22 @@
     width: 150px;
 }
 
-@mixin logo-purple{
+@mixin logo-purple {
     background-image: url('assets/images/logo_purple.png');
     background-repeat: no-repeat;
 }
 
-@mixin burger-menu(){
+@mixin burger-menu() {
     background-image: url('assets/images/hamburger.svg');
     background-repeat: no-repeat;
-    cursor:pointer;
-    border:none;
+    cursor: pointer;
+    border: none;
 }
 
-$social-media-icon-width:  40px;
+$social-media-icon-width: 40px;
 $social-media-icon-height: 40px;
-
-@mixin fb-share (){
+@mixin fb-share () {
+    margin-top: 10px;
     background: url('assets/images/fb_share_icon.svg') no-repeat;
     background-size: contain;
     display: block;
@@ -47,7 +48,8 @@ $social-media-icon-height: 40px;
     width: $social-media-icon-width;
 }
 
-@mixin tw-share (){
+@mixin tw-share () {
+    margin-top: 10px;
     background: url('assets/images/tw_share_icon.svg') no-repeat;
     background-size: contain;
     display: block;
@@ -55,7 +57,7 @@ $social-media-icon-height: 40px;
     width: $social-media-icon-width;
 }
 
-@mixin wa-share (){
+@mixin wa-share () {
     background: url('assets/images/wa_share_icon.svg') no-repeat;
     background-size: contain;
     display: block;

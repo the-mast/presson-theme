@@ -1,9 +1,14 @@
-@import "article";
+@import "article_head_base";
 .featured-article {
     @extend .article;
     margin: 15px;
     .text-article-container {
         padding: 0!important;
         padding-top: 5px !important;
+    }
+    .image-box {
+        img {
+            margin-top: 0;
+        }
     }
 }
