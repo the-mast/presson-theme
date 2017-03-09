@@ -1,4 +1,4 @@
-$article-padding: 5px 15px 10px 15px;
+$article-padding: 10px 15px 10px 15px;
 .article {
     @include row;
     header {
@@ -27,7 +27,6 @@ $article-padding: 5px 15px 10px 15px;
     }
     .text-article-container {
         padding: $article-padding;
-        margin-top: 15px;
         .article-category {
             @extend .category;
             display: inline-block;

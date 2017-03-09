@@ -9,4 +9,15 @@
         }
     });
     social_share_header.init();
+
+    var mastheader = new Headroom(document.querySelector("#masthead"), {
+        tolerance: 5,
+        offset: 60,
+        classes: {
+            initial: "animated",
+            pinned: "slideUp",
+            unpinned: "slideDown",
+        }
+    });
+    mastheader.init();
 }());

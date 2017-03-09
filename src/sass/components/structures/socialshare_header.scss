@@ -1,7 +1,6 @@
-@import "../nuclides/indexes";
 #social_share_header {
     z-index: $middleIndex;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #000;
     border-bottom: 2px solid #500850;
     height: 60px;
@@ -19,7 +18,7 @@
 
 .animated {
     will-change: transform;
-    transition: transform 200ms linear;
+    transition: transform 300ms linear;
 }
 
 .headroom--not-top {

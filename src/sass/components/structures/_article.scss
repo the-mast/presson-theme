@@ -1,10 +1,5 @@
 @import "article_head_base";
 .article {
-    .image-box {
-        img {
-            margin-top: -10px;
-        }
-    }
     .article-content {
         @import '../atoms/blockquote';
         padding: $article-padding;
@@ -16,4 +11,8 @@
             font-weight: bold;
         }
     }
+}
+
+#masthead {
+    position: fixed;
 }
