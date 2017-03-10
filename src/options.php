@@ -17,6 +17,9 @@ function register_presson_settings() {
     register_setting( 'presson-settings', 'po_front_page_category' );
     register_setting( 'presson-settings', 'po_headline_article_category' );
     register_setting( 'presson-settings', 'po_home_categories_enabled');
+    register_setting( 'presson-settings', 'po_post_count_home_page');
+    register_setting( 'presson-settings', 'po_post_count_latest');
+    register_setting( 'presson-settings', 'po_post_count_related');
 }
 
 function presson_settings_page() {
@@ -79,6 +82,20 @@ function presson_settings_page() {
                          wp_dropdown_categories($args) ?>
             </td>
         </tr>
+        <tr valign="top">
+        <th scope="row">Number of posts to display as Featured</th>
+        <td><input type="number" min="2" max="4" class="regular-text" name="po_post_count_home_page" value="<?php echo esc_attr( get_option('po_post_count_home_page') ); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Number of posts to display in Latest</th>
+        <td><input type="number" class="regular-text" name="po_post_count_latest" value="<?php echo esc_attr( get_option('po_post_count_latest') ); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Number of posts to display in related</th>
+        <td><input type="number" class="regular-text" name="po_post_count_related" value="<?php echo esc_attr( get_option('po_post_count_related') ); ?>" /></td>
+        </tr>
+        
+        
     </table>
     
     <?php submit_button(); ?>

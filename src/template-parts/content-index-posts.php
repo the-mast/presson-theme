@@ -1,7 +1,7 @@
  
 	<?php
 
-		$POSTS_AMOUNT = 10;
+		$POSTS_AMOUNT = get_option('po_post_count_home_page');;
 
 		if (get_option('po_home_categories_enabled')):
 								$excludes = array(

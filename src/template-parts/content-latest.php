@@ -1,7 +1,19 @@
  
 	<?php
 
-		$POSTS_AMOUNT = 4;
+		$POSTS_AMOUNT = get_option('po_post_count_latest');
+		$HOME_PAGE_POSTS = get_option('po_post_count_home_page');
+
+		$excludes_args = array(
+						'category' => get_option('po_front_page_category'),
+						'posts_per_page' => $HOME_PAGE_POSTS,
+						'orderby' => 'post_date',
+						'order' => 'DESC'
+					);
+
+		$exclude_posts = get_posts($excludes_args);
+
+		$post_to_exclude = is_front_page() ? wp_list_pluck( $exclude_posts, 'ID' ): false;
 
 		if (get_option('po_home_categories_enabled')):
 								$excludes = array(
@@ -13,11 +25,12 @@
 							endif;
 
 		$my_post_category = get_the_category();
-		$post_to_exclude = is_single() ? array($post->ID) : false;
 
 		$args = array(
 				'posts_per_page' => $POSTS_AMOUNT,
-				'post__not_in' => $post_to_exclude);
+				'post__not_in' => $post_to_exclude,
+				'orderby' => 'post_date',
+				'order' => 'DESC');
 		$postslist = get_posts($args);
 
 		if ($postslist) { ?>

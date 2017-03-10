@@ -1,8 +1,7 @@
  
 	<?php
 
-		$RELATED_POSTS_AMOUNT = 4;
-		$POSTS_AMOUNT = 10;
+		$RELATED_POSTS_AMOUNT = get_option('po_post_count_related');;
 
 		if (get_option('po_home_categories_enabled')):
 								$excludes = array(
@@ -16,25 +15,22 @@
 		$my_post_category = get_the_category();
 
 		$my_post_category_id = is_single() && !empty($my_post_category) ? $my_post_category[0]->term_id : false;
-		$posts_per_page = is_single() ? $RELATED_POSTS_AMOUNT : $POSTS_AMOUNT;
-		$offset_count = is_single() ? 0 : 1;
 		$post_to_exclude = is_single() ? array($post->ID) : false;
 
 		$args = array(
-				'posts_per_page' => $posts_per_page,
-				'offset' => $offset_count, 
+				'posts_per_page' => $RELATED_POSTS_AMOUNT,
 				'post__not_in' => $post_to_exclude,
 				'category' => $my_post_category_id);
 		$postslist = get_posts($args);
 
 		if ($postslist) { ?>
-	  <?php	if ( is_single() ) : ?>
+	  
 			<div id="article-related">
 				<div id="related-header">
-					<h2>LATEST STORIES</h2>
+					<h2>RELATED STORIES</h2>
 				</div>
 			</div>
-		<?php endif; ?>
+		
 		
 		<?php foreach( $postslist as $post ):
 			setup_postdata('$post');

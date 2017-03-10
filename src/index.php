@@ -59,8 +59,9 @@ get_header(); ?>
 			<div class="latest-stories">
 
 			<?php
-			get_template_part( 'template-parts/content-latest', 'none' );
-
+				if (get_option('po_home_categories_enabled')):
+					get_template_part( 'template-parts/content-latest', 'none' );
+				endif;
 			?>
 
 			</div>
