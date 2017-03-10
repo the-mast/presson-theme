@@ -1,164 +1,156 @@
 $timing: .3s;
-
 * {
-  margin: 0;
-  padding: 0; 
-
+    margin: 0;
+    padding: 0;
 }
 
-#nav-header{
-  margin: 0 auto;
-  font-family: $secondary-font;
-  color: #fff;
+#nav-header {
+    margin: 0 auto;
+    font-family: $secondary-font;
+    color: #fff;
 }
-
 
 #nav-burger-menu {
-  
-  float: right;
-  width: 40px;
-  height: 45px;
-  position: relative;
-  margin: 5px auto;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
+    float: right;
+    width: 40px;
+    height: 45px;
+    position: relative;
+    margin: 5px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
 }
 
 #nav-burger-menu span {
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #fff;
-  border-radius: 0px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 0px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
 }
 
 #nav-burger-menu span:nth-child(1) {
-  top: 0px;
+    top: 0px;
 }
 
-#nav-burger-menu span:nth-child(2),#nav-burger-menu span:nth-child(3) {
-  top: 12px;
+#nav-burger-menu span:nth-child(2),
+#nav-burger-menu span:nth-child(3) {
+    top: 12px;
 }
 
 #nav-burger-menu span:nth-child(4) {
-  top: 24px;
+    top: 24px;
 }
 
 #nav-burger-menu.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 
 #nav-burger-menu.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 #nav-burger-menu.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 #nav-burger-menu.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 
 
 /**
   Nav list
 */
+
+
 /**
  * Menu overview.
  */
 
-        #nav-menu-list{
-
-           
-            height: calc(100vh - 60px);
-            top: -5px;
-            background-color: white;
-            position: relative;
-            overflow: hidden;
-            z-index: $middleIndex;
-           // margin-left: -243px;
-            
-
-            ul{
-                margin: 0;
-                padding: 5px 20px;
-                text-align: center;
-
-                span{
-                    color: black;
-                }
-
-                li{
-                    padding: 15px;
-                    border-bottom: solid 2px $accent;
-
-                    a{
-                        text-decoration: none;
-                        font-size: 20px;
-                        text-transform: uppercase;
-                        
-                        color: black;
-                    }
-                }
+#nav-menu-list {
+    height: calc(100vh - 60px);
+    top: -5px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: $middleIndex;
+    // margin-left: -243px;
+    ul {
+        margin: 0;
+        padding: 5px 20px;
+        text-align: center;
+        span {
+            color: black;
+        }
+        li {
+            padding: 15px;
+            border-bottom: solid 2px $accent;
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                text-transform: uppercase;
+                color: black;
             }
         }
-        
-        .resting{
-          // transform: translateX(100%);
-          margin-left: 57px;
-          width: 0;
-        }
+    }
+}
 
-        .slide{
-            width: 300px;
-            border-left: solid 5px $primary;
-        }
+.resting {
+    // transform: translateX(100%);
+    margin-left: 57px;
+    width: 0;
+}
 
-        .slideLeft{
-            // transform: translateX(0);
-             margin-left: -243px;
-            transition: all $timing;
-            -webkit-transition: all $timing;
+.slide {
+    width: 300px;
+    border-left: solid 5px $primary;
+}
 
-            animation-timing-function: ease-in-out;	
-            -webkit-animation-timing-function: ease-in-out;		
+.slideLeft {
+    // transform: translateX(0);
+    margin-left: -243px;
+    transition: all $timing;
+    -webkit-transition: all $timing;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
 
-            visibility: visible !important;	
-        }
+.slideRight {
+    // transform: translateX(100%);
+    transition: all $timing;
+    -webkit-transition: all $timing;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
 
-        .slideRight{
-            // transform: translateX(100%);
-             transition: all $timing;
-            -webkit-transition: all $timing;
-
-            animation-timing-function: ease-in-out;	
-            -webkit-animation-timing-function: ease-in-out;		
-
-            visibility: visible !important;	
-        }
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}

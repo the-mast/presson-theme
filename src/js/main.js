@@ -18,38 +18,41 @@
  */
 /* eslint-env browser */
 (function() {
-  'use strict';
+    'use strict';
 
-  // Your custom JavaScript goes here
-  var nav = document.getElementById('nav-burger-menu');
-  var menuList = document.getElementById('nav-menu-list');
-  var overlay = document.getElementById('site-overlay');
+    // Your custom JavaScript goes here
+    var nav = document.getElementById('nav-burger-menu');
+    var menuList = document.getElementById('nav-menu-list');
+    var overlay = document.getElementById('site-overlay');
+    var body = document.getElementsByTagName('body');
 
-  nav.onclick = function() {
-    if (nav.classList.contains('open')) {
-      close();
-    } else {
-      open();
+    nav.onclick = function() {
+        if (nav.classList.contains('open')) {
+            close();
+        } else {
+            open();
+        }
+    };
+
+    overlay.onclick = close;
+
+    function open() {
+        nav.classList.add('open');
+        overlay.style.display = '';
+        menuList.classList.add('slideLeft');
+        menuList.classList.remove('slideRight');
+        menuList.classList.remove('resting');
+        menuList.classList.add('slide');
+        body[0].classList.add('stop-scrolling');
     }
-  };
 
-  overlay.onclick = close;
-
-  function open() {
-    nav.classList.add('open');
-    overlay.style.display = '';
-    menuList.classList.add('slideLeft');
-    menuList.classList.remove('slideRight');
-    menuList.classList.remove('resting');
-    menuList.classList.add('slide');
-  }
-
-  function close() {
-    nav.classList.remove('open');
-    overlay.style.display = 'none';
-    menuList.classList.add('slideRight');
-    menuList.classList.remove('slideLeft');
-    menuList.classList.add('resting');
-    menuList.classList.remove('slide');
-  }
+    function close() {
+        nav.classList.remove('open');
+        overlay.style.display = 'none';
+        menuList.classList.add('slideRight');
+        menuList.classList.remove('slideLeft');
+        menuList.classList.add('resting');
+        menuList.classList.remove('slide');
+        body[0].classList.remove('stop-scrolling');
+    }
 })();
