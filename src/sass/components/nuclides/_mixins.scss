@@ -17,7 +17,16 @@
     background-repeat: no-repeat;
 }
 
-@mixin logo-white () {
+@mixin not-found-icon (){
+    background-image: url('assets/images/404.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 75px;
+    width: 180px;
+}
+
+@mixin logo-white (){
     background: url('assets/images/logo_white.svg') no-repeat;
     background-size: contain;
     display: block;
