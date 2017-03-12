@@ -12,6 +12,59 @@
  */
 function press_on_customize_register( $wp_customize ) {
     $wp_customize->remove_control('header_textcolor');
+    
+    $wp_customize->add_section(
+		'presson_logos',
+		array(
+			'title'			=> __( 'logo', 'presson' ),
+            'priority' => 1
+		)
+	);
+
+    $wp_customize->add_setting(
+		'presson_header_logo',
+		array(
+			'default'		=> get_stylesheet_directory_uri() . '/assets/images/logo_white.svg',
+			'sanitize_callback'	=> 'esc_url_raw',
+			'transport'		=> 'postMessage'
+		)
+	);
+
+    $wp_customize->add_setting(
+		'presson_footer_logo',
+		array(
+			'default'		=> get_stylesheet_directory_uri() . '/assets/images/logo_white.svg',
+			'sanitize_callback'	=> 'esc_url_raw',
+			'transport'		=> 'postMessage'
+		)
+	);
+
+
+    $wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'presson_header_logo',
+			array(
+				'settings'		=> 'presson_footer_logo',
+				'section'		=> 'presson_logos',
+				'label'			=> __( 'Header logo', 'presson' ),
+				'description'	=> __( 'Select header logo', 'presson' )
+			)
+		)
+	);
+
+    $wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'presson_footer_logo',
+			array(
+				'settings'		=> 'presson_header_logo',
+				'section'		=> 'presson_logos',
+				'label'			=> __( 'Footer logo', 'presson' ),
+				'description'	=> __( 'Select footer logo', 'presson' )
+			)
+		)
+	);
 
 	$wp_customize->add_setting(
     'primary_color',
@@ -132,7 +185,16 @@ function presson_customizer_css() {
         .related-story {
             border-color: <?php echo get_theme_mod( 'accent_color' ); ?>; 
         }
-
+        #masthead #logo-header span {
+            background: url(<?php echo get_theme_mod( 'presson_header_logo' );?>) no-repeat;
+                background-size: contain;
+                display: block;
+                height: 50px;
+                width: 150px;
+        }
+        #mastfoot #logo-footer span {
+            background: url(<?php echo get_theme_mod( 'presson_footer_logo' );?>) no-repeat;
+        }
     </style>
     <?php
 }
