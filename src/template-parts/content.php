@@ -70,6 +70,12 @@
 			) );
 		?>
 	</section>
+	<div id="article-comments">
+	<?php 
+			get_template_part( 'template-parts/comments', 'none' );
+	?>
+	</div>
+
 	<!-- .entry-content -->
 	<section class="read-next-article">
 		<?php 

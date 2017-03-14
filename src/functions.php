@@ -134,6 +134,16 @@ function press_on_scripts() {
 add_action( 'wp_enqueue_scripts', 'press_on_scripts' );
 
 /**
+* Set query vars
+**/
+function add_query_vars_filter( $vars ){
+  $vars[] = "comments";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+/**
 * Set the image sizes for srcset
 **/
 function adjust_image_sizes_attr( $sizes, $size ) {

@@ -1,0 +1,24 @@
+/**
+ * @atom Primary Button
+ * @section Buttons
+ * @markup
+ *  <div class="button"><a href="">Show Comments</a></div>
+ */
+.button {
+    width: 253px;
+    height: 50px;
+    background-color: #500850;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    text-align: center;
+
+    a {
+        font-family:Helvetica, Arial, sans-serif;
+        font-size:16px;
+        font-weight:600;
+        line-height:44px;
+        color:#fff;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
