@@ -8,6 +8,9 @@
  */
 
 get_header(); ?>
+<script>
+	window.onscroll = function() {scrollEvent()};
+</script>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -17,9 +20,9 @@ get_header(); ?>
 
 			<header>
 				<div class="archive-header">
-					<?php
-						single_cat_title('<h1>', '</h1>' );
-					?>
+					<div id="banner">
+						<?php single_cat_title('<h1>', '</h1>' ); ?>
+					</div>					
 				</div>
 			</header><!-- .page-header -->
 

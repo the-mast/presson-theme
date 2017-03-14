@@ -154,6 +154,7 @@ gulp.task('scripts', () =>
         './src/js/skip-link-focus-fix.js',
         './src/js/social-media.js',
         './src/js/socialshare-slide.js',
+        './src/js/scrollhandler.js',
     ])
     .pipe($.newer('.tmp/scripts'))
     .pipe($.sourcemaps.init())
