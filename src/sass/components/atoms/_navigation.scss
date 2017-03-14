@@ -97,7 +97,7 @@ $timing: .3s;
     top: -5px;
     background-color: white;
     position: relative;
-    overflow: hidden;
+    overflow-y: scroll;
     z-index: $middleIndex;
     // margin-left: -243px;
     ul {
