@@ -67,6 +67,7 @@ $social-media-icon-height: 40px;
 }
 
 @mixin wa-share () {
+    margin-top: 10px;
     background: url('assets/images/wa_share_icon.svg') no-repeat;
     background-size: contain;
     display: block;

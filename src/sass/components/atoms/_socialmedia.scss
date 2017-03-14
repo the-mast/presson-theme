@@ -34,7 +34,7 @@
         }
     }
     .tw-share {
-        @include span_columns(3);
+        @include span_columns(4);
         span {
             @include tw-share;
             float: left;

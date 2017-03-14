@@ -25,6 +25,14 @@
 						<span />
 					</a>
 				</div>
+				<div class="wa-share">
+					<?php
+						$articleTitle = str_replace(' ', '%20', get_the_title());
+					?>
+					<a href="whatsapp://send?text=<?php echo $articleTitle ?>%20<?php echo esc_url( get_permalink()) ?>" data-action="share/whatsapp/share" >
+						<span />
+					</a>
+				</div>
 			</div>	
 			</div>
 		</div>
