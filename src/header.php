@@ -30,6 +30,14 @@
 
 </script>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "<?php echo esc_attr( get_option('po_google_ads_id') ); ?>",
+    enable_page_level_ads: true
+  });
+</script>
+
 <div id="fb-root"></div>
 
 <div id="page" class="site">

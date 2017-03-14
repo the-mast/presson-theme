@@ -20,6 +20,7 @@ function register_presson_settings() {
     register_setting( 'presson-settings', 'po_post_count_home_page');
     register_setting( 'presson-settings', 'po_post_count_latest');
     register_setting( 'presson-settings', 'po_post_count_related');
+    register_setting( 'presson-settings', 'po_google_ads_id');
 }
 
 function presson_settings_page() {
@@ -38,6 +39,10 @@ function presson_settings_page() {
         <tr valign="top">
         <th scope="row">Google Analytics ID</th>
         <td><input type="text" class="regular-text" name="po_google_analytics_id" value="<?php echo esc_attr( get_option('po_google_analytics_id') ); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Google Ads Client ID</th>
+        <td><input type="text" class="regular-text" name="po_google_ads_id" value="<?php echo esc_attr( get_option('po_google_ads_id') ); ?>" /></td>
         </tr>
         <tr valign="top">
         <th scope="row">Facebook URL</th>
