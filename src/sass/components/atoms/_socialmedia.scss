@@ -41,7 +41,7 @@
         }
     }
     .wa-share {
-        @include span_columns(2);
+        @include span_columns(4);
         span {
             @include wa-share;
             float: left;

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="50px" height="36px" viewBox="0 0 50 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
     <title>Group 8</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Mobile-Portrait-Copy-15" transform="translate(-15.000000, -414.000000)">
-            <g id="Group-8" transform="translate(15.000000, 414.000000)">
-                <rect id="Rectangle-15" fill="#3B5998" x="0" y="0" width="46" height="46" rx="4"></rect>
-                <path d="M24.4464315,35 L24.4464315,22.9985949 L27.7593442,22.9985949 L28.1983766,18.8628442 L24.4464315,18.8628442 L24.4520601,16.7928612 C24.4520601,15.7141937 24.5545479,15.136219 26.1038259,15.136219 L28.174924,15.136219 L28.174924,11 L24.8615423,11 C20.881638,11 19.4808148,13.006284 19.4808148,16.3802229 L19.4808148,18.8633126 L17,18.8633126 L17,22.9990633 L19.4808148,22.9990633 L19.4808148,35 L24.4464315,35 Z" id="Shape" fill="#FFFFFF"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Share-Header-Copy" transform="translate(-5.000000, -5.000000)">
+            <g id="Group-8" transform="translate(5.000000, 5.000000)">
+                <rect id="Rectangle-15-Copy" fill="#3B5998" x="0" y="0" width="50" height="36" rx="4"></rect>
+                <path d="M26.827642,27.7826087 L26.827642,18.3902047 L29.4203563,18.3902047 L29.7639469,15.1535302 L26.827642,15.1535302 L26.832047,13.5335435 C26.832047,12.689369 26.9122549,12.237041 28.1247333,12.237041 L29.7455927,12.237041 L29.7455927,9 L27.1525114,9 C24.0378036,9 22.9415073,10.5701353 22.9415073,13.2106092 L22.9415073,15.1538968 L21,15.1538968 L21,18.3905712 L22.9415073,18.3905712 L22.9415073,27.7826087 L26.827642,27.7826087 Z" id="Shape-Copy" fill="#FFFFFF"></path>
             </g>
         </g>
     </g>

@@ -46,8 +46,8 @@
     border: none;
 }
 
-$social-media-icon-width: 40px;
-$social-media-icon-height: 40px;
+$social-media-icon-width: 60px;
+$social-media-icon-height: 42px;
 @mixin fb-share () {
     margin-top: 10px;
     background: url('assets/images/fb_share_icon.svg') no-repeat;
@@ -79,16 +79,16 @@ $social-media-icon-height: 40px;
     background: url('assets/images/tw_white.svg') no-repeat;
     background-size: contain;
     display: block;
-    height: $social-media-icon-height;
-    width: $social-media-icon-width;
+    height: 40px;
+    width: 40px;
 }
 
 @mixin fb-follow-white {
     background: url('assets/images/fb_white.svg') no-repeat;
     background-size: contain;
     display: block;
-    height: $social-media-icon-height;
-    width: $social-media-icon-width;
+    height: 40px;
+    width: 40px;
 }
 
 @mixin banner_small {
