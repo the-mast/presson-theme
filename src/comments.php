@@ -30,7 +30,7 @@ fjs.parentNode.insertBefore(js, fjs);
 	<div class="fb-comments hidden" data-href="<?php echo esc_url( get_permalink()) ?>" data-width="640" data-numposts="5"></div>
 <?php else: ?>
 	<div class="button">
-		<a href="<?php echo esc_url( add_query_arg( array( 'comments' => 1 ), get_permalink() . "#comments" ) ) ?>">Show Comments</a>
+		<a href="<?php echo esc_url( add_query_arg( array( 'comments' => 1 ), get_permalink() . "#comments" ) ) ?>">Show Comments (<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>)</a>
 	</div>
 <?php endif; ?>
 
