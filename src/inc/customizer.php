@@ -16,7 +16,7 @@ function press_on_customize_register( $wp_customize ) {
     $wp_customize->add_section(
 		'presson_logos',
 		array(
-			'title'			=> __( 'logo', 'presson' ),
+			'title'			=> __( 'Logo', 'presson' ),
             'priority' => 1
 		)
 	);
@@ -45,7 +45,7 @@ function press_on_customize_register( $wp_customize ) {
 			$wp_customize,
 			'presson_header_logo',
 			array(
-				'settings'		=> 'presson_footer_logo',
+				'settings'		=> 'presson_header_logo',
 				'section'		=> 'presson_logos',
 				'label'			=> __( 'Header logo', 'presson' ),
 				'description'	=> __( 'Select header logo', 'presson' )
@@ -58,7 +58,7 @@ function press_on_customize_register( $wp_customize ) {
 			$wp_customize,
 			'presson_footer_logo',
 			array(
-				'settings'		=> 'presson_header_logo',
+				'settings'		=> 'presson_footer_logo',
 				'section'		=> 'presson_logos',
 				'label'			=> __( 'Footer logo', 'presson' ),
 				'description'	=> __( 'Select footer logo', 'presson' )
@@ -153,7 +153,7 @@ function presson_customizer_css() {
     ?>
     <style type="text/css">
         #masthead { 
-             background-color: <?php echo get_theme_mod( 'primary_color' ); ?>; 
+             background-color: <?php echo get_theme_mod( 'primary_color' ); ?>;
         }
         a{
              color:<?php echo get_theme_mod( 'highlight' ); ?>;
@@ -186,14 +186,19 @@ function presson_customizer_css() {
             border-color: <?php echo get_theme_mod( 'accent_color' ); ?>; 
         }
         #masthead #logo-header span {
-            background: url(<?php echo get_theme_mod( 'presson_header_logo' );?>) no-repeat;
+            background: url(<?php echo get_theme_mod( 'presson_header_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
                 background-size: contain;
                 display: block;
                 height: 50px;
                 width: 150px;
         }
         #mastfoot #logo-footer span {
-            background: url(<?php echo get_theme_mod( 'presson_footer_logo' );?>) no-repeat;
+            background: url(<?php echo get_theme_mod( 'presson_footer_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
+            background-size: contain;
+            display: block;
+            height: 50px;
+            margin: 0e auto;
+            width: 110px;
         }
     </style>
     <?php
