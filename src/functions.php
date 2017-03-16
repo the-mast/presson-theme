@@ -178,6 +178,21 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
+/**
+ * Advertising
+*/
+
+function render_banner_advertisment() {
+	$advert = 
+	'<div align="center" class="advert-banner">'
+	 . get_option('po_banner_ads') .
+	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+	 </div>';
+
+	echo $advert;
+}
+
+
 //Insert Adsense code in the middle of Single Post content
 add_filter( 'the_content', 'crunchify_ads' );
 function crunchify_ads( $content ) {

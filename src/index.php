@@ -14,6 +14,8 @@
 
 get_header(); ?>
 
+		<?php render_banner_advertisment() ?>	
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

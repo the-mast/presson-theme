@@ -11,6 +11,9 @@
 
 
 <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+		<?php render_banner_advertisment() ?>	
+	
 	<header id="social_share_header" class="header">
 		<div class="container" >
 			<div id="sharing">

@@ -24,6 +24,8 @@ function register_presson_settings() {
     //Advertising
     register_setting( 'presson-settings', 'po_middle_content_ads');
     register_setting( 'presson-settings', 'po_middle_content_ads_paragraph_count');
+    register_setting( 'presson-settings', 'po_banner_ads');
+
 }
 
 function presson_settings_page() {
@@ -67,11 +69,17 @@ function presson_settings_page() {
 
         <tr valign="top">
         <th scope="row">Middle article adverts</th>
-            <td><textarea type="text" rows="4" class="regular-text" name="po_middle_content_ads"><?php echo esc_attr( get_option('po_middle_content_ads') ); ?></textarea></td>
+            <td><textarea type="text" rows="6" class="regular-text" name="po_middle_content_ads"><?php echo esc_attr( get_option('po_middle_content_ads') ); ?></textarea></td>
         </tr>
         <tr valign="top">
         <th scope="row">Insert ad after which paragraph?</th>
-            <td><input type="number" class="regular-text" name="po_middle_content_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_middle_content_ads_paragraph_count') ); ?>"/></td>
+            <td><input type="number"  min="4" class="regular-text" name="po_middle_content_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_middle_content_ads_paragraph_count') ); ?>"/></td>
+        </tr>
+
+
+        <tr valign="top">
+        <th scope="row">Banner adverts</th>
+            <td><textarea type="text" rows="6" class="regular-text" name="po_banner_ads"><?php echo esc_attr( get_option('po_banner_ads') ); ?></textarea></td>
         </tr>
 
         <tr valign="top">
