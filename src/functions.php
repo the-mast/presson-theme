@@ -199,7 +199,7 @@ function crunchify_ads( $content ) {
  
 	 // Ad code which we are using on Single post
      $single_post_ads = 
-	 '<div align="center" style="margin-bottom:10px;"> '
+	 '<div align="center" class="advert-article"> '
 	 . get_option('po_middle_content_ads') .
 	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 	 </div>';
