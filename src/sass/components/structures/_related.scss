@@ -10,15 +10,31 @@ $section-border-margin: 0 15px 0 15px;
 }
 
 #related-header {
+    @include row();
     height: 48px;
     margin: $section-border-margin;
     border-top: $section-border-style;
     border-bottom: $section-border-style;
+   
     padding: 5px 0px;
-    h2 {
-        margin: 0;
+    p{
+        font-family: $secondary-font;
         font-size: 1.3em;
         font-weight: 100;
+    }
+    .heading {
+        @include span_columns(9);
+        margin: 0;
+    }
+    .see-all {
+        @include span_columns(3);
+
+        a{
+            float: right;
+            text-transform: uppercase;
+            color: $primary;
+            text-decoration: none;
+        }
     }
 }
 

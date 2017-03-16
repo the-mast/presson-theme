@@ -36,7 +36,9 @@
 		if ($postslist) { ?>
 			<div id="article-related">
 				<div id="related-header">
-					<h2>LATEST STORIES</h2>
+					<p class="heading">LATEST STORIES</p>
+					
+					<p class="see-all"><a href="#"> See all ></a> </p> 
 				</div>
 			</div>
 		

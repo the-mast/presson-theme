@@ -15,6 +15,8 @@
 		$my_post_category = get_the_category();
 
 		$my_post_category_id = is_single() && !empty($my_post_category) ? $my_post_category[0]->term_id : false;
+		$category_link = get_category_link( $my_post_category_id );
+
 		$post_to_exclude = is_single() ? array($post->ID) : false;
 
 		$args = array(
@@ -27,7 +29,9 @@
 	  
 			<div id="article-related">
 				<div id="related-header">
-					<h2>RELATED STORIES</h2>
+					<p class="heading">LATEST STORIES</p>
+
+					<p class="see-all"><a href="<?php echo $category_link ?>"> See all ></a> </p> 
 				</div>
 			</div>
 		
