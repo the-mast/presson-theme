@@ -178,3 +178,35 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
+//Insert Adsense code in the middle of Single Post content
+add_filter( 'the_content', 'crunchify_ads' );
+function crunchify_ads( $content ) {
+ 
+	 // Ad code which we are using on Single post
+     $single_post_ads = 
+	 '<div align="center" style="margin-bottom:10px;"> '
+	 . get_option('po_middle_content_ads') .
+	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+	 </div>';
+ 
+    if ( is_single() && ! is_admin()) {
+        return crunchify_insert_ads( $single_post_ads, get_option('po_middle_content_ads_paragraph_count'), $content );
+    }
+
+    return $content;
+}
+
+// This function identifies after which paragraph we need to insert ads
+function crunchify_insert_ads( $ads, $after_which_paragraph, $content ) {
+    $identify_paragraph = '</p>';
+    $crunchifyData = explode( $identify_paragraph, $content );
+    foreach ($crunchifyData as $index => $paragraph) {
+        if ( trim( $paragraph ) ) {
+            $crunchifyData[$index] .= $identify_paragraph;
+        }
+        if ( $after_which_paragraph == $index + 1 ) {
+            $crunchifyData[$index] .= $ads;
+        }
+    }
+    return implode( '', $crunchifyData );
+}

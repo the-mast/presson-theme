@@ -21,6 +21,9 @@ function register_presson_settings() {
     register_setting( 'presson-settings', 'po_post_count_latest');
     register_setting( 'presson-settings', 'po_post_count_related');
     register_setting( 'presson-settings', 'po_google_ads_id');
+    //Advertising
+    register_setting( 'presson-settings', 'po_middle_content_ads');
+    register_setting( 'presson-settings', 'po_middle_content_ads_paragraph_count');
 }
 
 function presson_settings_page() {
@@ -56,6 +59,25 @@ function presson_settings_page() {
         <th scope="row">MailTo Address ("Contact Us")</th>
         <td><input type="text" class="regular-text" name="po_mailto_address" value="<?php echo esc_attr( get_option('po_mailto_address') ); ?>" /></td>
         </tr>
+
+         
+        <tr valign="top" >
+            <th><h1>Advertising settings</h1></th>
+        </tr>
+
+        <tr valign="top">
+        <th scope="row">Middle article adverts</th>
+            <td><textarea type="text" rows="4" class="regular-text" name="po_middle_content_ads"><?php echo esc_attr( get_option('po_middle_content_ads') ); ?></textarea></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Insert ad after which paragraph?</th>
+            <td><input type="number" class="regular-text" name="po_middle_content_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_middle_content_ads_paragraph_count') ); ?>"/></td>
+        </tr>
+
+        <tr valign="top">
+            <th><h1>Page Layout Settings</h1></th>
+        </tr>
+    
         <tr valign="top">
         <th scope="row">Configure Home Page Categories</th>
         <td><input type="checkbox" name="po_home_categories_enabled" value="1" <?php checked( 1, get_option('po_home_categories_enabled') ); ?> />
@@ -99,8 +121,7 @@ function presson_settings_page() {
         <th scope="row">Number of posts to display in related</th>
         <td><input type="number" class="regular-text" name="po_post_count_related" value="<?php echo esc_attr( get_option('po_post_count_related') ); ?>" /></td>
         </tr>
-        
-        
+       
     </table>
     
     <?php submit_button(); ?>
