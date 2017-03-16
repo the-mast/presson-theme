@@ -152,7 +152,6 @@ gulp.task('scripts', () =>
         './src/js/main.js',
         './src/js/navigation.js',
         './src/js/skip-link-focus-fix.js',
-        './src/js/social-media.js',
         './src/js/socialshare-slide.js',
         './src/js/scrollhandler.js',
     ])
