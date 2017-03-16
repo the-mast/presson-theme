@@ -34,9 +34,12 @@
     width: 150px;
 }
 
-@mixin logo-purple {
-    background-image: url('assets/images/logo_purple.png');
-    background-repeat: no-repeat;
+@mixin logo-colour {
+    background: url('assets/images/logo_colour.svg') no-repeat;
+    background-size: contain;
+    display: block;
+    height: 42px;
+    width: 150px;
 }
 
 @mixin burger-menu() {

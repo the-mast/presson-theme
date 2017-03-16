@@ -1,25 +1,40 @@
+.social-media-container{
+    margin: 20px;
+}
+
+
 .social-media-following {
-    @include row;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    border: 2px solid $primary;
+    width: 290px;
+
     p {
         text-align: center;
-        font-size: 1em;
-        color: #3b55a0;
-        padding: 10px;
-        margin: 0;
+        text-transform: uppercase;
+        margin: 10px;
     }
-    .fb-like-section {
-        display: block;
+
+    .social-icon{
+        @include logo-colour;
         margin: 0 auto;
-        width: 49px;
-        padding-bottom: 20px;
     }
-    .tw-follow-section {
-        display: block;
-        margin: 0 auto;
-        width: 64px;
+
+    .sharing-icons{
+
+        .fb-like-section {
+            display: block;
+            margin: 0 auto;
+            width: 52px;
+            padding-bottom: 20px;
+        }
+        .tw-follow-section {
+            display: block;
+            margin: 0 auto;
+            width: 82px;
+        }
     }
+
 }
 
 .presson-social-media-links {
