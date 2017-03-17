@@ -105,3 +105,11 @@ $social-media-icon-height: 42px;
 @mixin hidden {
     display: hidden;
 }
+
+@mixin arrow {
+    background: url('assets/images/arrow.svg') no-repeat;
+    background-size: contain;
+    display: block;
+    height: 16px;
+    width: 16px;
+}

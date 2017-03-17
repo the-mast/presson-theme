@@ -33,12 +33,14 @@
 				'order' => 'DESC');
 		$postslist = get_posts($args);
 
+		$url = get_site_url() . '/' . date('Y');
+
 		if ($postslist) { ?>
 			<div id="article-related">
 				<div id="related-header">
 					<p class="heading">LATEST STORIES</p>
-					
-					<p class="see-all"><a href="#"> See all ></a> </p> 
+									
+					<p class="see-all"><a href="<?php echo $url ?>"> See all <span class="arrow"></span></a> </p> 
 				</div>
 			</div>
 		

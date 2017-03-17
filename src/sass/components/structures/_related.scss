@@ -28,12 +28,22 @@ $section-border-margin: 0 15px 0 15px;
     }
     .see-all {
         @include span_columns(3);
-
+        font-family: $primary-font;
+        float: right;
+        font-weight: bold;
+        font-size: 1em;
+        line-height: 1.9em;
         a{
             float: right;
             text-transform: uppercase;
             color: $primary;
             text-decoration: none;
+
+            .arrow{
+                @include arrow;
+                float: right;
+                margin: 7px 0 5px 6px;
+            }
         }
     }
 }
