@@ -2,7 +2,7 @@
     $post = get_next_post();
     if (!empty( $post )): ?>
     <div class="next-article-header">
-        <h2>READ NEXT</h2>
+        <p>READ NEXT</p>
     </div>
     <?php
         $post_category = get_the_category();

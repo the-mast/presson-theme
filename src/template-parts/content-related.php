@@ -29,7 +29,7 @@
 	  
 			<div id="article-related">
 				<div id="related-header">
-					<p class="heading">LATEST STORIES</p>
+					<p class="heading">RELATED STORIES</p>
 					<p class="see-all"><a href="<?php echo $category_link ?>"> See all <span class="arrow"></span></a> </p> 
 				</div>
 			</div>
