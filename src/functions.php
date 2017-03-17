@@ -239,14 +239,17 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 
 function render_banner_advertisment() {
-	$advert = 
-	'<div class="ad-heading">advertisement</div>
-	 <div align="center" class="advert-banner">'
-	 . get_option('po_banner_ads') .
-	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-	 </div>';
+	if(!empty(get_option('po_banner_ads')))
+	{
+		$advert = 
+		'<div class="ad-heading">advertisement</div>
+		<div align="center" class="advert-banner">'
+		. get_option('po_banner_ads') .
+		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		</div>';
 
-	echo $advert;
+		echo $advert;
+	}
 }
 
 
@@ -254,19 +257,23 @@ function render_banner_advertisment() {
 add_filter( 'the_content', 'crunchify_ads' );
 function crunchify_ads( $content ) {
  
-	 // Ad code which we are using on Single post
-     $single_post_ads = 
-	 '<div class="ad-heading">advertisement</div>
-	  <div align="center" class="advert-article"> '
-	 . get_option('po_middle_content_ads') .
-	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-	 </div>';
- 
-    if ( is_single() && ! is_admin()) {
-        return crunchify_insert_ads( $single_post_ads, get_option('po_middle_content_ads_paragraph_count'), $content );
-    }
-
-    return $content;
+	if(!empty(get_option('po_middle_content_ads')))
+	{
+		// Ad code which we are using on Single post
+		$single_post_ads = 
+		'<div class="ad-heading">advertisement</div>
+		<div align="center" class="advert-article"> '
+		. get_option('po_middle_content_ads') .
+		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		</div>';
+	
+		if ( is_single() && ! is_admin()) {
+			return crunchify_insert_ads( $single_post_ads, get_option('po_middle_content_ads_paragraph_count'), $content );
+		}
+	}
+	
+	return $content;
+	
 }
 
 // This function identifies after which paragraph we need to insert ads
