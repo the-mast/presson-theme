@@ -113,3 +113,30 @@ $social-media-icon-height: 42px;
     height: 16px;
     width: 16px;
 }
+
+$round-share-height: 40px;
+$round-share-weight: 40px;
+
+@mixin fb-share-round {
+    background: url('assets/images/fb_share_round.svg') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: $round-share-height;
+    width: $round-share-weight;
+}
+
+@mixin tw-share-round {
+    background: url('assets/images/tw_share_round.svg') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: $round-share-height;
+    width: $round-share-weight;
+}
+
+@mixin wa-share-round {
+    background: url('assets/images/wa_share_round.svg') no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: $round-share-height;
+    width: $round-share-weight;
+}

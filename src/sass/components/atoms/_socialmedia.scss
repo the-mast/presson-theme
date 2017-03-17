@@ -2,6 +2,23 @@
     margin: 20px;
 }
 
+$round-icon-margin: 5px;
+.social-media-container-article{
+    margin: 0 10px;
+
+    .fb-share-round {
+        @include fb-share-round;
+        margin: $round-icon-margin;
+    }
+    .tw-share-round {
+        @include tw-share-round;
+        margin: $round-icon-margin;
+    }
+    .wa-share-round {
+        @include wa-share-round;
+        margin: $round-icon-margin;
+    }
+}
 
 .social-media-following {
     padding: 10px;

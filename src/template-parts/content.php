@@ -12,7 +12,11 @@
 
 <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-		<?php render_banner_advertisment() ?>	
+		<?php render_banner_advertisment() ?>		
+		<?php
+			$articleTitle = str_replace(' ', '%20', get_the_title());			
+		?>
+
 	
 	<header id="social_share_header" class="header">
 		<div class="container" >
@@ -29,9 +33,6 @@
 					</a>
 				</div>
 				<div class="wa-share">
-					<?php
-						$articleTitle = str_replace(' ', '%20', get_the_title());
-					?>
 					<a href="whatsapp://send?text=<?php echo $articleTitle ?>%20<?php echo esc_url( get_permalink()) ?>" data-action="share/whatsapp/share" >
 						<span />
 					</a>
@@ -55,6 +56,13 @@
 			endif; ?>
 		</div>
 	</header><!-- .entry-header -->
+
+	<div class="social-media-container-article">
+		<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>"><span class="fb-share-round"></span></a>
+		<a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" ><span class="tw-share-round"></span></a>
+			<a href="whatsapp://send?text=<?php echo $articleTitle ?>%20<?php echo esc_url( get_permalink()) ?>" data-action="share/whatsapp/share" ><span class="wa-share-round"></span></a>
+	</div>
+
     <section class="article-content">
 		<?php
 			the_content( sprintf(
