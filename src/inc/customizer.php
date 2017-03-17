@@ -197,7 +197,7 @@ function presson_customizer_css() {
             background-size: contain;
             display: block;
             height: 50px;
-            margin: 0e auto;
+            margin: 0 auto;
             width: 110px;
         }
     </style>

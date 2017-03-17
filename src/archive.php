@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-<script>
+<script xmlns="http://www.w3.org/1999/html">
 	window.onscroll = function() {scrollEvent()};
 </script>
 
@@ -16,7 +16,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+			$count_posts = $wp_the_query->post_count;
+			$POSTS_PER_PAGE = 10;
+			?>
 
 			<header>
 				<div class="archive-header">
@@ -25,10 +28,9 @@ get_header(); ?>
 					</div>					
 				</div>
 			</header><!-- .page-header -->
-
 			<?php
 					$args = array(
-						'posts_per_page' => 10,
+						'posts_per_page' => $POSTS_PER_PAGE,
 						'category' => the_category_ID(false)
 					);
 
@@ -55,11 +57,13 @@ get_header(); ?>
 					</div>
 				<?php 
 				endforeach;
-				$cur_cat = get_cat_ID(single_cat_title("",false) );
-				$cur_category = get_category($cur_cat);
-				echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="10" 
-				button_label="LOAD MORE" pause="true" offset="5" scroll="false"
-				images_loaded="true" category="'.$cur_category->slug.'"]');
+				if ($count_posts > $POSTS_PER_PAGE){
+                    $cur_cat = get_cat_ID(single_cat_title("", false));
+                    $cur_category = get_category($cur_cat);
+                    echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="'.$POSTS_PER_PAGE.'" 
+				button_label="LOAD MORE" pause="true" offset="'.$POSTS_PER_PAGE.'" scroll="false"
+				images_loaded="true" category="' . $cur_category->slug . '"]');
+                }
 				wp_reset_postdata;
 			endif ?>
 
