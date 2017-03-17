@@ -5,7 +5,7 @@
  *  <div class="advert-banner"> </div>
  */
 .advert-banner {
-    padding: 10px 10px 5px 10px;
+    padding: 3px 10px;
 }
 
 /**
@@ -15,10 +15,18 @@
  *  <div class="advert-article"> </div>
  */
 .advert-article {
-    padding: 10px;
+    padding: 3px 10px;
 }
 
 ins {
     background: transparent;
     display: inline-block;
+}
+
+.ad-heading{
+    text-transform: uppercase;
+    color:  darken($accent,10%);
+    font-size: .65em;
+    text-align: center;
+    padding-top: 10px;
 }

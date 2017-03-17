@@ -240,7 +240,8 @@ require get_template_directory() . '/inc/jetpack.php';
 
 function render_banner_advertisment() {
 	$advert = 
-	'<div align="center" class="advert-banner">'
+	'<div class="ad-heading">advertisement</div>
+	 <div align="center" class="advert-banner">'
 	 . get_option('po_banner_ads') .
 	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 	 </div>';
@@ -255,7 +256,8 @@ function crunchify_ads( $content ) {
  
 	 // Ad code which we are using on Single post
      $single_post_ads = 
-	 '<div align="center" class="advert-article"> '
+	 '<div class="ad-heading">advertisement</div>
+	  <div align="center" class="advert-article"> '
 	 . get_option('po_middle_content_ads') .
 	 '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 	 </div>';
