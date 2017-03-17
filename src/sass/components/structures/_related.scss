@@ -21,11 +21,11 @@ $section-border-margin: 0 15px 0 15px;
         font-weight: 100;
     }
     .heading {
-        @include span_columns(9);
+        @include span_columns(8);
         margin: 0;
     }
     .see-all {
-        @include span_columns(3);
+        @include span_columns(4);
         font-family: $primary-font;
         float: right;
         font-weight: bold;
