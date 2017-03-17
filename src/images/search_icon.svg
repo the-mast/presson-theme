@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>search icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Section-Front" transform="translate(-231.000000, -10.000000)">
+            <g id="mobile-nav">
+                <g id="search-icon" transform="translate(233.000000, 12.000000)">
+                    <g id="Group-5">
+                        <circle id="Oval-3" stroke="#FFFFFF" stroke-width="3" cx="8" cy="8" r="8"></circle>
+                        <path d="M12,17.2675356 L20.5352574,17.0008088 C21.4376032,16.9726105 22.1690991,17.6852656 22.1690991,18.5850275 L22.1690991,18.7041748 C22.1690991,19.6073129 21.4377625,20.3165967 20.5352574,20.2883934 L12,20.0216666 L12,17.2675356 Z" id="Rectangle-16" fill="#FFFFFF" transform="translate(17.084550, 18.644603) rotate(45.000000) translate(-17.084550, -18.644603) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

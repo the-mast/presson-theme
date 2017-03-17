@@ -27,11 +27,13 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'press-on' ); ?></p>
-			<?php
-				get_search_form();
 
-		else : ?>
-
+			<div id="results-search-bar">
+				<?php
+					get_search_form();
+				?>
+			</div>
+			<?php else: ?>
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'press-on' ); ?></p>
 			<?php
 				get_search_form();

@@ -27,9 +27,12 @@
 		<div id="logo-header">
 			<a href="/" ><span > </span> </a>
       	</div>
-      
+      	
 		<div id="nav-header">
 			<nav>
+				<div id="nav-search">
+					<span></span>
+				</div>
 				<div id="nav-burger-menu" ><?php esc_html_e( '', 'press-on' ); ?>
 					<span></span>
 					<span></span>
@@ -60,5 +63,9 @@
 			</nav><!-- #site-navigation -->
 		</div>
 	</div>
-
+	<div id="search-bar" class="search-close">
+		<?php
+			get_search_form( true );
+		?>
+	</div>
 	<div id="content" class="site-content">

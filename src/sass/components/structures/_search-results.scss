@@ -1,0 +1,76 @@
+#results-search-bar {
+    position: relative;
+    margin: 15px;
+    max-width: 640px;
+    min-width: 250px;
+    height: 60px;
+    background-color: white;
+    z-index: $middleIndex;
+    border: 1px solid #979797;
+    label {
+        padding-left: 15px;
+        input:focus {
+            outline-color: white;
+        }
+    }
+    #search-form {
+        padding-top: 15px;
+    }
+    .search-submit {
+        // margin-left: -71px;
+        // @extend .button;
+        // float: right;
+        // background: #612061!important;
+        // color: white!important;
+        border-radius: 0px!important;
+        height: 60px;
+        // font-size: 16px!important;
+        // width: 60px;
+        // padding-top: 9px!important;
+        margin-top: -16px;
+        margin-right: -1px;
+        // text-transform: uppercase;
+        // border-color: black!important;
+    }
+    .search-submit:hover {
+        background-color: #260426!important;
+    }
+    .search-submit:active {
+        background-color: #260426!important;
+    }
+    .search-submit:focus {
+        background-color: #260426!important;
+    }
+    .search-submit:visited {
+        background-color: #260426!important;
+    }
+}
+
+.results-header {
+    margin: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4dbcc;
+}
+
+.search-excerpt {
+    color: purple;
+}
+
+.search-results-story {
+    @extend .related-story;
+    .results-story-title {
+        @extend .related-story-title;
+        span {
+            text-transform: none;
+            color: purple;
+            font-weight: normal;
+            font-size: inherit;
+        }
+    }
+    .results-story-image {
+        @extend .related-story-image;
+    }
+    .results-story-date {
+        @extend .related-story-date;
+    }
+}

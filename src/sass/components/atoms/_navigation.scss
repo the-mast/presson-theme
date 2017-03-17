@@ -92,13 +92,12 @@ $timing: .3s;
  * Menu overview.
  */
 
-#nav-menu-list { 
+#nav-menu-list {
     top: -5px;
     background-color: white;
     position: relative;
     overflow-y: scroll;
     z-index: $middleIndex;
-    
     ul {
         margin: 0;
         padding: 5px 20px;
@@ -125,6 +124,35 @@ $timing: .3s;
     height: 0;
 }
 
+.hidden {
+    margin-top: -10px;
+    height: 0;
+    display: none;
+    transition: all $timing;
+    -webkit-transition: all $timing;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+.search-open {
+    margin-top: 60px;
+    transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+.search-close {
+    margin-top: -70px;
+    transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
 .slide {
     width: 300px;
     border-left: solid 5px $primary;
@@ -141,7 +169,6 @@ $timing: .3s;
 }
 
 .slideRight {
-    
     transition: all $timing;
     -webkit-transition: all $timing;
     animation-timing-function: ease-in-out;
@@ -152,4 +179,62 @@ $timing: .3s;
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
+}
+
+#nav-search {
+    @include span_columns(12);
+    position: relative;
+    width: 28px;
+    height: 37px;
+    cursor: pointer;
+    margin-left: -65px;
+    span {
+        @include search_icon;
+        float: left;
+    }
+    @media screen and (min-width: 640px) {
+        margin-left: -50px;
+    }
+}
+
+#search-bar {
+    position: fixed;
+    width: 100%;
+    max-width: 640px;
+    height: 60px;
+    background-color: white;
+    z-index: $foregroundIndex - 1;
+    border-bottom: 1px solid #612061;
+    label {
+        padding-left: 15px;
+        input:focus {
+            outline-color: white;
+        }
+    }
+}
+
+.search-submit {
+    margin-left: -71px;
+    float: right;
+    background: #612061!important;
+    color: white!important;
+    border-radius: 20px!important;
+    height: 42px;
+    font-size: 16px!important;
+    width: 80px;
+    padding-top: 9px!important;
+    margin-top: -6px;
+    margin-right: 8px;
+    text-transform: uppercase;
+    border-color: black!important;
+    @extend .button;
+}
+
+#search-form {
+    padding-top: 15px;
+}
+
+.search-field {
+    padding-right: 70px;
+    border: none!important;
 }

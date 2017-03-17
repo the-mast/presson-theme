@@ -11,14 +11,23 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+			
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'press-on' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
+			<div id="results-search-bar">
+				<form role="search" method="get" id="search-form" action="//localhost:3000/" >
+					<label>
+						<span class="screen-reader-text">Search</span>
+						<input type="search" class="search-field" placeholder="Enter search …" value="" name="s">
+					</label>
+					<input type="submit" class="search-submit button" value="Go">
+				</form>
+			</div>
+			<div class="results-header">
+				<?php printf( esc_html__( '%s', 'press-on' ), '<strong>' . $wp_query->post_count . '</strong>' ); ?>
+					<span>results for</sapn>
+				<?php printf( esc_html__( '%s', 'press-on' ), '<em>' . get_search_query() .':</em>' ); ?>
+			</div>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -28,11 +37,11 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content-search', 'search' );
 
 			endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
 
 		else :
 
