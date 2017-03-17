@@ -1,0 +1,75 @@
+# Ansible playbook to provision LEMP stack with Wordpress
+# for deploying and testing PressOn! theme in Vagrant box.
+# Assumes that theme has been built with `gulp build` first.
+---
+- hosts: all
+  become: yes
+  vars:
+    wordpress_installs:
+      - name: press_on
+        dbname: wordpress
+        dbuser: wordpress
+        dbpass: dev.password
+        dbhost: localhost
+        path: /usr/share/nginx/html
+        url: http://localhost:8080
+        title: PressOn!
+        admin_name: dev
+        admin_email: dev@localhost.localdomain
+        admin_password: dev.password
+        plugins: []
+        themes:
+          - name: presson-theme
+            activate: true
+        options: 
+          - name: category_base
+            command: add
+            value: "/section"
+
+  pre_tasks:
+    - name: install LEMP stack
+      apt: name={{ item }} state=present update_cache=yes
+      with_items:
+        - nginx
+        - mariadb-server
+        - php7.0
+        - php7.0-mysql
+
+    - name: install ansible module dependencies
+      apt: name='python-mysqldb' state=present
+
+    - name: configure database
+      mysql_db: 
+        login_host: "{{ wordpress_installs[0].dbhost }}"
+        name: "{{ wordpress_installs[0].dbname }}"
+
+    - name: create user
+      mysql_user:
+        name: "{{ wordpress_installs[0].dbuser }}"
+        password: "{{ wordpress_installs[0].dbpass }}"
+        priv: "{{ wordpress_installs[0].dbname | trim }}.*:ALL"
+
+    - name: create wordpress directory structure for themes
+      file:
+        path: "{{ wordpress_installs[0].path }}/wp-content/themes"
+        state: directory
+
+    - name: link the project src/ to wordpress installation
+      file:
+        path: "{{ wordpress_installs[0].path }}/wp-content/themes/{{ wordpress_installs[0].themes[0].name }}"
+        src: /vagrant/dist
+        state: link
+
+    - name: configure nginx site
+      template:
+        dest: /etc/nginx/sites-enabled/default
+        src: templates/site.nginx.conf.j2
+
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+
+  roles:
+    - tersmitten.wordpress
+

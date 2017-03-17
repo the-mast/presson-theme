@@ -4,3 +4,7 @@ dist/
 .DS_Store
 packaged/
 wpcs/
+.vagrant/
+provisioning/roles/
+*.retry
+*.log
