@@ -92,14 +92,13 @@ $timing: .3s;
  * Menu overview.
  */
 
-#nav-menu-list {
-    height: calc(100vh - 60px);
+#nav-menu-list { 
     top: -5px;
     background-color: white;
     position: relative;
     overflow-y: scroll;
     z-index: $middleIndex;
-    // margin-left: -243px;
+    
     ul {
         margin: 0;
         padding: 5px 20px;
@@ -121,9 +120,9 @@ $timing: .3s;
 }
 
 .resting {
-    // transform: translateX(100%);
     margin-left: 57px;
     width: 0;
+    height: 0;
 }
 
 .slide {
@@ -132,7 +131,7 @@ $timing: .3s;
 }
 
 .slideLeft {
-    // transform: translateX(0);
+    height: calc(100vh - 60px);
     margin-left: -243px;
     transition: all $timing;
     -webkit-transition: all $timing;
@@ -142,7 +141,7 @@ $timing: .3s;
 }
 
 .slideRight {
-    // transform: translateX(100%);
+    
     transition: all $timing;
     -webkit-transition: all $timing;
     animation-timing-function: ease-in-out;
