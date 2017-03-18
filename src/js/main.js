@@ -27,8 +27,10 @@
     var body = document.getElementsByTagName('body')[0];
     var searchIcon = document.getElementById('nav-search');
     var searchBar = document.getElementById('search-bar');
+    var resultsSearchBar = document.getElementById('results-search-bar');
     var masthead = document.getElementById("masthead");
     var searchField = document.getElementsByClassName('search-field')[0];
+    var resultsSearchField = document.getElementsByClassName('search-field')[1];
 
     nav.onclick = function() {
         if (nav.classList.contains('open')) {
@@ -44,6 +46,14 @@
         } else {
             closeSearch();
         }
+    };
+
+    searchBar.onclick = function() {
+        searchField.focus();
+    };
+
+    resultsSearchBar.onclick = function() {
+        resultsSearchField.focus();
     };
 
     overlay.onclick = closeAll;
