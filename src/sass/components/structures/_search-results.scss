@@ -13,9 +13,6 @@
             outline-color: white;
         }
     }
-    #search-form {
-        padding-top: 15px;
-    }
     .search-submit {
         border-radius: 0px!important;
         height: 60px;
@@ -24,6 +21,9 @@
         &:hover {
             background-color: #260426!important;
         }
+    }
+    .search-form {
+        width: 85%;
     }
 }
 
