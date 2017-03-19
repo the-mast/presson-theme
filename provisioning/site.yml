@@ -65,6 +65,13 @@
         dest: /etc/nginx/sites-enabled/default
         src: templates/site.nginx.conf.j2
 
+    - name: disable sendfile (https://www.vagrantup.com/docs/synced-folders/virtualbox.html)
+      lineinfile:
+        dest: /etc/nginx/nginx.conf
+        regexp: 'sendfile on;$'
+        line: 'sendfile off;'
+        backrefs: yes
+
     - name: restart nginx
       service:
         name: nginx
