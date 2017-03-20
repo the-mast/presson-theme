@@ -21,17 +21,12 @@ js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="comments" class="comments-area">
-
-<?php if ( get_query_var('comments', 0) ): ?>
+<div id="comments-header">
 	<div class="button">
-		<a href="<?php echo esc_url( add_query_arg( array( 'comments' => 0 ), get_permalink() ) ) ?>">Hide Comments</a>
+		<a id="comments-btn" class="button">Show Comments (<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>)</button>
 	</div>
-	<div class="fb-comments hidden" data-href="<?php echo esc_url( get_permalink()) ?>" data-width="640" data-numposts="5"></div>
-<?php else: ?>
-	<div class="button">
-		<a href="<?php echo esc_url( add_query_arg( array( 'comments' => 1 ), get_permalink() . "#comments" ) ) ?>">Show Comments (<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>)</a>
-	</div>
-<?php endif; ?>
+</div>
 
+<div id="comments" class="comments-area hidden">
+	<div class="fb-comments" data-href="<?php echo esc_url( get_permalink()) ?>" data-width="640" data-numposts="5"></div>
 </div><!-- #comments -->

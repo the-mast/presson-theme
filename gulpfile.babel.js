@@ -107,6 +107,7 @@ gulp.task('scripts', () =>
         './src/js/skip-link-focus-fix.js',
         './src/js/socialshare-slide.js',
         './src/js/scrollhandler.js',
+        './src/js/comments.js',
     ])
     .pipe($.newer('.tmp/scripts'))
     .pipe($.sourcemaps.init())
@@ -183,7 +184,7 @@ gulp.task('serve:wordpress', ['build'], function() {
     gulp.watch(['src/sass/**/*.scss'], ['styles', reload]);
     gulp.watch(['src/**/*.php'], ['copy:php', reload]);
     gulp.watch(['src/images/**/*'], ['copy:images', reload]);
-    gulp.watch(['src/js/**/*'], ['lint', 'scripts', 'copy:scripts', reload]);
+    gulp.watch(['src/js/**/*'], ['lint', 'scripts', reload]);
 });
 
 // Build production files, the default task
