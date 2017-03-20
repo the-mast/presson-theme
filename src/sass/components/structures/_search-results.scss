@@ -55,3 +55,12 @@
         @extend .related-story-date;
     }
 }
+
+.no-results {
+    header {
+        margin-left: 15px;
+    }
+    p {
+        margin: 0 15px;
+    }
+}
