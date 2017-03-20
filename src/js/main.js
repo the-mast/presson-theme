@@ -52,9 +52,11 @@
         searchField.focus();
     };
 
-    resultsSearchBar.onclick = function() {
-        resultsSearchField.focus();
-    };
+    if (resultsSearchBar != null) {
+        resultsSearchBar.onclick = function() {
+            resultsSearchField.focus();
+        };
+    }
 
     overlay.onclick = closeAll;
 
