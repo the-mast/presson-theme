@@ -80,3 +80,13 @@
   roles:
     - tersmitten.wordpress
 
+  post_tasks:
+    - name: download theme test fixtures
+      get_url:
+        url: 'https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml'
+        dest: '/tmp/theme-unit-test-data.xml'
+
+    - name: load test fixtures
+      command: |
+        wp-cli --allow-root --no-color --path="{{ wordpress_installs[0].path }}" \
+          import /tmp/theme-unit-test-data.xml --authors=create
