@@ -102,5 +102,4 @@
 	<footer class="entry-footer">
 		<?php press_on_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-	<script src="https://rawgithub.com/WickyNilliams/headroom.js/gh-pages/assets/scripts/main.js"></script>
 </article><!-- #post-## -->
