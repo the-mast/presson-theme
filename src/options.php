@@ -97,7 +97,7 @@ function presson_settings_page() {
             </td>
         </tr>
         <tr valign="top">
-            <th scope="row">Main Feature</th>
+            <th scope="row">Landing Page Category</th>
             <td><?php   $args = array(
                                 'show_option_none'  => 'None',
                                 'name'              => 'po_front_page_category',
@@ -110,7 +110,7 @@ function presson_settings_page() {
             </td>
         </tr>
         <tr valign="top">
-            <th scope="row">Featured Category</th>
+            <th scope="row">Main Featured Article Category</th>
             <td><?php   $args = array(
                                 'show_option_none'  => 'None',
                                 'name'              => 'po_headline_article_category',
