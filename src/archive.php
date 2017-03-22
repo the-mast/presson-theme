@@ -20,7 +20,7 @@ get_header(); ?>
 			$count_posts = $wp_the_query->post_count;
 			$POSTS_PER_PAGE = 10;
 			?>
-
+			
 			<header>
 				<div class="archive-header">
 					<div id="banner">
@@ -57,7 +57,7 @@ get_header(); ?>
 					</div>
 				<?php 
 				endforeach;
-				if ($count_posts > $POSTS_PER_PAGE){
+				if ($categories[0]->category_count > $POSTS_PER_PAGE){
                     $cur_cat = get_cat_ID(single_cat_title("", false));
                     $cur_category = get_category($cur_cat);
                     echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="'.$POSTS_PER_PAGE.'" 
