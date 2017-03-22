@@ -2,7 +2,7 @@ pipeline:
   build:
     image: themast/docker-wp-theme-build:latest
     commands:
-    - npm install -g --unsafe yarn bower-cli
+    - npm install -g --unsafe yarn gulp-cli
     - yarn install
     - gulp package
     - git config remote.origin.url 'https://${GITHUB_TOKEN}@github.com/the-mast/presson-theme.git'
