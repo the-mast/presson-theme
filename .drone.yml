@@ -4,7 +4,7 @@ pipeline:
     commands:
     - npm install -g --unsafe yarn gulp-cli
     - yarn install
-    - gulp package
+    - npm run package
     - git config remote.origin.url 'https://${GITHUB_TOKEN}@github.com/the-mast/presson-theme.git'
     - git tag v0.0.1-${DRONE_COMMIT_SHA}
     - git push origin v0.0.1-${DRONE_COMMIT_SHA}
