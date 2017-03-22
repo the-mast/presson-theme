@@ -268,19 +268,28 @@ function render_banner_advertisment() {
 add_filter( 'the_content', 'crunchify_ads' );
 function crunchify_ads( $content ) {
  
-	if(!empty(get_option('po_middle_content_ads')))
+	if (!empty(get_option('po_custom_article_ads')))
+	{
+		$single_post_ads = 
+		'<div class="ad-heading">advertisement</div>
+		<div align="center" class="advert-article">
+		<img src="'. get_option('po_custom_article_ads') . '">
+		</div>';
+	}
+	else if(!empty(get_option('po_adsense_article_ads')))
 	{
 		// Ad code which we are using on Single post
 		$single_post_ads = 
 		'<div class="ad-heading">advertisement</div>
 		<div align="center" class="advert-article"> '
-		. get_option('po_middle_content_ads') .
+		. get_option('po_adsense_article_ads') .
 		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 		</div>';
 	
-		if ( is_single() && ! is_admin()) {
-			return crunchify_insert_ads( $single_post_ads, get_option('po_middle_content_ads_paragraph_count'), $content );
-		}
+	}
+
+	if ( is_single() && ! is_admin() && !empty($single_post_ads)) {
+		return crunchify_insert_ads( $single_post_ads, get_option('po_article_ads_paragraph_count'), $content );
 	}
 	
 	return $content;

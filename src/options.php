@@ -22,8 +22,9 @@ function register_presson_settings() {
     register_setting( 'presson-settings', 'po_post_count_related');
     register_setting( 'presson-settings', 'po_google_ads_id');
     //Advertising
-    register_setting( 'presson-settings', 'po_middle_content_ads');
-    register_setting( 'presson-settings', 'po_middle_content_ads_paragraph_count');
+    register_setting( 'presson-settings', 'po_custom_article_ads');
+    register_setting( 'presson-settings', 'po_adsense_article_ads');
+    register_setting( 'presson-settings', 'po_article_ads_paragraph_count');
     register_setting( 'presson-settings', 'po_banner_ads');
 
 }
@@ -66,14 +67,18 @@ function presson_settings_page() {
         <tr valign="top" >
             <th><h1>Advertising settings</h1></th>
         </tr>
-
         <tr valign="top">
-        <th scope="row">Middle article adverts</th>
-            <td><textarea type="text" rows="6" class="regular-text" name="po_middle_content_ads"><?php echo esc_attr( get_option('po_middle_content_ads') ); ?></textarea></td>
+        <th scope="row">Custom image advert URL</th>
+            <td><input type="text" class="regular-text" name="po_custom_article_ads" value="<?php echo esc_attr( get_option('po_custom_article_ads') ); ?>"/></td>
         </tr>
         <tr valign="top">
+        <th scope="row">Google adsense article adverts</th>
+            <td><textarea type="text" rows="6" class="regular-text" name="po_adsense_article_ads"><?php echo esc_attr( get_option('po_adsense_article_ads') ); ?></textarea></td>
+        </tr>
+        
+        <tr valign="top">
         <th scope="row">Insert ad after which paragraph?</th>
-            <td><input type="number"  min="4" class="regular-text" name="po_middle_content_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_middle_content_ads_paragraph_count') ); ?>"/></td>
+            <td><input type="number"  min="4" class="regular-text" name="po_article_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_article_ads_paragraph_count') ); ?>"/></td>
         </tr>
 
 
