@@ -12,6 +12,11 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php if ( !empty (get_the_post_thumbnail()) ) : ?>
+	<meta name="og:image" content="<?php echo esc_html( get_the_post_thumbnail() ); ?>"/> 
+<?php else:  ?>
+	<meta name="og:image" content="/assets/images/banner_small.jpg" />
+<?php endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
