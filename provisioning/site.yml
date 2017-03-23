@@ -81,6 +81,11 @@
     - tersmitten.wordpress
 
   post_tasks:
+    - name: install wordpress importer plugin
+      command: |
+        wp-cli --allow-root --no-color --path="{{ wordpress_installs[0].path }}" \
+          plugin install wordpress-importer --activate
+
     - name: download theme test fixtures
       get_url:
         url: 'https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml'
