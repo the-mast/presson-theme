@@ -140,6 +140,7 @@ function press_on_scripts() {
 
   wp_deregister_script('jquery');
   wp_deregister_script('jquery-migrate');
+  wp_deregister_script('wp-embed');
 
   wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', [], null, true);
   wp_enqueue_script('google_ads', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), null, true);
