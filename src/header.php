@@ -14,7 +14,7 @@
 <?php if ( !empty (get_the_post_thumbnail()) ) : ?>
 	<meta property="og:image" content="<?php echo esc_html( get_the_post_thumbnail() ); ?>" /> 
 <?php else:  ?>
-	<meta property="og:image" content="https://themastonline.com/wp-content/themes/presson-theme/assets/images/banner_small.jpg" />
+	<meta property="og:image" content="https://themastonline.com/wp-content/themes/presson-theme/assets/images/mast_icon.png" />
 <?php endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
