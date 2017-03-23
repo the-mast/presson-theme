@@ -188,8 +188,12 @@ EOD;
     wp_enqueue_script( 'comment-reply' );
   }
 }
-
 add_action( 'wp_enqueue_scripts', 'press_on_scripts' );
+
+/**
+ * Include the critical css
+ */
+include get_template_directory() . '/critical_css.php';
 
 /**
  * Make scripts load asynchronously/deferred

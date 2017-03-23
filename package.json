@@ -28,6 +28,7 @@
     "moment": "^2.17.1",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
+    "penthouse": "^0.10.9",
     "psi": "^2.0.4",
     "run-sequence": "^1.0.1"
   },

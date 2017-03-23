@@ -88,7 +88,7 @@ gulp.task('styles', () => {
         }).on('error', $.sass.logError))
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
         // Concatenate and minify styles
-        .pipe($.if('*.css', $.cssnano({ zindex: false })))
+        .pipe($.if('*.css', $.cssnano({ discardComments: true, zindex: false })))
         .pipe($.size({ title: 'styles' }))
         .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest('src/'));
@@ -205,6 +205,36 @@ gulp.task('pagespeed', cb =>
             // key: 'YOUR_API_KEY'
     }, cb)
 );
+
+var penthouse = require('penthouse');
+var fs = require('fs');
+
+gulp.task('critical-css', ['styles'],  cb => {
+
+    penthouse({
+        url: 'src/html/front_page.html',
+        css: path.join('./src/style.css'),
+        width: 640,
+        height: 360,
+        forceInclude: [],
+        timeout: 30000,
+        strict: true,
+        maxEmbeddedBase64Length: 1000,
+        userAgent: 'Penthouse Critical Path CSS Generator',
+        renderWaitTime: 100,
+        blockJSRequests: true,
+    },function(err, criticalCss) {
+        if (err) {
+            throw err;
+        }
+
+        fs.writeFileSync('./src/critical.css', criticalCss);
+
+        return gulp.src('./src/critical.css')
+            .pipe($.cssnano({ zindex: false }))
+            .pipe(gulp.dest('dist/'));
+    });
+});
 
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line
