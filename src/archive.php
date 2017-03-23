@@ -89,6 +89,9 @@ get_header(); ?>
 							<div class="related-story-excerpt">
 								<?php	echo $sentence[0]; ?>
 							</div>
+							<div class="related-story-date">
+								<?php the_time('jS F Y') ?>
+							</div>
 						</div>
 					</div>
 				<?php endif;
