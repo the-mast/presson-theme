@@ -11,9 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php if ( !empty (get_the_post_thumbnail()) ) : ?>
-	<meta property="og:image" content="<?php echo esc_html( get_the_post_thumbnail() ); ?>" /> 
-<?php else:  ?>
+<?php if ( empty (get_the_post_thumbnail()) ) : ?>
 	<meta property="og:image" content="https://themastonline.com/wp-content/themes/presson-theme/assets/images/mast_icon.png" />
 <?php endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
