@@ -131,6 +131,7 @@ if (!function_exists(disable_emojis)) {
   add_action( 'init', 'disable_emojis' );
 }
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -139,7 +140,6 @@ function press_on_scripts() {
 
   wp_deregister_script('jquery');
   wp_deregister_script('jquery-migrate');
-  wp_deregister_script('wp-emoji');
 
   wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', [], null, true);
   wp_enqueue_script('google_ads', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), null, true);
@@ -189,6 +189,36 @@ EOD;
 }
 
 add_action( 'wp_enqueue_scripts', 'press_on_scripts' );
+
+/**
+ * Make scripts load asynchronously/deferred
+ */
+function add_defer_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_defer = array('google_ads', 'headroom');
+   
+   foreach($scripts_to_defer as $defer_script) {
+      if ($defer_script === $handle) {
+         return str_replace(' src', ' defer="defer" src', $tag);
+      }
+   }
+   return $tag;
+}
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
+
+function add_async_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_async = array('jquery', 'twitter-widgets', 'main');
+   
+   foreach($scripts_to_async as $async_script) {
+      if ($async_script === $handle) {
+         return str_replace(' src', ' async="async" src', $tag);
+      }
+   }
+   return $tag;
+}
+
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
 
 /**
 * Set query vars
