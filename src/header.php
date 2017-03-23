@@ -14,7 +14,7 @@
 <?php if ( !empty (get_the_post_thumbnail()) ) : ?>
 	<meta property="og:image" content="<?php echo esc_html( get_the_post_thumbnail() ); ?>" /> 
 <?php else:  ?>
-	<meta property="og:image" content="<img width=&quot;640&quot; height=&quot;220&quot; src=&quot;https://themastonline.com/wp-content/themes/presson-theme/assets/images/banner_small.jpg&quot; sizes=&quot;(max-width: 640px) 300px, (max-width: 800px) 768px, 1024px&quot; />" />
+	<meta property="og:image" content="<img src=&quot;https://themastonline.com/wp-content/themes/presson-theme/assets/images/banner_small.jpg&quot;/>" />
 <?php endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
