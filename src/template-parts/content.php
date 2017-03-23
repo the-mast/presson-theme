@@ -34,7 +34,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="social-media-container-article">
-		<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>"><span class="fb-share-round"></span></a>
+		<a target="new" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>"><span class="fb-share-round"></span></a>
 		<a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" ><span class="tw-share-round"></span></a>
 			<a href="whatsapp://send?text=<?php echo $articleTitle ?>%20<?php echo esc_url( get_permalink()) ?>" data-action="share/whatsapp/share" ><span class="wa-share-round"></span></a>
 	</div>

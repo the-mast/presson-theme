@@ -78,7 +78,7 @@
 			<div id="sharing">
 			<div class="presson-social-media-links">
 				<div class="fb-share">
-					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">
+					<a target="new" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">
 						<span />
 					</a>
 				</div>
