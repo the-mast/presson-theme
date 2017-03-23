@@ -53,8 +53,12 @@ $section-border-margin: 0 15px 0 15px;
     margin: auto;
     border-bottom: solid 1px $accent;
     border-width: 95%;
-    .related-story-title {
-        @include span_columns(8);
+
+    .full-length-title{
+        @include span_columns(12);
+    }
+
+    .title{
         span {
             text-transform: uppercase;
             color: $highlight;
@@ -69,6 +73,11 @@ $section-border-margin: 0 15px 0 15px;
             text-decoration: none;
             color: black;
         }
+    }
+
+
+    .related-story-title{
+        @include span_columns(8);
     }
     .related-story-image {
         @include span_columns(4);
