@@ -72,4 +72,29 @@
 			get_search_form( true );
 		?>
 	</div>
+
+	<header id="social_share_header" class="header">
+		<div class="container" >
+			<div id="sharing">
+			<div class="presson-social-media-links">
+				<div class="fb-share">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink()) ?>">
+						<span />
+					</a>
+				</div>
+				<div class="tw-share">
+					<a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title() ?>&url=<?php echo esc_url( get_permalink()) ?>" >
+						<span />
+					</a>
+				</div>
+				<div class="wa-share">
+					<a href="whatsapp://send?text=<?php echo $articleTitle ?>%20<?php echo esc_url( get_permalink()) ?>" data-action="share/whatsapp/share" >
+						<span />
+					</a>
+				</div>
+			</div>	
+			</div>
+		</div>
+	</header>
+	
 	<div id="content" class="site-content">
