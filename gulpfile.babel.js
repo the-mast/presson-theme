@@ -181,7 +181,7 @@ gulp.task('serve:wordpress', ['build'], function() {
         proxy: 'http://localhost:8080'
     });
 
-    gulp.watch(['src/sass/**/*.scss'], ['styles', reload]);
+    gulp.watch(['src/sass/**/*.scss'], ['styles', 'copy:style', reload]);
     gulp.watch(['src/**/*.php'], ['copy:php', reload]);
     gulp.watch(['src/images/**/*'], ['copy:images', reload]);
     gulp.watch(['src/js/**/*'], ['lint', 'scripts', reload]);
