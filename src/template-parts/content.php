@@ -60,21 +60,6 @@
 	<?php comments_template(); ?>
 
 	<!-- .entry-content -->
-	<section class="read-next-article">
-		<?php 
-			get_template_part( 'template-parts/content-next', 'none' );
-		?>
-	</section>
-	<section class="related-stuff">
-		<?php
-			get_template_part( 'template-parts/content-related');
-		?>
-	</section>
-
-	<?php
-		get_template_part( 'template-parts/content-social-media-following', 'none' );
-	?>
-
 	<footer class="entry-footer">
 		<?php press_on_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

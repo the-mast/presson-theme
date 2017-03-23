@@ -17,12 +17,17 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			// the_post_navigation();
+			echo ('<div class="article">');
+				echo ('<section class="read-next-article">');
+					get_template_part( 'template-parts/content-next', 'none' );
+		  		echo ('</section>');
+			echo ('</div>');
 
-			// // If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// comments_template();
-			// endif;
+			echo ('<section class="related-stuff">');
+				get_template_part( 'template-parts/content-related');		
+			echo ('</section>');
+
+			get_template_part( 'template-parts/content-social-media-following', 'none' );
 
 		endwhile; // End of the loop.
 		?>
