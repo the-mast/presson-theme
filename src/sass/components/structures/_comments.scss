@@ -2,31 +2,31 @@
     @include row;
     text-align: center;
 
-    .button {
-        margin: 20px auto;
+    #comments-btn {
         width: 253px;
         height: 50px;
-        background-color: $primary;
+        background-color: #500850;
         border: 1px solid #000000;
         border-radius: 100px;
+
+        font-family: Helvetica, Arial, sans-serif;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 4px;
+        padding: 0 20px;
+        display: inline-block;
+        transition: padding 0.25s ease-in-out, width 0.25s ease-in-out;
         text-align: center;
-
-        a {
-            font-size:16px;
-            font-weight:600;
-            line-height:46px;
-            color:#fff;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
+        text-decoration: none;
+        -webkit-appearance: none;
+        user-select: none;
+        cursor: pointer;
+        text-transform: uppercase;
     }
 
-    .button:hover{
+    #comments-btn:hover {
         background-color:  darken($primary,7%);
-    }
-
-    .hidden {
-        display: hidden;
     }
 
 }
