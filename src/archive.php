@@ -61,7 +61,7 @@ get_header(); ?>
 													echo ' ';
 												endif;
 											endforeach ?>
-									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+									<h3 class="archive-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 									<div class="related-story-excerpt">
 										<?php	echo $sentence[0]; ?>
 									</div>
@@ -85,7 +85,7 @@ get_header(); ?>
 									echo ' ';
 									endif;
 								endforeach ?>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<h3 class="archive-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<div class="related-story-excerpt">
 								<?php	echo $sentence[0]; ?>
 							</div>
