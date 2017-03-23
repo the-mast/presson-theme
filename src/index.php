@@ -58,15 +58,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/content-index-posts', 'none' );
 
 			?>
-			<div class="latest-stories">
-
-			<?php
-				if (get_option('po_home_categories_enabled')):
-					get_template_part( 'template-parts/content-latest', 'none' );
-				endif;
-			?>
-
-			</div>
 
 			<?php
 			/* Start the Loop */
