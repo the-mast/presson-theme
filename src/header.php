@@ -44,15 +44,17 @@
 				<div id="nav-menu-list" class="resting">
 					<ul>
 						<?php 
+							$excludes = false;
 							if (get_option('po_home_categories_enabled')):
-								$args = array(
-									'exclude' => array( 
-										get_option('po_front_page_category'), 
-										get_option('po_headline_article_category') )
-									);
-							else:
-								$args = array();
+								$excludes = array( 
+									get_option('po_front_page_category'), 
+									get_option('po_headline_article_category') );
 							endif;
+
+							$args = array(
+								'exclude' => $excludes,
+								'parent'  => 0
+								);
 							$categories = get_categories($args);
 							foreach ($categories as $cat): 
 								$category_link = get_category_link( $cat->term_id );
