@@ -8,3 +8,5 @@ wpcs/
 provisioning/roles/
 *.retry
 *.log
+style.css
+style.css.map
