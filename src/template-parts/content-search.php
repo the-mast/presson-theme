@@ -18,7 +18,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="search-results-story">
-		<div class="results-story-title">	
+		<div class="results-story-title title">	
 			<h3><a href="<?php the_permalink(); ?>"><?php echo $title ?></a></h3>
 		</div>
 		<div class="results-story-image">

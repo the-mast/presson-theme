@@ -34,7 +34,7 @@
 }
 
 .search-excerpt {
-    color: purple;
+    color: $primary;
 }
 
 .search-results-story {
@@ -43,7 +43,7 @@
         @extend .related-story-title;
         span {
             text-transform: none;
-            color: purple;
+            color: $primary;
             font-weight: normal;
             font-size: inherit;
         }
