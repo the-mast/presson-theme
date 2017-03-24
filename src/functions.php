@@ -182,11 +182,6 @@ EOD;
   wp_add_inline_script('main', $facebook_sdk, 'after');
   wp_add_inline_script('main', $google_analytics, 'after');
   wp_add_inline_script('google_ads', $google_adsense, 'before');
-
-
-  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-    wp_enqueue_script( 'comment-reply' );
-  }
 }
 add_action( 'wp_enqueue_scripts', 'press_on_scripts' );
 
