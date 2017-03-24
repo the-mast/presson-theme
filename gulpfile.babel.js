@@ -63,6 +63,7 @@ gulp.task('images', () =>
             {removeDimensions: true}
         ]})))
         .pipe($.cache($.imagemin({
+            plugins: [$.imagemin.gifsicle(), $.imagemin.jpegtran(), $.imagemin.svgo()],
             progressive: true,
             interlaced: true
         })))
