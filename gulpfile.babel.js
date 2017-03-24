@@ -54,14 +54,19 @@ gulp.task('lint', () =>
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
 );
 
+const svgo = require('gulp-svgo');
 // Optimize images
-gulp.task('images', () =>
+gulp.task('images', () => 
     gulp.src('src/images/**/*')
-    .pipe($.cache($.imagemin({
-        progressive: true,
-        interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'))
+        .pipe($.if('*.svg', svgo({ plugins: [
+            {removeTitle: true},
+            {removeDimensions: true}
+        ]})))
+        .pipe($.cache($.imagemin({
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/images'))
     .pipe($.size({ title: 'images' }))
 );
 
@@ -129,7 +134,7 @@ gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 gulp.task('copy:style', ['styles'], () => {
     return gulp.src(['src/style.css', 'src/style.css.map']).pipe(gulp.dest('dist/'));
 });
-gulp.task('copy:images', () => {
+gulp.task('copy:images', ['images'], () => {
     return gulp.src('src/images/**/*').pipe(gulp.dest('dist/assets/images/'));
 });
 
