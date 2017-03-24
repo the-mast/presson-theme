@@ -50,8 +50,8 @@
                 </div>
             </div>
 
-        <p>
-            <?php else: ?>
+       
+            <?php else:?>
                     <div class="related-story">
                         <div class="full-length-title title">
                             <?php
@@ -70,7 +70,7 @@
             wp_reset_postdata;
             }
             ?>
-        </p>
+                     
 <div class="latest-stories">
     <?php
     if (get_option('po_home_categories_enabled')):

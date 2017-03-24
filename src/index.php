@@ -14,6 +14,8 @@
 
 get_header(); ?>
 
+<?php if (function_exists ('adinserter')) echo adinserter (1, 'page_type'); ?>
+
 		<?php render_banner_advertisment() ?>	
 
 	<div id="primary" class="content-area">
@@ -54,13 +56,9 @@ get_header(); ?>
 					<?php 
 				wp_reset_postdata;
 			}
-		
-			?>
-			<p>
-				<?php 	get_template_part( 'template-parts/content-index-posts', 'none' ); ?>
-			</p>
+			
+			get_template_part( 'template-parts/content-index-posts', 'none' ); 
 
-			<?php
 			/* Start the Loop */
 			// while ( have_posts() ) : the_post();
 
