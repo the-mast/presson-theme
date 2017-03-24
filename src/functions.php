@@ -280,68 +280,68 @@ add_filter( 'posts_search', function( $search, \WP_Query $q )
     return $search;
 }, 10, 2 );
 
-/**
- * Advertising
-*/
+// /**
+//  * Advertising
+// */
 
-function render_banner_advertisment() {
-	if(!empty(get_option('po_banner_ads')))
-	{
-		$advert = 
-		'<div class="ad-heading">advertisement</div>
-		<div align="center" class="advert-banner">'
-		. get_option('po_banner_ads') .
-		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-		</div>';
+// function render_banner_advertisment() {
+// 	if(!empty(get_option('po_banner_ads')))
+// 	{
+// 		$advert = 
+// 		'<div class="ad-heading">advertisement</div>
+// 		<div align="center" class="advert-banner">'
+// 		. get_option('po_banner_ads') .
+// 		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+// 		</div>';
 
-		echo $advert;
-	}
-}
+// 		echo $advert;
+// 	}
+// }
 
 
-//Insert Adsense code in the middle of Single Post content
-add_filter( 'the_content', 'crunchify_ads' );
-function crunchify_ads( $content ) {
+// //Insert Adsense code in the middle of Single Post content
+// add_filter( 'the_content', 'crunchify_ads' );
+// function crunchify_ads( $content ) {
  
-	if (!empty(get_option('po_custom_article_ads')))
-	{
-		$single_post_ads = 
-		'<div class="ad-heading">advertisement</div>
-		<div align="center" class="advert-article">
-		<img src="'. get_option('po_custom_article_ads') . '">
-		</div>';
-	}
-	else if(!empty(get_option('po_adsense_article_ads')))
-	{
-		// Ad code which we are using on Single post
-		$single_post_ads = 
-		'<div class="ad-heading">advertisement</div>
-		<div align="center" class="advert-article"> '
-		. get_option('po_adsense_article_ads') .
-		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-		</div>';
+// 	if (!empty(get_option('po_custom_article_ads')))
+// 	{
+// 		$single_post_ads = 
+// 		'<div class="ad-heading">advertisement</div>
+// 		<div align="center" class="advert-article">
+// 		<img src="'. get_option('po_custom_article_ads') . '">
+// 		</div>';
+// 	}
+// 	else if(!empty(get_option('po_adsense_article_ads')))
+// 	{
+// 		// Ad code which we are using on Single post
+// 		$single_post_ads = 
+// 		'<div class="ad-heading">advertisement</div>
+// 		<div align="center" class="advert-article"> '
+// 		. get_option('po_adsense_article_ads') .
+// 		'<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+// 		</div>';
 	
-	}
+// 	}
 
-	if ( is_single() && ! is_admin() && !empty($single_post_ads)) {
-		return crunchify_insert_ads( $single_post_ads, get_option('po_article_ads_paragraph_count'), $content );
-	}
+// 	if ( is_single() && ! is_admin() && !empty($single_post_ads)) {
+// 		return crunchify_insert_ads( $single_post_ads, get_option('po_article_ads_paragraph_count'), $content );
+// 	}
 	
-	return $content;
+// 	return $content;
 	
-}
+// }
 
-// This function identifies after which paragraph we need to insert ads
-function crunchify_insert_ads( $ads, $after_which_paragraph, $content ) {
-    $identify_paragraph = '</p>';
-    $crunchifyData = explode( $identify_paragraph, $content );
-    foreach ($crunchifyData as $index => $paragraph) {
-        if ( trim( $paragraph ) ) {
-            $crunchifyData[$index] .= $identify_paragraph;
-        }
-        if ( $after_which_paragraph == $index + 1 ) {
-            $crunchifyData[$index] .= $ads;
-        }
-    }
-    return implode( '', $crunchifyData );
-}
+// // This function identifies after which paragraph we need to insert ads
+// function crunchify_insert_ads( $ads, $after_which_paragraph, $content ) {
+//     $identify_paragraph = '</p>';
+//     $crunchifyData = explode( $identify_paragraph, $content );
+//     foreach ($crunchifyData as $index => $paragraph) {
+//         if ( trim( $paragraph ) ) {
+//             $crunchifyData[$index] .= $identify_paragraph;
+//         }
+//         if ( $after_which_paragraph == $index + 1 ) {
+//             $crunchifyData[$index] .= $ads;
+//         }
+//     }
+//     return implode( '', $crunchifyData );
+// }

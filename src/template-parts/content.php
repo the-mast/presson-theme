@@ -13,7 +13,6 @@
 <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 		<?php
-			render_banner_advertisment(); 
 			$articleTitle = str_replace(' ', '%20', get_the_title());			
 		?>
 

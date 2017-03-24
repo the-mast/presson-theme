@@ -70,6 +70,8 @@
             wp_reset_postdata;
             }
             ?>
+
+<?php if (function_exists ('adinserter')) echo adinserter (get_option('po_index_content_ad')); ?>
                      
 <div class="latest-stories">
     <?php

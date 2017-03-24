@@ -22,10 +22,8 @@ function register_presson_settings() {
     register_setting( 'presson-settings', 'po_post_count_related');
     register_setting( 'presson-settings', 'po_google_ads_id');
     //Advertising
-    register_setting( 'presson-settings', 'po_custom_article_ads');
-    register_setting( 'presson-settings', 'po_adsense_article_ads');
-    register_setting( 'presson-settings', 'po_article_ads_paragraph_count');
-    register_setting( 'presson-settings', 'po_banner_ads');
+    register_setting( 'presson-settings', 'po_index_banner_ad');
+    register_setting( 'presson-settings', 'po_index_content_ad');
 
 }
 
@@ -67,24 +65,15 @@ function presson_settings_page() {
         <tr valign="top" >
             <th><h1>Advertising settings</h1></th>
         </tr>
-        <tr valign="top">
-        <th scope="row">Custom image advert URL</th>
-            <td><input type="text" class="regular-text" name="po_custom_article_ads" value="<?php echo esc_attr( get_option('po_custom_article_ads') ); ?>"/></td>
-        </tr>
-        <tr valign="top">
-        <th scope="row">Google adsense article adverts</th>
-            <td><textarea type="text" rows="6" class="regular-text" name="po_adsense_article_ads"><?php echo esc_attr( get_option('po_adsense_article_ads') ); ?></textarea></td>
-        </tr>
         
         <tr valign="top">
-        <th scope="row">Insert ad after which paragraph?</th>
-            <td><input type="number"  min="4" class="regular-text" name="po_article_ads_paragraph_count" value="<?php echo esc_attr( get_option('po_article_ads_paragraph_count') ); ?>"/></td>
+        <th scope="row">Home page banner ad box no.</th>
+            <td><input type="number" class="regular-text" name="po_index_banner_ad" value="<?php echo esc_attr( get_option('po_index_banner_ad') ); ?>"/></td>
         </tr>
 
-
         <tr valign="top">
-        <th scope="row">Banner adverts</th>
-            <td><textarea type="text" rows="6" class="regular-text" name="po_banner_ads"><?php echo esc_attr( get_option('po_banner_ads') ); ?></textarea></td>
+        <th scope="row">Home page content ad box no.</th>
+             <td><input type="number" class="regular-text" name="po_index_content_ad" value="<?php echo esc_attr( get_option('po_index_content_ad') ); ?>"/></td>
         </tr>
 
         <tr valign="top">

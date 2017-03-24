@@ -14,9 +14,7 @@
 
 get_header(); ?>
 
-<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
-
-		<?php render_banner_advertisment() ?>	
+<?php if (function_exists ('adinserter')) echo adinserter (get_option('po_index_banner_ad')); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
