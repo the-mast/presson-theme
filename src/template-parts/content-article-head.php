@@ -44,6 +44,7 @@ if ( !empty (get_the_post_thumbnail()) ) : ?>
 			the_title( '<h1><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 		else :
 			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_excerpt('<p>', '</p>');
 		endif; ?>
 	</div>
 	
