@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<?php if (function_exists ('adinserter')) echo adinserter (1, 'page_type'); ?>
+<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
 
 		<?php render_banner_advertisment() ?>	
 
