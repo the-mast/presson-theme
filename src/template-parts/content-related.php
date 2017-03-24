@@ -14,15 +14,18 @@
 
 		$my_post_category = get_the_category();
 
-		$my_post_category_id = is_single() && !empty($my_post_category) ? $my_post_category[0]->term_id : false;
+		$my_post_categories = is_single() && !empty($my_post_category) ? wp_list_pluck($my_post_category, 'term_id') : false;
 		$category_link = get_category_link( $my_post_category_id );
 
-		$post_to_exclude = is_single() ? array($post->ID) : false;
+		$next_post = get_next_post();
+
+		$exclude_posts = is_single() ? array(the_ID, $next_post->ID) : false;
+
 
 		$args = array(
 				'posts_per_page' => $RELATED_POSTS_AMOUNT,
-				'post__not_in' => $post_to_exclude,
-				'category' => $my_post_category_id);
+				'post__not_in' => $exclude_posts,
+				'category' => $my_post_categories);
 		$postslist = get_posts($args);
 
 		if ($postslist) { ?>
