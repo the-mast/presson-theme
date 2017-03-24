@@ -54,10 +54,11 @@ get_header(); ?>
 					<?php 
 				wp_reset_postdata;
 			}
-
-			get_template_part( 'template-parts/content-index-posts', 'none' );
-
+		
 			?>
+			<p>
+				<?php 	get_template_part( 'template-parts/content-index-posts', 'none' ); ?>
+			</p>
 
 			<?php
 			/* Start the Loop */
@@ -78,10 +79,9 @@ get_header(); ?>
 
 		endif; ?>
 
-
-		<?php
-		get_template_part( 'template-parts/content-social-media-following', 'none' );
-		?>
+		
+		<?php get_template_part( 'template-parts/content-social-media-following', 'none' ); ?>
+	
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
