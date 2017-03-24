@@ -200,7 +200,7 @@ include get_template_directory() . '/critical_css.php';
  */
 function add_defer_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_defer = array('google_ads', 'headroom');
+   $scripts_to_defer = array('google_ads');
    
    foreach($scripts_to_defer as $defer_script) {
       if ($defer_script === $handle) {
@@ -213,7 +213,7 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_async = array('jquery', 'twitter-widgets', 'main');
+   $scripts_to_async = array('headroom', 'jquery', 'twitter-widgets', 'main');
    
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
