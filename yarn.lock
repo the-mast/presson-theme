@@ -2948,6 +2948,10 @@ header-case@^1.0.0:
     no-case "^2.2.0"
     upper-case "^1.1.3"
 
+headroom.js@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.9.3.tgz#6d48499a2b9883fcc0683b26f461e732f149a1fe"
+
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
