@@ -148,43 +148,41 @@ function press_on_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'press_on_customize_preview_js' );
 
+/**
+ * Generate a line of CSS for each theme_mod that exists
+ */
+function generate_css( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true ) {
+    $return = '';
+    $mod = get_theme_mod($mod_name);
+    if ( ! empty( $mod ) ) {
+        $return = sprintf('%s { %s:%s; }',
+            $selector,
+            $style,
+            $prefix.$mod.$postfix
+        );
+        if ( $echo ) {
+            echo $return;
+        }
+    }
+    return $return;
+}
 
 function presson_customizer_css() {
     ?>
+<!--Customizer CSS--> 
     <style type="text/css">
-        #masthead { 
-             background-color: <?php echo get_theme_mod( 'primary_color' ); ?>;
-        }
-        a{
-             color:<?php echo get_theme_mod( 'highlight' ); ?>;
-        }
-        a :hover{
-             color:<?php echo get_theme_mod( 'secondary_color' ); ?>;
-        }
-        a :focus {
-             color:<?php echo get_theme_mod( 'secondary_color' ); ?>;
-        }
-	    a:active {
-             color:<?php echo get_theme_mod( 'secondary_color' ); ?>;
-        }
-        .related-story .related-story-title span {
-            color: <?php echo get_theme_mod( 'highlight' ); ?>;
-        }
-        .article .category a, .article .image-container .category-overlay a, .article .text-article-container .article-category a, .featured-article .category a, .featured-article .image-container .category-overlay a, .featured-article .text-article-container .article-category a {
-            color: <?php echo get_theme_mod( 'highlight' ); ?>;
-        }
-        .archive .archive-header h1 {
-            color: <?php echo get_theme_mod( 'primary_color' ); ?>;
-        }
-        .archive .archive-header {
-         border-color: <?php echo get_theme_mod( 'primary_color' ); ?>;
-        }
-        #mastfoot{
-                background-color: <?php echo get_theme_mod( 'primary_color' ); ?>; 
-        }
-        .related-story {
-            border-color: <?php echo get_theme_mod( 'accent_color' ); ?>; 
-        }
+        <?php generate_css('#masthead', 'background-color', 'primary_color'); ?> 
+        <?php generate_css('a', 'color', 'highlight'); ?> 
+        <?php generate_css('a :hover', 'color', 'secondary_color'); ?> 
+        <?php generate_css('a :focus', 'color', 'secondary_color'); ?> 
+        <?php generate_css('a :active', 'color', 'secondary_color'); ?> 
+        <?php generate_css('.related-story .related-story-title span', 'color', 'highlight'); ?> 
+        <?php generate_css('.arhive .archive-header h1', 'color', 'highlight'); ?> 
+        <?php generate_css('.arhive .archive-header h1', 'border-color', 'primary_color'); ?> 
+        <?php generate_css('#mastfoot', 'background-color', 'primary_color'); ?> 
+        <?php generate_css('.related-story', 'border-color', 'accent_color'); ?> 
+
+        <?php if (get_theme_mod('presson_header_logo')): ?>
         #masthead #logo-header span {
             background: url(<?php echo get_theme_mod( 'presson_header_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
                 background-size: contain;
@@ -192,6 +190,15 @@ function presson_customizer_css() {
                 height: 50px;
                 width: 150px;
         }
+        <?php endif; ?>
+
+        <?php if (get_theme_mod('highlight')): ?>
+        .article .category a, .article .image-container .category-overlay a, .article .text-article-container .article-category a, .featured-article .category a, .featured-article .image-container .category-overlay a, .featured-article .text-article-container .article-category a {
+            color: <?php echo get_theme_mod( 'highlight' ); ?>;
+        }
+        <?php endif; ?>
+
+        <?php if (get_theme_mod('presson_footer_logo')): ?>
         #mastfoot #logo-footer span {
             background: url(<?php echo get_theme_mod( 'presson_footer_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
             background-size: contain;
@@ -200,7 +207,9 @@ function presson_customizer_css() {
             margin: 0 auto;
             width: 110px;
         }
+        <?php endif; ?>
     </style>
+<!--/Customizer CSS-->
     <?php
 }
 add_action( 'wp_head', 'presson_customizer_css' );
