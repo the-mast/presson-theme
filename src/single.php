@@ -17,6 +17,11 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
+			$current_post_ID = get_the_ID();
+
+			$nextpost = get_next_post();
+			$next_post_ID = $nextpost->ID;
+
 			echo ('<div class="article">');
 				echo ('<section class="read-next-article">');
 					get_template_part( 'template-parts/content-next', 'none' );
@@ -24,7 +29,7 @@ get_header(); ?>
 			echo ('</div>');
 
 			echo ('<section class="related-stuff">');
-				get_template_part( 'template-parts/content-related');		
+				 include(locate_template('template-parts/content-related.php'));	
 			echo ('</section>');
 
 			get_template_part( 'template-parts/content-social-media-following', 'none' );

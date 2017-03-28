@@ -17,19 +17,20 @@
 		$my_post_categories = is_single() && !empty($my_post_category) ? wp_list_pluck($my_post_category, 'term_id') : false;
 		$category_link = get_category_link( $my_post_category_id );
 
-		$next_post = get_next_post();
-
-		$exclude_posts = is_single() ? array(the_ID, $next_post->ID) : false;
-
+		$exclude_posts = array();
+		array_push ($exclude_posts, $current_post_ID);
+		array_push ($exclude_posts,  $next_post_ID);
 
 		$args = array(
-				'posts_per_page' => $RELATED_POSTS_AMOUNT,
-				'post__not_in' => $exclude_posts,
-				'category' => $my_post_categories);
+				'exclude' => $exclude_posts,
+				'numberposts' => $RELATED_POSTS_AMOUNT,
+				'category' => $my_post_categories,
+				'orderby' => 'date',
+				'order' => 'DESC'
+				);
 		$postslist = get_posts($args);
 
 		if ($postslist) { ?>
-	  
 			<div id="article-related">
 				<div id="related-header">
 					<p class="heading">RELATED STORIES</p>
@@ -45,6 +46,7 @@
 				if(!empty (get_the_post_thumbnail())):
 				?>
 					<div class="related-story">
+					 
 						<div class="related-story-title title">
 							<?php
 								foreach ($categories as $cat): 
