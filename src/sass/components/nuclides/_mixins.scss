@@ -140,7 +140,7 @@
     }
     
     @mixin search_icon {
-        @include background-svg('<svg viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg"><g transform="translate(2 2)" fill="none" fill-rule="evenodd"><circle stroke="#FFF" stroke-width="3" cx="8" cy="8" r="8"/><path d="M14.463 14.076l6.224 5.846c.658.618.671 1.64.035 2.276l-.084.084a1.574 1.574 0 0 1-2.276-.035l-5.847-6.224 1.948-1.947z" fill="#FFF"/></g></svg>');
+        background: url('assets/images/search_icon.svg') no-repeat;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
