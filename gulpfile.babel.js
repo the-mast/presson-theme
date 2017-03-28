@@ -136,7 +136,7 @@ gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 gulp.task('copy:style', ['styles'], () => {
     return gulp.src(['src/style.css', 'src/style.css.map']).pipe(gulp.dest('dist/'));
 });
-gulp.task('copy:images', ['images'], () => {
+gulp.task('copy:images', () => {
     return gulp.src('src/images/**/*').pipe(gulp.dest('dist/assets/images/'));
 });
 

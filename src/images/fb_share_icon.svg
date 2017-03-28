@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="50px" height="36px" viewBox="0 0 50 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 8</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Social-Share-Header-Copy" transform="translate(-5.000000, -5.000000)">
-            <g id="Group-8" transform="translate(5.000000, 5.000000)">
-                <rect id="Rectangle-15-Copy" fill="#3B5998" x="0" y="0" width="50" height="36" rx="4"></rect>
-                <path d="M26.827642,27.7826087 L26.827642,18.3902047 L29.4203563,18.3902047 L29.7639469,15.1535302 L26.827642,15.1535302 L26.832047,13.5335435 C26.832047,12.689369 26.9122549,12.237041 28.1247333,12.237041 L29.7455927,12.237041 L29.7455927,9 L27.1525114,9 C24.0378036,9 22.9415073,10.5701353 22.9415073,13.2106092 L22.9415073,15.1538968 L21,15.1538968 L21,18.3905712 L22.9415073,18.3905712 L22.9415073,27.7826087 L26.827642,27.7826087 Z" id="Shape-Copy" fill="#FFFFFF"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 50 36" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><rect fill="#3B5998" width="50" height="36" rx="4"/><path d="M26.828 27.783V18.39h2.592l.344-3.236h-2.936l.004-1.62c0-.845.08-1.297 1.293-1.297h1.62V9h-2.592c-3.115 0-4.211 1.57-4.211 4.21v1.944H21v3.237h1.942v9.392h3.886z" fill="#FFF"/></g></svg>
