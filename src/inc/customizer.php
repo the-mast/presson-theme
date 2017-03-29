@@ -233,8 +233,8 @@ function presson_customizer_css()
         <?php generate_css('a :focus', 'color', 'secondary_color'); ?>
         <?php generate_css('a :active', 'color', 'secondary_color'); ?>
         <?php generate_css('.related-story .related-story-title span', 'color', 'highlight'); ?>
-        <?php generate_css('.archive .archive-header h1', 'color', 'highlight'); ?>
-        <?php generate_css('.archive .archive-header h1, .social-media-following', 'border-color', 'primary_color'); ?>
+        <?php generate_css('#mastbanner .banner-header h1', 'color', 'highlight'); ?>
+        <?php generate_css('#mastbanner .banner-header h1, .social-media-following', 'border-color', 'primary_color'); ?>
         <?php generate_css('.related-story', 'border-color', 'accent_color'); ?>
 
         <?php if (get_theme_mod('presson_header_logo')): ?>
@@ -278,7 +278,7 @@ function presson_customizer_css()
         <?php endif; ?>
 
         <?php if (get_theme_mod('presson_banner_small')): ?>
-        .archive #banner {
+        #mastbanner #banner {
             background: url(<?php echo get_theme_mod( 'presson_banner_small', get_stylesheet_directory_uri() . '/assets/images/banner_small.jpg' );?>) no-repeat;
             background-position: center center;
             background-size: cover;

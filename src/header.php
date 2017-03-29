@@ -107,7 +107,7 @@
 					<div id="banner">
 						 	<?php single_cat_title('<h1>', '</h1>'); ?> 
 							<?php if (empty(single_cat_title("", false))) {
-						 	  		echo '<p>' . date('D F j, Y') . '</p>';
+						 	  		echo '<p>' . date('D, F j, Y') . '</p>';
 							   }
 							 ?>
 					</div>					

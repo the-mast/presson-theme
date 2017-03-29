@@ -199,7 +199,7 @@ $timing: .3s;
     height: 60px;
     background-color: white;
     z-index: $foregroundIndex - 1;
-    border-bottom: 1px solid #612061;
+    border-bottom: 1px solid $primary;
     label {
         padding-left: 15px;
         input:focus {
@@ -210,7 +210,7 @@ $timing: .3s;
 
 .search-submit {
     float: right;
-    background: #612061!important;
+    background: $primary !important;
     color: white!important;
     border-radius: 20px!important;
     height: 42px;
@@ -223,7 +223,7 @@ $timing: .3s;
     border-color: black!important;
     @extend .button;
     &:hover {
-        background-color: #260426!important;
+        background-color:  darken($primary, .7) !important;
     }
 }
 
