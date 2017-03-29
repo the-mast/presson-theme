@@ -25,6 +25,7 @@
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'press-on' ); ?></a>
+	
 	<div  id="masthead">
 		<div id="logo-header">
 			<a href="/" ><span > </span> </a>
@@ -67,6 +68,7 @@
 			</nav><!-- #site-navigation -->
 		</div>
 	</div>
+
 	<div id="search-bar" class="search-close">
 		<?php
 			get_search_form( true );
@@ -98,5 +100,24 @@
 			</div>
 		</header>
 	<?php endif; ?>
+
+	<div id="mastbanner">
+		<header>
+				<div class="banner-header">
+					<div id="banner">
+						 	<?php single_cat_title('<h1>', '</h1>'); ?> 
+							<?php if (empty(single_cat_title("", false))) {
+						 	  		echo '<p>' . date('D F j, Y') . '</p>';
+							   }
+							 ?>
+					</div>					
+				</div>
+		</header><!-- .page-header -->
+	</div>
+
+
+	<script xmlns="http://www.w3.org/1999/html">
+		window.onscroll = function() {scrollEvent()};
+	</script>
 	
-	<div id="content" class="site-content">
+<div id="content" class="site-content">

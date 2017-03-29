@@ -28,7 +28,7 @@
     var searchIcon = document.getElementById('nav-search');
     var searchBar = document.getElementById('search-bar');
     var resultsSearchBar = document.getElementById('results-search-bar');
-    var masthead = document.getElementById("masthead");
+    var masthead = document.getElementById('masthead');
     var searchField = document.getElementsByClassName('search-field')[0];
     var resultsSearchField = document.getElementsByClassName('search-field')[1];
 

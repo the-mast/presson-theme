@@ -8,9 +8,6 @@
  */
 
 get_header(); ?>
-<script xmlns="http://www.w3.org/1999/html">
-	window.onscroll = function() {scrollEvent()};
-</script>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -31,13 +28,6 @@ get_header(); ?>
 			$POSTS_PER_PAGE = 10;
 			?>
 			
-			<header>
-				<div class="archive-header">
-					<div id="banner">
-						<?php single_cat_title('<h1>', '</h1>' ); ?>
-					</div>					
-				</div>
-			</header><!-- .page-header -->
 			<?php
 					$args = array(
 						'posts_per_page' => $POSTS_PER_PAGE,

@@ -176,11 +176,6 @@ $timing: .3s;
     visibility: visible !important;
 }
 
-.stop-scrolling {
-    height: 100%;
-    overflow: hidden;
-}
-
 #nav-search {
     @include span_columns(12);
     position: relative;
