@@ -97,7 +97,7 @@ gulp.task('styles', () => {
         .pipe($.if('*.css', $.cssnano({ discardComments: true, zindex: false })))
         .pipe($.size({ title: 'styles' }))
         .pipe($.sourcemaps.write('./'))
-        .pipe(gulp.dest('src/'));
+        .pipe(gulp.dest('dist/'));
 });
 
 // Generate & Inline Critical-path CSS
@@ -106,10 +106,10 @@ gulp.task('critical', ['styles'], ()=> {
     return gulp.src('src/html/*.html')
         .pipe(critical({
             base: './', 
-            dest: 'src/critical.css',
+            dest: 'dist/critical.css',
             inline: false, 
             minify: true,
-            css: ['src/style.css'],
+            css: ['dist/style.css'],
             width: 640,
             height: 360
         }))
@@ -150,9 +150,6 @@ gulp.task('scripts', () =>
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 
-gulp.task('copy:style', ['styles'], () => {
-    return gulp.src(['src/style.css', 'src/style.css.map', 'src/critical.css']).pipe(gulp.dest('dist/'));
-});
 gulp.task('copy:images', () => {
     return gulp.src('src/images/**/*').pipe(gulp.dest('dist/assets/images/'));
 });
@@ -161,8 +158,8 @@ gulp.task('copy:php', () => {
     return gulp.src('src/**/*.php').pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', ['clean', 'styles'], cb => {
-    runSequence('critical', ['copy:style', 'copy:images', 'scripts', 'copy:php'], cb);
+gulp.task('build', ['clean', 'styles', 'critical', 'scripts'], cb => {
+    runSequence(['copy:images', 'copy:php'], cb);
 });
 
 // PHP Code Sniffer task
