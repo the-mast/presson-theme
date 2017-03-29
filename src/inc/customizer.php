@@ -227,12 +227,13 @@ function presson_customizer_css()
     ?>
     <!--Customizer CSS-->
     <style type="text/css">
-        <?php generate_css('#load-more, #masthead, #mastfoot', 'background-color', 'primary_color'); ?>
+        <?php generate_css('#load-more, #mastfoot', 'background-color', 'primary_color'); ?>
         <?php generate_css('a', 'color', 'highlight'); ?>
         <?php generate_css('a :hover', 'color', 'secondary_color'); ?>
         <?php generate_css('a :focus', 'color', 'secondary_color'); ?>
         <?php generate_css('a :active', 'color', 'secondary_color'); ?>
         <?php generate_css('.related-story .related-story-title span', 'color', 'highlight'); ?>
+        <?php generate_css('.related-story .full-length-title span', 'color', 'highlight'); ?>
         <?php generate_css('#mastbanner .banner-header h1', 'color', 'highlight'); ?>
         <?php generate_css('#mastbanner .banner-header h1, .social-media-following', 'border-color', 'primary_color'); ?>
         <?php generate_css('.related-story', 'border-color', 'accent_color'); ?>
@@ -272,7 +273,10 @@ function presson_customizer_css()
         .article .category a, .article .image-container .category-overlay a,
         .article .text-article-container .article-category a, .featured-article .category a,
         .featured-article .image-container .category-overlay a,
-        .featured-article .text-article-container .article-category a, #related-header .see-all a {
+        .featured-article .text-article-container .article-category a,
+        .search-results-story .related-story .related-story-title span, .search-excerpt,
+        .search-results-story .results-story-title span,
+        .related-story .related-story-title span, #related-header .see-all a {
             color: <?php echo get_theme_mod( 'highlight' ); ?>;
         }
         <?php endif; ?>
@@ -298,7 +302,8 @@ function presson_customizer_css()
         }
 
         .opaque {
-            background: rgba(<?php echo get_theme_mod( 'primary_color' ); ?>, 0.9) !important;
+            background: <?php echo get_theme_mod( 'primary_color' ); ?> !important;
+            opacity: 0.9;
             transition: all 500ms ease;
         }
 
