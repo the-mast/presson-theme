@@ -133,8 +133,8 @@ gulp.task('scripts', () =>
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 
-gulp.task('copy:style', ['styles'], () => {
-    return gulp.src(['src/style.css', 'src/style.css.map']).pipe(gulp.dest('dist/'));
+gulp.task('copy:style', ['styles', 'critical'], () => {
+    return gulp.src(['src/style.css', 'src/style.css.map', 'src/critical.css']).pipe(gulp.dest('dist/'));
 });
 gulp.task('copy:images', () => {
     return gulp.src('src/images/**/*').pipe(gulp.dest('dist/assets/images/'));
@@ -213,34 +213,21 @@ gulp.task('pagespeed', cb =>
     }, cb)
 );
 
-var penthouse = require('penthouse');
-var fs = require('fs');
-
-gulp.task('critical-css', ['styles'],  cb => {
-
-    penthouse({
-        url: 'src/html/front_page.html',
-        css: path.join('./src/style.css'),
-        width: 640,
-        height: 360,
-        forceInclude: [],
-        timeout: 30000,
-        strict: true,
-        maxEmbeddedBase64Length: 1000,
-        userAgent: 'Penthouse Critical Path CSS Generator',
-        renderWaitTime: 100,
-        blockJSRequests: true,
-    },function(err, criticalCss) {
-        if (err) {
-            throw err;
-        }
-
-        fs.writeFileSync('./src/critical.css', criticalCss);
-
-        return gulp.src('./src/critical.css')
-            .pipe($.cssnano({ zindex: false }))
-            .pipe(gulp.dest('dist/'));
-    });
+// Generate & Inline Critical-path CSS
+const critical = require('critical').stream;
+gulp.task('critical', ['styles'], ()=> {
+    return gulp.src('src/html/*.html')
+        .pipe(critical({
+            base: './', 
+            dest: 'src/critical.css',
+            inline: false, 
+            minify: true,
+            css: ['src/style.css'],
+            width: 640,
+            height: 360
+        }))
+        .on('error', function(err) { $.util.log(gutil.colors.red(err.message)); })
+        .pipe(gulp.dest('dist/assets/css'));
 });
 
 // Load custom tasks from the `tasks` directory
