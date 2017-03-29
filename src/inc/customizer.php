@@ -296,6 +296,11 @@ function presson_customizer_css()
             background-color: <?php echo get_theme_mod( 'primary_color' ); ?> !important;
         }
 
+        #next-article-header {
+            border-top: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
+            border-bottom: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
+        }
+
         #related-header {
             border-top: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
             border-bottom: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
