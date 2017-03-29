@@ -297,8 +297,8 @@ function presson_customizer_css()
         }
 
         .next-article-header {
-            border-top: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
-            border-bottom: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?>;
+            border-top: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?> !important;
+            border-bottom: 4px solid <?php echo get_theme_mod( 'primary_color' ); ?> !important;
         }
 
         #related-header {
