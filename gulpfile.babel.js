@@ -54,11 +54,10 @@ gulp.task('lint', () =>
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
 );
 
-const svgo = require('gulp-svgo');
 // Optimize images
 gulp.task('images', () => 
     gulp.src('src/images/**/*')
-        .pipe($.if('*.svg', svgo({ plugins: [
+        .pipe($.if('*.svg', $.svgo({ plugins: [
             {removeTitle: true},
             {removeDimensions: true}
         ]})))
@@ -71,6 +70,7 @@ gulp.task('images', () =>
     .pipe($.size({ title: 'images' }))
 );
 
+// Compile styles
 gulp.task('styles', () => {
     const AUTOPREFIXER_BROWSERS = [
         'ie >= 10',
@@ -98,6 +98,23 @@ gulp.task('styles', () => {
         .pipe($.size({ title: 'styles' }))
         .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest('src/'));
+});
+
+// Generate & Inline Critical-path CSS
+const critical = require('critical').stream;
+gulp.task('critical', ['styles'], ()=> {
+    return gulp.src('src/html/*.html')
+        .pipe(critical({
+            base: './', 
+            dest: 'src/critical.css',
+            inline: false, 
+            minify: true,
+            css: ['src/style.css'],
+            width: 640,
+            height: 360
+        }))
+        .on('error', function(err) { $.util.log($.util.colors.red(err.message)); })
+        .pipe(gulp.dest('dist/assets/css'));
 });
 
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
@@ -133,7 +150,7 @@ gulp.task('scripts', () =>
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 
-gulp.task('copy:style', ['styles', 'critical'], () => {
+gulp.task('copy:style', ['styles'], () => {
     return gulp.src(['src/style.css', 'src/style.css.map', 'src/critical.css']).pipe(gulp.dest('dist/'));
 });
 gulp.task('copy:images', () => {
@@ -145,7 +162,7 @@ gulp.task('copy:php', () => {
 });
 
 gulp.task('build', ['clean', 'styles'], cb => {
-    runSequence(['copy:style', 'copy:images', 'scripts', 'copy:php'], cb);
+    runSequence('critical', ['copy:style', 'copy:images', 'scripts', 'copy:php'], cb);
 });
 
 // PHP Code Sniffer task
@@ -212,23 +229,6 @@ gulp.task('pagespeed', cb =>
             // key: 'YOUR_API_KEY'
     }, cb)
 );
-
-// Generate & Inline Critical-path CSS
-const critical = require('critical').stream;
-gulp.task('critical', ['styles'], ()=> {
-    return gulp.src('src/html/*.html')
-        .pipe(critical({
-            base: './', 
-            dest: 'src/critical.css',
-            inline: false, 
-            minify: true,
-            css: ['src/style.css'],
-            width: 640,
-            height: 360
-        }))
-        .on('error', function(err) { $.util.log(gutil.colors.red(err.message)); })
-        .pipe(gulp.dest('dist/assets/css'));
-});
 
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line
