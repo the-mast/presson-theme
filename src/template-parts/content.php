@@ -56,6 +56,9 @@
 			) );
 		?>
 	</section>
+
+	<?php press_on_tags(); ?>
+
 	<?php comments_template(); ?>
 
 	<!-- .entry-content -->

@@ -1,0 +1,18 @@
+
+.tag-links{
+    @include row;
+    margin: 5px 0 30px 0;
+    padding: 0 15px;
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+        height: 33px;
+        margin: 10px 3px 10px 0;
+        padding: 3px 15px;
+        text-align: center;
+        border-radius: 100px;
+        background: $accent;
+        border: solid 1px darken($accent, 7%);
+    }
+}

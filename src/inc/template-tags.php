@@ -39,6 +39,17 @@ function press_on_posted_on() {
 }
 endif;
 
+if( ! function_exists( 'press_on_tags' ) ) :
+
+function press_on_tags() {
+	
+	$tags_list = get_the_tag_list( '', esc_html__( ' ', 'press-on' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tag-links">' .  $tags_list . '</span>' ); // WPCS: XSS OK.
+		}	
+}
+endif;
+
 if ( ! function_exists( 'press_on_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -52,12 +63,7 @@ function press_on_entry_footer() {
 			// 	printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'press-on' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			// }
 
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'press-on' ) );
-			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'press-on' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-			}
+			
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
@@ -76,9 +82,10 @@ function press_on_entry_footer() {
 			esc_html__( 'Edit %s', 'press-on' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
+		'<span class="edit-link button">',
 		'</span>'
 			);
+		}
 }
 endif;
 
