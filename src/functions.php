@@ -187,7 +187,13 @@ add_action( 'wp_enqueue_scripts', 'press_on_scripts' );
 /**
  * Include the critical css
  */
-include get_template_directory() . '/critical_css.php';
+include get_template_directory() . '/inc/critical-css.php';
+
+/**
+ * Include the loadCSS 
+ */
+include get_template_directory() . '/inc/load-css.php';
+
 
 /**
  * Make scripts load asynchronously/deferred

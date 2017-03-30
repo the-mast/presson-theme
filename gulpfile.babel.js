@@ -147,6 +147,12 @@ gulp.task('scripts', () =>
     .pipe(gulp.dest('.tmp/scripts'))
 );
 
+gulp.task('scripts:loadcss', ()=> {
+    gulp.src('./node_modules/fg-loadcss/src/*.js')
+    .pipe($.uglify({ preserveComments: 'none' }))
+    .pipe(gulp.dest('dist/assets/js'));
+});
+
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
 
@@ -162,8 +168,8 @@ gulp.task('copy:php', () => {
     return gulp.src('src/**/*.php').pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', ['clean', 'styles', 'scripts'], cb => {
-    runSequence(['copy:styles', 'copy:images', 'copy:php'], cb);
+gulp.task('build', ['clean'], cb => {
+    runSequence(['scripts', 'scripts:loadcss', 'styles', 'copy:styles', 'copy:images', 'copy:php'], cb);
 });
 
 // PHP Code Sniffer task
