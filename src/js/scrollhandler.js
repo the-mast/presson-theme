@@ -1,12 +1,12 @@
 function scrollEvent() {
   var body = document.scrollingElement; 
-  var masthead = document.getElementById('masthead');
+  var pressonhead = document.getElementById('pressonhead');
 
   if (body !== undefined) {
       if (body.scrollTop == 0) {
-          masthead.classList.remove('opaque');
+          pressonhead.classList.remove('opaque');
         } else {
-          masthead.classList.add('opaque');
+          pressonhead.classList.add('opaque');
         }
     }
 };

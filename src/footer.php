@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 	<div id="site-overlay" style="display:none"></div>
-	<div id="mastfoot">
+	<div id="pressonfoot">
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div id="logo-footer">
 				<span></span>

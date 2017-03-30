@@ -14,7 +14,7 @@
         social_share_header.init();
     };
 
-    var mastheader = new Headroom(document.querySelector("#masthead"), {
+    var pressonheader = new Headroom(document.querySelector("#pressonhead"), {
         tolerance: 5,
         offset: 60,
         classes: {
@@ -23,5 +23,5 @@
             unpinned: "slideDown",
         }
     });
-    mastheader.init();
+    pressonheader.init();
 }());

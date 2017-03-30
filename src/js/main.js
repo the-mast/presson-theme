@@ -28,7 +28,7 @@
     var searchIcon = document.getElementById('nav-search');
     var searchBar = document.getElementById('search-bar');
     var resultsSearchBar = document.getElementById('results-search-bar');
-    var masthead = document.getElementById('masthead');
+    var pressonhead = document.getElementById('pressonhead');
     var searchField = document.getElementsByClassName('search-field')[0];
     var resultsSearchField = document.getElementsByClassName('search-field')[1];
 
@@ -61,7 +61,7 @@
     overlay.onclick = closeAll;
 
     function openMenu() {
-        masthead.classList.add('opaque');
+        pressonhead.classList.add('opaque');
         nav.classList.add('open');
         menuList.classList.add('slideLeft');
         menuList.classList.remove('slideRight');
@@ -79,7 +79,7 @@
     }
 
     function openSearch() {
-        masthead.classList.add('opaque');
+        pressonhead.classList.add('opaque');
         searchBar.classList.add('search-open');
         searchBar.classList.remove('search-close');
         if (nav.classList.contains('open')) {

@@ -227,19 +227,19 @@ function presson_customizer_css()
     ?>
     <!--Customizer CSS-->
     <style type="text/css">
-        <?php generate_css('#load-more, #mastfoot', 'background-color', 'primary_color'); ?>
+        <?php generate_css('#load-more, #pressonfoot', 'background-color', 'primary_color'); ?>
         <?php generate_css('a', 'color', 'highlight'); ?>
         <?php generate_css('a :hover', 'color', 'secondary_color'); ?>
         <?php generate_css('a :focus', 'color', 'secondary_color'); ?>
         <?php generate_css('a :active', 'color', 'secondary_color'); ?>
         <?php generate_css('.related-story .related-story-title span', 'color', 'highlight'); ?>
         <?php generate_css('.related-story .full-length-title span', 'color', 'highlight'); ?>
-        <?php generate_css('#mastbanner .banner-header h1', 'color', 'highlight'); ?>
-        <?php generate_css('#mastbanner .banner-header h1, .social-media-following', 'border-color', 'primary_color'); ?>
+        <?php generate_css('#pressonbanner .banner-header h1', 'color', 'highlight'); ?>
+        <?php generate_css('#pressonbanner .banner-header h1, .social-media-following', 'border-color', 'primary_color'); ?>
         <?php generate_css('.related-story', 'border-color', 'accent_color'); ?>
 
         <?php if (get_theme_mod('presson_header_logo')): ?>
-        #masthead #logo-header span {
+        #pressonhead #logo-header span {
             background: url(<?php echo get_theme_mod( 'presson_header_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
             background-size: contain;
             display: block;
@@ -249,7 +249,7 @@ function presson_customizer_css()
         <?php endif; ?>
 
         <?php if (get_theme_mod('presson_footer_logo')): ?>
-        #mastfoot #logo-footer span {
+        #pressonfoot #logo-footer span {
             background: url(<?php echo get_theme_mod( 'presson_footer_logo', get_stylesheet_directory_uri() . '/assets/images/logo_white.svg' );?>) no-repeat;
             background-size: contain;
             display: block;
@@ -282,7 +282,7 @@ function presson_customizer_css()
         <?php endif; ?>
 
         <?php if (get_theme_mod('presson_banner_small')): ?>
-        #mastbanner #banner {
+        #pressonbanner #banner {
             background: url(<?php echo get_theme_mod( 'presson_banner_small', get_stylesheet_directory_uri() . '/assets/images/banner_small.jpg' );?>) no-repeat;
             background-position: center center;
             background-size: cover;

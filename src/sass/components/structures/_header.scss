@@ -1,23 +1,23 @@
-$masthead-height: 60px;
+$pressonhead-height: 60px;
 @import '../atoms/navigation';
 
 #page {
     overflow: hidden;
 }
 
-#masthead {
+#pressonhead {
     @include row;
     padding: 10px 20px;
     //background: transparent;
     //transition: all 500ms ease;
     color: white;
-    height: $masthead-height;
+    height: $pressonhead-height;
     width: 100%;
     max-width: 640px;
     z-index: $foregroundIndex;
     #logo-header {
         @include span_columns(11);
-        height: $masthead-height;
+        height: $pressonhead-height;
         span {
             @include logo-white;
         }
@@ -33,11 +33,11 @@ $masthead-height: 60px;
     transition: all 500ms ease;
 }
 
-#mastbanner {
+#pressonbanner {
     #content {
         margin-top: 39px!important;
     }
-    #masthead {
+    #pressonhead {
         background: transparent;
         transition: all 500ms ease;
     }
