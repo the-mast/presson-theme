@@ -169,7 +169,7 @@ gulp.task('copy:php', () => {
 });
 
 gulp.task('build', ['clean'], cb => {
-    runSequence(['scripts', 'scripts:loadcss', 'styles', 'copy:styles', 'copy:images', 'copy:php'], cb);
+    runSequence(['scripts', 'scripts:loadcss', 'styles'], ['copy:styles', 'copy:images', 'copy:php'], cb);
 });
 
 // PHP Code Sniffer task
