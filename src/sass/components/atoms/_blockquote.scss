@@ -26,6 +26,8 @@ blockquote:before{
     display: inline;
     position: absolute;
     opacity: 0.6;
+    width: 28px;
+    height: 21px;
 }
 
 blockquote:after{
@@ -33,4 +35,6 @@ blockquote:after{
     float: right;
     margin-top: -30px;
     opacity: 0.6;
+    width: 28px;
+    height: 21px;
 }
