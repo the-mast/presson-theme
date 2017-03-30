@@ -24,7 +24,7 @@
 <div id="fb-root"></div>
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'press-on' ); ?></a>
+	<a class="skip-link screen-reader-text hidden" href="#content"><?php esc_html_e( 'Skip to content', 'press-on' ); ?></a>
 	
 	<div  id="pressonhead">
 		<div id="logo-header">

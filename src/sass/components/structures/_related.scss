@@ -83,6 +83,9 @@ $section-border-margin: 0 15px 0 15px;
         @include span_columns(4);
         width: 90px;
         float: right;
+        img {
+            width: 100%;
+        }
     }
     .related-story-date {
         @include span_columns(12);
