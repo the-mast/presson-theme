@@ -22,9 +22,15 @@ fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="comments-header">
-	<button class="button" id="comments-btn">
+	<!--<button class="button" id="comments-btn">
 		Show Comments (<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>)
-	</button>
+	</button>-->
+	<span class="reader-comments comments-border right" id="comment-btn">
+		Reader Comments
+	</span>
+	<span class="comments-count-border left" >
+		<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>
+	</span>
 </div>
 
 <div id="comments" class="comments-area hidden">

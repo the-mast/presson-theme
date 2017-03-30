@@ -1,5 +1,5 @@
 #comments-header {
-    @include row;
+    margin-bottom: 50px;
     text-align: center;
 
     #comments-btn {
@@ -8,7 +8,6 @@
         background-color: $primary;
         border: 1px solid #000000;
         border-radius: 100px;
-
         font-family: Helvetica, Arial, sans-serif;
         color: #fff;
         font-size: 16px;
@@ -29,6 +28,76 @@
         background-color:  darken($primary,7%);
     }
 
+    .comments-border {
+        position: relative;
+        padding: 5px;
+        border: 5px solid darkgrey;
+        background: darkgrey;
+        color: #fff;
+        font-weight: bold;
+        -webkit-border-radius: 10px 0 0 10px;
+        -moz-border-radius: 10px 0 0 10px;
+        border-radius: 10px 0 0 10px;
+    }
+
+      .comments-border:after {
+        content: "";
+        position: relative;
+        bottom: -15px;
+        left: 31px;
+        border-width: 21px 21px 21px 0;
+        border-style: solid;
+        border-color: darkgrey transparent;
+        display: inline-block;
+        width: 0;
+    }
+
+    .comments-count-border.left {
+        margin-left: 30px;
+    }
+
+    .comments-count-border {
+        position: relative;
+        padding: 5px;
+        margin: 1em 0 3em;
+        width: 50px;
+        border: 5px solid $primary;
+        background: $primary;
+        color: white;
+        font-weight: bold;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 0 10px 10px 0;
+    }
+    .comments-count-border.left:before {
+        top: -5px;
+        bottom: auto;
+        left: -26px;
+        border-width: 21px 21px 21px 0;
+        border-color: transparent $primary;
+        
+    }
+
+    .comments-count-border:before {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 40px;
+        border-width: 20px 20px 0;
+        border-style: solid;
+        border-color: $primary transparent;
+        display: block;
+        width: 0;
+    }
+
+    p {
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+    
 }
 
 
