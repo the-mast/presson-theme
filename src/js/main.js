@@ -99,6 +99,7 @@
         menuList.classList.remove('slideLeft');
         menuList.classList.add('resting');
         menuList.classList.remove('slide');
+        pressonhead.classList.remove('opaque');
         toggle();
     }
 
@@ -111,6 +112,7 @@
     function closeSearchHelper() {
         searchBar.classList.remove('search-open');
         searchBar.classList.add('search-close');
+        pressonhead.classList.remove('opaque');
         toggle();
     }
 
