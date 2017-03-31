@@ -212,7 +212,7 @@ $timing: .3s;
     float: right;
     background: $primary;
     color: white;
-    border-radius: 15px ;
+    border-radius: 20px;
     height: 42px;
     font-size: 16px;
     width: 60px;
@@ -223,7 +223,7 @@ $timing: .3s;
     border-color: darken($primary, 7%);
     @extend .button;
     &:hover {
-        background-color:  darken($primary, .7);
+        background-color: darken($primary, .7);
     }
 }
 
@@ -238,9 +238,11 @@ $timing: .3s;
 
 .search-field {
     border: none;
-    min-width: 200px;
+    height: 25px;
+    font-size: .8em;
+    min-width: 74%;
     padding-left: 10px;
-    margin-top: -10px;
+    padding-top: 5px;
     margin-left: -9px;
     font-family: Noto Sans, sans-serif;
 }
