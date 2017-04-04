@@ -57,10 +57,25 @@
 								'parent'  => 0
 								);
 							$categories = get_categories($args);
+
+							$item = (object) [
+								'link' => '/',
+								'name' => 'Home' 
+							];
+
+							$menu_items = array($item);
+
 							foreach ($categories as $cat): 
-								$category_link = get_category_link( $cat->term_id );
-								echo '<li><a href="' . esc_html($category_link) . '"><span>' . esc_html( $cat->name ) . '</span> </a> </li>';
-							endforeach 
+								$cat_item = (object) [
+									'link' => get_category_link( $cat->term_id ),
+									'name' => $cat->name 
+								];
+								array_push($menu_items, $cat_item);
+							endforeach;
+
+							foreach ($menu_items as $item):
+								echo '<li><a href="' . esc_html($item->link) . '"><span>' . esc_html( $item->name ) . '</span> </a> </li>';
+							endforeach;
 						?>
 					</ul>
 				</div>
