@@ -26,7 +26,7 @@ fjs.parentNode.insertBefore(js, fjs);
 		Show Comments (<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>)
 	</button>-->
 	<span class="reader-comments comments-border right" id="comment-btn">
-		Reader Comments
+		Show Comments
 	</span>
 	<span class="comments-count-border left" >
 		<span class="fb-comments-count" data-href="<?php echo esc_url( get_permalink()) ?>"></span>
