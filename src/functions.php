@@ -213,7 +213,7 @@ add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_async = array('headroom', 'jquery', 'twitter-widgets', 'main');
+   $scripts_to_async = array('headroom', 'twitter-widgets', 'main');
    
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
