@@ -1,5 +1,5 @@
 (function(doc){
-	var commentsBtn = doc.getElementById('comment-btn');
+	var commentsBtn = doc.getElementById('comments-btn');
 	var commentsSection = doc.getElementById('comments');
 	var showCommentsText;
 
