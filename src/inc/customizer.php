@@ -316,6 +316,12 @@ function presson_customizer_css()
             border-left: solid 5px <?php echo get_theme_mod( 'primary_color' ); ?>;
         }
         <?php endif; ?>
+
+        <?php if (get_theme_mod('accent_color')): ?>
+        #nav-menu-list ul li {
+            border-bottom: 2px solid <?php echo get_theme_mod( 'accent_color' ); ?>;
+        }
+        <?php endif; ?>
     </style>
     <!--/Customizer CSS-->
     <?php
