@@ -279,6 +279,12 @@ add_filter( 'posts_search', function( $search, \WP_Query $q )
 
     return $search;
 }, 10, 2 );
+add_action('pre_get_posts', 'ad_filter_categories');
+function ad_filter_categories($query) {
+	if ( is_category()) {
+		$query->set('category_name', single_cat_title('', false));
+	}
+}
 
 // /**
 //  * Advertising
